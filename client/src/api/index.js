@@ -10,10 +10,26 @@ class Api {
 
   create = async entity => {
     const r = await fetch(
-      `/api/${this.entity}`,
+      `/${this.entity}`,
       this.getOptions(`post`, entity.values)
     );
     return await r.json();
+  };
+
+  update = async entity => {
+    const r = await fetch(
+      `/${this.entity}/${entity.id}`,
+      this.getOptions("put", entity.values)
+    );
+    return await r.json();
+  };
+
+  delete = async entity => {
+    const r = await fetch(
+      `/${this.entity}/${entity.id}`,
+      this.getOptions("delete")
+    );
+    return r.json();
   };
 
   getOptions = (method, body = null) => {

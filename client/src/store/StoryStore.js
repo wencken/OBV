@@ -18,7 +18,7 @@ class StoryStore {
   };
 
   addStory = data => {
-    const newStory = new Story();
+    const newStory = new Story(this.rootStore);
     newStory.updateFromServer(data);
     this.stories.push(newStory);
     this.api
@@ -28,15 +28,27 @@ class StoryStore {
 
   _addStories = values => {
     console.log(values);
-    const story = new Story();
+    const story = new Story(this.rootStore);
     story.updateFromServer(values);
     runInAction(() => this.stories.push(story));
+  };
+
+  updateStory = story => {
+    this.api
+      .update(story)
+      .then(storyValues => story.updateFromServer(storyValues));
+  };
+
+  deleteStory = story => {
+    this.stories.remove(story);
+    this.api.delete(story);
   };
 }
 
 decorate(StoryStore, {
   stories: observable,
-  addStory: action
+  addStory: action,
+  deleteStory: action
 });
 
 export default StoryStore;

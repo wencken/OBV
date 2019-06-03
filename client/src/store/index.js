@@ -1,10 +1,11 @@
 import StoryStore from "./StoryStore";
-// import MoodStore from "./MoodStore";
+import MoodStore from "./MoodStore";
 
-class Store {
+class RootStore {
   constructor() {
     this.storyStore = new StoryStore(this);
+    this.moodStore = new MoodStore(this);
   }
 }
 
-export default new Store();
+export default new RootStore();
