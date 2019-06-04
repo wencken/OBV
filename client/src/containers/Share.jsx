@@ -6,6 +6,7 @@ import Navigation from "../components/Navigation";
 const Share = ({ moodStore, storyStore }) => {
   const descriptionInput = React.createRef();
   const moodInput = React.createRef();
+  const emailinput = React.createRef();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -59,6 +60,22 @@ const Share = ({ moodStore, storyStore }) => {
             id="description"
             ref={descriptionInput}
             required
+          />
+        </label>
+        <label htmlFor="email">
+          <input
+            type="checkbox"
+            name="description"
+            id="checkbox"
+            // onChange={() => this.setToggleMode(false)}
+          />
+          Ik wil deelnemen aan de wedstrijd.
+          <input
+            className={`visually-hidden`}
+            type="email"
+            name="email"
+            id="email"
+            // ref={emailinput}
           />
         </label>
         <input type="submit" value="add" />
