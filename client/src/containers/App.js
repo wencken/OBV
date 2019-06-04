@@ -5,7 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import { ROUTES } from "../constants";
 import Home from "./Home";
 import Stories from "./Stories";
-import Mood from "./Mood";
+import Mood from "./Moods";
 import Share from "./Share";
 import Detail from "./Detail";
 import Information from "./Information";

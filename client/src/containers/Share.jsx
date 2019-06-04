@@ -17,16 +17,16 @@ const Share = ({ moodStore, storyStore }) => {
     moodInput.current.value = "";
   };
 
-  const setMood = value => {
-    console.log(value);
-  };
+  // const setMood = value => {
+  //   console.log(value);
+  // };
 
   return (
     <>
       <Navigation />
       <PageHeader title={`Tell us your story`} />
       <form onSubmit={handleSubmit}>
-        {/* <label htmlFor="mood">
+        <label htmlFor="mood">
           Mood:
           <select name="mood" id="mood" ref={moodInput}>
             {moodStore.moods.map(mood => (
@@ -35,20 +35,22 @@ const Share = ({ moodStore, storyStore }) => {
               </option>
             ))}
           </select>
-        </label> */}
-        <label htmlFor="radio">
+        </label>
+        {/* <label htmlFor="mood">
           Mood:
           {moodStore.moods.map(mood => (
-            <input
-              type="radio"
-              name="mood"
-              id={mood.id}
-              value={mood.id}
-              ref={moodInput}
-              onClick={() => setMood(mood)}
-            />
+            <li key={mood.id}>
+              <input
+                type="radio"
+                name="mood"
+                value={mood.name}
+                ref={moodInput}
+                onClick={() => setMood(mood.name)}
+              />
+              {mood.name}
+            </li>
           ))}
-        </label>
+        </label> */}
         <label htmlFor="description">
           Question
           <input

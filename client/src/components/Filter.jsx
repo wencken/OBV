@@ -4,19 +4,40 @@ import { observer, inject } from "mobx-react";
 class Filter extends Component {
   constructor(props) {
     super(props);
-    this.state = { city: false };
+    this.state = { selected: "Gent" };
   }
 
-  setCity = e => {
-    console.log(e.target.value);
+  // handleFormSubmit = e => {
+  //   e.preventDefault();
+  //   console.log("Geselecteerde stad:", e.target.value);
+  // };
+
+  setCityMode = value => {
+    console.log("Geselecteerde stad:", this.state.selected);
+    this.setState({ selected: value });
   };
 
   render() {
     return (
-      <form onChange={this.setCity.bind(this)}>
-        <input type="radio" id="Gent" name="city" value="Gent" />
+      // <form onChange={this.handleFormSubmit}>
+      <form>
+        <input
+          type="radio"
+          id="Gent"
+          name="city"
+          value="Gent"
+          checked={this.state.selected === "Gent"}
+          onChange={() => this.setCityMode("Gent")}
+        />
         Gent
-        <input type="radio" id="Antwerpen" name="city" value="Antwerpen" />
+        <input
+          type="radio"
+          id="Antwerpen"
+          name="city"
+          value="Antwerpen"
+          checked={this.state.selected === "Antwerpen"}
+          onChange={() => this.setCityMode("Antwerpen")}
+        />
         Antwerpen
       </form>
     );
