@@ -5,17 +5,23 @@ import Navigation from "../components/Navigation";
 
 const Mood = ({ moodStore, storyStore }) => {
   const { moods } = moodStore;
+  const { stories } = storyStore;
   // const moodCat = storyStore.story.mood;
   // console.log(moodCat);
 
   return (
     <>
-      <PageHeader title={`How are we doing?`} />
       <Navigation />
+      <PageHeader title={`How are we doing?`} />
 
       <div>
         {moods.map(mood => (
           <p>{mood.name}</p>
+        ))}
+      </div>
+      <div>
+        {stories.map(story => (
+          <p>{story.moodId}</p>
         ))}
       </div>
     </>

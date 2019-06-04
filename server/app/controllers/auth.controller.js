@@ -61,3 +61,16 @@ exports.logout = (req, res) => {
     .clearCookie('signature', signatureCookie)
     .sendStatus(200);
 };
+
+//REGISTREREN
+exports.register = (req, res) => {
+  const {email, password, name} = req.body;
+  const user = new User({email, password, name});
+  user.save(err => {
+    if (err) {
+      res.status(500).send('Error registering new user please try again.');
+    } else {
+      res.status(200).send('Welcome to the club!');
+    }
+  });
+};

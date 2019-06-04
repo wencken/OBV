@@ -5,8 +5,8 @@ import Navigation from "../components/Navigation";
 const Detail = () => {
   return (
     <>
-      <PageHeader title={`Detailpagina`} />
       <Navigation />
+      <PageHeader title={`Detailpagina`} />
     </>
   );
 };

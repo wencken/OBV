@@ -5,8 +5,8 @@ import Navigation from "../components/Navigation";
 const Information = () => {
   return (
     <>
-      <PageHeader title={`Huh?`} />
       <Navigation />
+      <PageHeader title={`Huh?`} />
     </>
   );
 };

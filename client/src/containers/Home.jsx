@@ -8,8 +8,8 @@ const Home = ({ storyStore }) => {
 
   return (
     <>
-      <PageHeader title={`De Derde Boodschap`} />
       <Navigation />
+      <PageHeader title={`De Derde Boodschap`} />
       {stories.length > 0 ? (
         <ul>
           {stories.map(story => (

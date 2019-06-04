@@ -1,21 +1,72 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { ROUTES } from "../constants";
+import { inject, observer } from "mobx-react";
+import { ROUTES, ROLES } from "../constants";
+import Filter from "./Filter";
 // import styles from "./Navigation.module.css";
 
-const Navigation = () => {
+const Navigation = ({ uiStore }) => {
   return (
-    <div>
-      <NavLink exact={true} to={ROUTES.home}>
-        De Derde Boodschap
-      </NavLink>
-      <NavLink to={ROUTES.stories}>Stories</NavLink>
-      <NavLink to={ROUTES.mood}>Mood</NavLink>
-      <NavLink to={ROUTES.share}>Tell us your story</NavLink>
-      <NavLink to={ROUTES.detail}>Macbeth</NavLink>
-      <NavLink to={ROUTES.information}>Huh?</NavLink>
-    </div>
+    <nav>
+      {/* {uiStore.authUser.roles.includes(ROLES.admin) ? (
+        <ul>
+          <li>
+            {uiStore.authUser.name.charAt(0).toUpperCase() +
+              uiStore.authUser.name.slice(1)}
+          </li>
+          <li>
+            <button onClick={uiStore.logout}>Uitloggen</button>
+          </li>
+          <li>
+            <NavLink exact={true} to={ROUTES.home}>
+              De Derde Boodschap
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={ROUTES.storylist}>Admin - Stories</NavLink>
+          </li>
+          <li>
+            <NavLink to={ROUTES.mood}>Mood</NavLink>
+          </li>
+          <li>
+            <NavLink to={ROUTES.share}>Tell us your story</NavLink>
+          </li>
+          <li>
+            <NavLink to={ROUTES.detail}>Macbeth</NavLink>
+          </li>
+          <li>
+            <NavLink to={ROUTES.information}>Huh?</NavLink>
+          </li>
+        </ul>
+      ) : ( */}
+      <ul>
+        <li>
+          <Filter />
+        </li>
+        <li>
+          <NavLink exact={true} to={ROUTES.home}>
+            De Derde Boodschap
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to={ROUTES.stories}>Stories</NavLink>
+        </li>
+        <li>
+          <NavLink to={ROUTES.mood}>Mood</NavLink>
+        </li>
+        <li>
+          <NavLink to={ROUTES.share}>Tell us your story</NavLink>
+        </li>
+        <li>
+          <NavLink to={ROUTES.detail}>Macbeth</NavLink>
+        </li>
+        <li>
+          <NavLink to={ROUTES.information}>Huh?</NavLink>
+        </li>
+      </ul>
+      {/* )} */}
+    </nav>
   );
 };
 
-export default Navigation;
+export default inject("uiStore")(observer(Navigation));
