@@ -3,14 +3,13 @@ import { NavLink } from "react-router-dom";
 import { inject, observer } from "mobx-react";
 import { ROUTES } from "../constants";
 // import { ROUTES, ROLES } from "../constants";
-import Filter from "./Filter";
-// import styles from "./Navigation.module.css";
+import styles from "./Navigation.module.css";
 
 const Navigation = ({ uiStore }) => {
   return (
     <nav>
       {/* {uiStore.authUser.roles.includes(ROLES.admin) ? (
-        <ul>
+        <ul className={styles.boxAdmin}>
           <li>
             {uiStore.authUser.name.charAt(0).toUpperCase() +
               uiStore.authUser.name.slice(1)}
@@ -40,10 +39,7 @@ const Navigation = ({ uiStore }) => {
           </li>
         </ul>
       ) : ( */}
-      <ul>
-        <li>
-          <Filter />
-        </li>
+      <ul className={styles.box}>
         <li>
           <NavLink exact={true} to={ROUTES.home}>
             De Derde Boodschap

@@ -1,0 +1,16 @@
+.box, .box1, .box2{
+  display: flex;
+  justify-content: space-around;
+}
+.box{
+  align-items: center;
+  background-color: aliceblue;
+  height: 5rem;
+  width: 100%;
+}
+.box1{
+  width: 10%;
+}
+.box2{
+  width: 25%;
+}
