@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PageHeader from "./PageHeader";
+import PageHeader from "../PageHeader";
 import CarouselSlide from "./CarouselSlide";
 import CarouselIndicator from "./CarouselIndicator";
 import styles from "./Carousel.module.css";
@@ -20,7 +20,6 @@ class Carousel extends Component {
       activeIndex: index
     });
   };
-
   nexSlide = e => {
     e.preventDefault();
     // console.log("-1");
@@ -38,7 +37,6 @@ class Carousel extends Component {
       activeIndex: index
     });
   };
-
   prevSlide = e => {
     e.preventDefault();
     // console.log("+1");
@@ -56,14 +54,13 @@ class Carousel extends Component {
       activeIndex: index
     });
   };
+
   render() {
     return (
       <>
         <PageHeader title={`Macbeth`} />
-
         <article className={styles.carousel_container}>
           <h2>Shakespeare’s darkest psychological thriller.</h2>
-
           <div className={styles.carousel}>
             <ul className={styles.carousel__slides}>
               {this.props.slides.map((slide, index) => (
@@ -75,7 +72,6 @@ class Carousel extends Component {
                 />
               ))}
             </ul>
-
             <ul className={styles.carousel__indicators}>
               {this.props.slides.map((slide, index) => (
                 <CarouselIndicator
@@ -87,7 +83,6 @@ class Carousel extends Component {
                 />
               ))}
             </ul>
-
             <button onClick={e => this.prevSlide(e)}>Previous</button>
             <button onClick={e => this.nexSlide(e)}>Next</button>
           </div>

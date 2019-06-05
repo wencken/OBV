@@ -1,7 +1,7 @@
 export const ROUTES = {
   home: `/`,
   stories: `/stories`,
-  storylist: `/storylist`,
+  storyadmin: `/storyadmin`,
   mood: `/mood`,
   share: `/share`,
   detail: `/detail`,

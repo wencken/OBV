@@ -24,7 +24,7 @@ const Navigation = ({ uiStore }) => {
             </NavLink>
           </li>
           <li>
-            <NavLink to={ROUTES.storylist}>Admin - Stories</NavLink>
+            <NavLink to={ROUTES.storyadmin}>Admin - Stories</NavLink>
           </li>
           <li>
             <NavLink to={ROUTES.mood}>Mood</NavLink>

@@ -7,7 +7,7 @@ import PageHeader from "./PageHeader";
 import Navigation from "./Navigation";
 import StoryDetail from "./StoryDetail";
 
-const StoryList = ({ moodStore, storyStore }) => {
+const StoryAdmin = ({ moodStore, storyStore }) => {
   const { stories } = storyStore;
   const descriptionInput = React.createRef();
   const moodInput = React.createRef();
@@ -70,13 +70,13 @@ const StoryList = ({ moodStore, storyStore }) => {
   );
 };
 
-StoryList.propTypes = {
+StoryAdmin.propTypes = {
   storyStore: PropTypes.observableObject.isRequired
 };
 
 const condition = authUser => authUser && authUser.roles.includes(ROLES.admin);
 
 export default inject(`moodStore`, `storyStore`)(
-  WithAuthorisation(condition)(observer(StoryList))
+  WithAuthorisation(condition)(observer(StoryAdmin))
 );
-// export default inject(`moodStore`, `storyStore`)(observer(StoryList));
+// export default inject(`moodStore`, `storyStore`)(observer(StoryAdmin));

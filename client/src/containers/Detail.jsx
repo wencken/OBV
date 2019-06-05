@@ -1,7 +1,7 @@
 import React from "react";
 import Navigation from "../components/Navigation";
-import Carousel from "../components/Carousel";
-import CarouselData from "../components/CarouselData";
+import Carousel from "../components/carousel/Carousel";
+import CarouselData from "../components/carousel/CarouselData";
 
 const Detail = () => {
   return (
