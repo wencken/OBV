@@ -2,6 +2,7 @@ import React from "react";
 import { PropTypes, inject, observer } from "mobx-react";
 import PageHeader from "../components/PageHeader";
 import Navigation from "../components/Navigation";
+import Rate from "../components/Rate";
 
 const Stories = ({ storyStore }) => {
   const { stories } = storyStore;
@@ -19,9 +20,19 @@ const Stories = ({ storyStore }) => {
                 <li>{story.description}</li>
                 <li>{story.mood ? story.mood.name : ""}</li>
                 <li>{story.city}</li>
-                <button type="submit" onClick={story.ratings}>
+                {/* <button type="submit" onClick={story.ratings}>
                   {story.rate} Stemmen
-                </button>
+                </button> */}
+                <label htmlFor="submit">
+                  <input
+                    type="submit"
+                    // value={value}
+                    // onChange={handleChangeSlider}
+                  />{" "}
+                  {story.rate}
+                  {/* <Rate value={value} /> */}
+                  Stemmen
+                </label>
               </ul>
             ))}
           </div>

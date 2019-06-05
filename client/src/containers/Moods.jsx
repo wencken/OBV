@@ -14,7 +14,7 @@ const Moods = ({ moodStore, storyStore }) => {
         count++;
       }
     }
-    return count;
+    return (Math.round(count) / stories.length) * 100;
   };
 
   return (
@@ -24,7 +24,7 @@ const Moods = ({ moodStore, storyStore }) => {
       <ul>
         {moods.map(mood => (
           <li key={mood.id}>
-            {mood.name}: {countStories(mood.id)}
+            {mood.name}: {Math.round(countStories(mood.id))}%
           </li>
         ))}
       </ul>

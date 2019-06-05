@@ -10,7 +10,7 @@ const Home = ({ storyStore }) => {
     <>
       <Navigation />
       <PageHeader title={`De Derde Boodschap`} />
-      <h2>{stories.length} stories to be told:</h2>
+      <h2>{stories.length} stories:</h2>
       {stories.length > 0 ? (
         <ul>
           {stories.map(story => (

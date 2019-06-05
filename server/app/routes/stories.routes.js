@@ -8,7 +8,7 @@ module.exports = app => {
   app.get('/stories', controller.findAll);
   app.get('/stories/:storyId', controller.findOne);
   //
-  app.put('/stories/:storyId', checkToken, hasRole(ADMIN), controller.update);
+  app.put('/stories/:storyId', controller.update);
   app.delete(
     '/stories/:storyId',
     checkToken,

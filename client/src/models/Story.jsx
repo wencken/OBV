@@ -2,11 +2,11 @@ import uuid from "uuid";
 import { decorate, observable, action, computed } from "mobx";
 
 class Story {
-  constructor(store, description, city, id = uuid.v4()) {
+  constructor(store, description, city, rate, id = uuid.v4()) {
     this.id = id;
     this.description = description;
     this.city = city;
-    this.rate = 0;
+    this.rate = rate;
     this.store = store;
   }
 
@@ -21,7 +21,7 @@ class Story {
   }
 
   ratings = () => {
-    this.rate++;
+    parseInt(this.rate++);
   };
 
   get values() {
