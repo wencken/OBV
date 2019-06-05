@@ -43,6 +43,14 @@ class StoryStore {
     this.stories.remove(story);
     this.api.delete(story);
   };
+
+  voteStory = story => {
+    // console.log("button clicked for ", story.id);
+    story.ratings();
+    this.api
+      .update(story)
+      .then(storyValues => story.updateFromServer(storyValues));
+  };
 }
 
 decorate(StoryStore, {

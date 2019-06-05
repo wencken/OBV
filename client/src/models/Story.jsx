@@ -14,14 +14,14 @@ class Story {
   setDesc = value => (this.description = value);
   setCity = value => (this.city = value);
   setMoodId = value => (this.moodId = value);
-  // setRatings = value => (this.rate = value);
+  setRatings = value => (this.rate = value);
 
   get mood() {
     return this.store.moodStore.resolveMood(this.moodId);
   }
 
   ratings = () => {
-    parseInt(this.rate++);
+    this.rate++;
   };
 
   get values() {
@@ -38,7 +38,7 @@ class Story {
     this.setDesc(values.description);
     this.setCity(values.city);
     this.setMoodId(values.moodId);
-    // this.setRatings(values.rate);
+    this.setRatings(values.rate);
   };
 }
 
@@ -53,9 +53,9 @@ decorate(Story, {
   setDesc: action,
   setCity: action,
   setMoodId: action,
-  ratings: action,
+  setRatings: action,
   //
-  // ratings: computed,
+  ratings: action,
   values: computed,
   mood: computed
 });
