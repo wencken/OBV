@@ -34,6 +34,7 @@ const Share = ({ moodStore, storyStore }) => {
       <PageHeader title={`Tell us your story`} />
       <form onSubmit={handleSubmit}>
         <label htmlFor="city">{storyStore.stories.city}</label>
+
         <label htmlFor="mood">
           Mood:
           <select name="mood" id="mood" ref={moodInput}>

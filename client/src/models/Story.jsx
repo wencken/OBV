@@ -38,7 +38,7 @@ class Story {
     this.setDesc(values.description);
     this.setCity(values.city);
     this.setMoodId(values.moodId);
-    // this.setRatings(values.ratings);
+    // this.setRatings(values.rate);
   };
 }
 
