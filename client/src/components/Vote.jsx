@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { observer, inject } from "mobx-react";
 
 class Vote extends Component {
-  // handleClick = () => this.props.onVote(this.props.story);
-
   render() {
     const { story, onVote } = this.props;
     return (

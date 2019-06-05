@@ -34,6 +34,7 @@ app.get('/', (req, res) => {
 require('./app/routes/auth.routes.js')(app);
 require('./app/routes/stories.routes.js')(app);
 require('./app/routes/moods.routes.js')(app);
+require('./app/routes/emails.routes.js')(app);
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build/', 'index.html'));
