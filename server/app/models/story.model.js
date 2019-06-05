@@ -5,7 +5,8 @@ const StorySchema = mongoose.Schema(
   {
     description: String,
     city: String,
-    moodId: ObjectId
+    moodId: ObjectId,
+    rate: Number
   },
   {
     timestamps: true

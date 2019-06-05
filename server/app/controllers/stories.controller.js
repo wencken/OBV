@@ -9,7 +9,8 @@ exports.create = (req, res) => {
   const story = new Story({
     description: req.body.description,
     city: req.body.city,
-    moodId: req.body.moodId
+    moodId: req.body.moodId,
+    rate: req.body.rate
   });
 
   story
@@ -59,7 +60,8 @@ exports.update = async (req, res) => {
       {
         description: req.body.description,
         city: req.body.city,
-        moodId: req.body.moodId
+        moodId: req.body.moodId,
+        rate: req.body.rate
       },
       {
         new: true

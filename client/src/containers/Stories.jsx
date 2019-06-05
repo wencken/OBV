@@ -5,7 +5,7 @@ import Navigation from "../components/Navigation";
 
 const Stories = ({ storyStore }) => {
   const { stories } = storyStore;
-  console.log(stories);
+
   return (
     <>
       <Navigation />
@@ -13,13 +13,20 @@ const Stories = ({ storyStore }) => {
 
       <>
         {stories.length > 0 ? (
-          <ul>
+          <div>
             {stories.map(story => (
-              <li key={story.id}>
-                {story.description} - {story.mood ? story.mood.name : ""}
-              </li>
+              <ul key={story.id}>
+                <li>{story.description}</li>
+                <li>{story.mood ? story.mood.name : ""}</li>
+                <li>{story.city}</li>
+                <input
+                  type="submit"
+                  value={story.rate}
+                  onClick={story.ratings}
+                />
+              </ul>
             ))}
-          </ul>
+          </div>
         ) : (
           <p>No stories</p>
         )}

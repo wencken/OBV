@@ -3,17 +3,23 @@ import { inject, observer } from "mobx-react";
 import PageHeader from "../components/PageHeader";
 import Navigation from "../components/Navigation";
 
+import Filter from "../components/Filter";
+import Stories from "./Stories";
+
 const Share = ({ moodStore, storyStore }) => {
+  const cityInput = React.createRef();
   const descriptionInput = React.createRef();
   const moodInput = React.createRef();
-  const emailinput = React.createRef();
+  const emailInput = React.createRef();
 
   const handleSubmit = e => {
     e.preventDefault();
     storyStore.addStory({
+      city: cityInput.current.value,
       description: descriptionInput.current.value,
       moodId: moodInput.current.value
     });
+    cityInput.current.value = "";
     descriptionInput.current.value = "";
     moodInput.current.value = "";
   };
@@ -27,6 +33,7 @@ const Share = ({ moodStore, storyStore }) => {
       <Navigation />
       <PageHeader title={`Tell us your story`} />
       <form onSubmit={handleSubmit}>
+        <label htmlFor="city">{storyStore.stories.city}</label>
         <label htmlFor="mood">
           Mood:
           <select name="mood" id="mood" ref={moodInput}>
@@ -75,7 +82,7 @@ const Share = ({ moodStore, storyStore }) => {
             type="email"
             name="email"
             id="email"
-            // ref={emailinput}
+            // ref={emailInput}
           />
         </label>
         <input type="submit" value="add" />

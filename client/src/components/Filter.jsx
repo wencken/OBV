@@ -11,7 +11,6 @@ class Filter extends Component {
   //   e.preventDefault();
   //   console.log("Geselecteerde stad:", e.target.value);
   // };
-
   setCityMode = value => {
     console.log("Geselecteerde stad:", this.state.selected);
     this.setState({ selected: value });
@@ -21,24 +20,28 @@ class Filter extends Component {
     return (
       // <form onChange={this.handleFormSubmit}>
       <form>
-        <input
-          type="radio"
-          id="Gent"
-          name="city"
-          value="Gent"
-          checked={this.state.selected === "Gent"}
-          onChange={() => this.setCityMode("Gent")}
-        />
-        Gent
-        <input
-          type="radio"
-          id="Antwerpen"
-          name="city"
-          value="Antwerpen"
-          checked={this.state.selected === "Antwerpen"}
-          onChange={() => this.setCityMode("Antwerpen")}
-        />
-        Antwerpen
+        <label htmlFor="city">
+          <input
+            type="radio"
+            id="Gent"
+            name="city"
+            value="Gent"
+            // ref={cityInput}
+            checked={this.state.selected === "Gent"}
+            onChange={() => this.setCityMode("Gent")}
+          />
+          Gent
+          <input
+            type="radio"
+            id="Antwerpen"
+            name="city"
+            value="Antwerpen"
+            // ref={cityInput}
+            checked={this.state.selected === "Antwerpen"}
+            onChange={() => this.setCityMode("Antwerpen")}
+          />
+          Antwerpen
+        </label>
       </form>
     );
   }
