@@ -38,10 +38,15 @@ class CheckBox extends Component {
               id="email"
               ref={emailInput}
               className={styles.reverse}
-              required
             />
           ) : (
-            ""
+            <input
+              type="email"
+              name="email"
+              id="email"
+              ref={emailInput}
+              className={styles.visually_hidden}
+            />
           )}
         </label>
       </>

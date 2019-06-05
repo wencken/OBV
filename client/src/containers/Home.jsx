@@ -7,10 +7,15 @@ const Home = ({ storyStore, moodStore }) => {
   const { stories } = storyStore;
   const { moods } = moodStore;
 
+  const countStories = value => {
+    for (var i = 0; i < 10; i++) {
+      return stories[i];
+    }
+  };
   return (
     <>
       <PageHeader title={`De Derde Boodschap`} />
-      <h2>{stories.length} stories:</h2>
+      <h2>Top 10 van de {stories.length} verhalen:</h2>
       {stories.length > 0 ? (
         <div>
           {stories.map(story => (
