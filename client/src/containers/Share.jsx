@@ -67,7 +67,7 @@ const Share = ({ moodStore, storyStore, emailStore, history }) => {
           />
         </label>
         <CheckBox emailInput={emailInput} />
-        <input type="submit" value="add" />
+        <input type="submit" value="Share your story" />
       </form>
     </>
   );
