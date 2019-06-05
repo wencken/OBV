@@ -3,6 +3,8 @@ import { inject, observer } from "mobx-react";
 import { ROUTES } from "../constants";
 import PageHeader from "../components/PageHeader";
 import Navigation from "../components/Navigation";
+//
+import CheckBox from "../components/CheckBox";
 
 const Share = ({ moodStore, storyStore, emailStore, history }) => {
   const descriptionInput = React.createRef();
@@ -64,16 +66,18 @@ const Share = ({ moodStore, storyStore, emailStore, history }) => {
             required
           />
         </label>
-        <label htmlFor="email">
-          <input
-            type="checkbox"
-            name="email"
-            id="checkbox"
-            onClick={() => this.toggleHidden.bind(this)}
-          />
+        <CheckBox emailInput={emailInput} />
+        {/* <label htmlFor="email">
+          <input type="checkbox" name="email" id="checkbox" onClick={toggle} />
           Ik wil deelnemen aan de wedstrijd.
-          <input type="email" name="email" id="email" ref={emailInput} />
-        </label>
+          <input
+            type="email"
+            className={toggle === true ? styles.email_hidden : styles.email}
+            name="email"
+            id="email"
+            ref={emailInput}
+          />
+        </label> */}
         <input type="submit" value="add" />
       </form>
     </>

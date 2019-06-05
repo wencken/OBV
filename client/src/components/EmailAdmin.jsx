@@ -29,9 +29,9 @@ const EmailAdmin = ({ emailStore }) => {
   );
 };
 
-const condition = authUser => authUser && authUser.roles.includes(ROLES.admin);
+// const condition = authUser => authUser && authUser.roles.includes(ROLES.admin);
 
-export default inject(`emailStore`)(
-  WithAuthorisation(condition)(observer(EmailAdmin))
-);
-// export default inject(`emailStore`)(observer(EmailAdmin));
+// export default inject(`emailStore`)(
+//   WithAuthorisation(condition)(observer(EmailAdmin))
+// );
+export default inject(`emailStore`)(observer(EmailAdmin));
