@@ -16,7 +16,7 @@ import Login from "../components/auth/Login";
 import Register from "../components/auth/Register";
 //
 import StoryAdmin from "../components/StoryAdmin";
-import EmailAdmin from "../components/EmailAdmin";
+import Kandidaten from "../components/Kandidaten";
 
 class App extends Component {
   render() {
@@ -34,7 +34,7 @@ class App extends Component {
             <Route path={ROUTES.succeed} component={Succeed} />
 
             <Route path={ROUTES.storyadmin} component={StoryAdmin} />
-            <Route path={ROUTES.kandidaten} component={EmailAdmin} />
+            <Route path={ROUTES.kandidaten} component={Kandidaten} />
 
             <Route path={ROUTES.register} component={Register} />
           </Switch>

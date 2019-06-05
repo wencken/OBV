@@ -7,8 +7,8 @@ const Moods = ({ moodStore, storyStore }) => {
   const { stories } = storyStore;
 
   const countStories = value => {
-    var count = 0;
-    for (var i = 0; i < stories.length; i++) {
+    let count = 0;
+    for (let i = 0; i < stories.length; i++) {
       if (stories[i].moodId === value) {
         count++;
       }

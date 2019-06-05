@@ -5,9 +5,9 @@ export const ROUTES = {
   share: `/share`,
   succeed: `/succeed`,
   detail: `/detail`,
+  information: `/information`,
   storyadmin: `/storyadmin`,
   kandidaten: `/kandidaten`,
-  information: `/information`,
   login: `/login`,
   register: "/register"
 };

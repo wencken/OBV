@@ -1,17 +1,14 @@
 import React from "react";
 import { inject, observer } from "mobx-react";
+import PageHeader from "./PageHeader";
 import WithAuthorisation from "./auth/WithAuthorisation";
 import { ROLES } from "../constants";
 
-import PageHeader from "./PageHeader";
-import Navigation from "./Navigation";
-
-const EmailAdmin = ({ emailStore }) => {
+const Kandidaten = ({ emailStore }) => {
   const { emails } = emailStore;
 
   return (
     <>
-      <Navigation />
       <PageHeader title={`Kandidaten`} />
       <p>This page can only be accessed by administrators.</p>
       <>
@@ -29,9 +26,9 @@ const EmailAdmin = ({ emailStore }) => {
   );
 };
 
-// const condition = authUser => authUser && authUser.roles.includes(ROLES.admin);
+const condition = authUser => authUser && authUser.roles.includes(ROLES.admin);
 
-// export default inject(`emailStore`)(
-//   WithAuthorisation(condition)(observer(EmailAdmin))
-// );
-export default inject(`emailStore`)(observer(EmailAdmin));
+export default inject(`emailStore`)(
+  WithAuthorisation(condition)(observer(Kandidaten))
+);
+// export default inject(`emailStore`)(observer(EmailAdmin));

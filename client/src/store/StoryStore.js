@@ -29,7 +29,6 @@ class StoryStore {
   _addStories = values => {
     // console.log(values);
     const story = new Story(this.rootStore);
-    this.stories.sort((a, b) => a - b);
     story.updateFromServer(values);
     runInAction(() => this.stories.push(story));
   };

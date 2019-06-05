@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { inject } from "mobx-react";
 import { withRouter } from "react-router-dom";
 import { ROUTES } from "../../constants";
-
+import PageHeader from "../PageHeader";
+import styles from "./Login.module.css";
 class Register extends Component {
   constructor() {
     super();
@@ -32,9 +33,9 @@ class Register extends Component {
     const { name, email, pwd, pwd2 } = this.state;
     return (
       <>
-        <h2>Registreren</h2>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="email">
+        <PageHeader title={`Registreren`} />
+        <form onSubmit={this.handleSubmit} className={styles.layout}>
+          <label htmlFor="email" className={styles.label}>
             name
             <input
               type="test"
@@ -44,7 +45,7 @@ class Register extends Component {
               onChange={this.handleChange}
             />
           </label>
-          <label htmlFor="email">
+          <label htmlFor="email" className={styles.label}>
             email
             <input
               type="email"
@@ -54,7 +55,7 @@ class Register extends Component {
               onChange={this.handleChange}
             />
           </label>
-          <label htmlFor="username">
+          <label htmlFor="username" className={styles.label}>
             password
             <input
               type="password"
@@ -64,7 +65,7 @@ class Register extends Component {
               onChange={this.handleChange}
             />
           </label>
-          <label htmlFor="username">
+          <label htmlFor="username" className={styles.label}>
             repeat password
             <input
               type="password"
@@ -74,7 +75,6 @@ class Register extends Component {
               onChange={this.handleChange}
             />
           </label>
-
           <input
             type="submit"
             value="register"

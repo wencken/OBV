@@ -24,7 +24,6 @@ const StoryAdmin = ({ moodStore, storyStore }) => {
 
   return (
     <>
-      <Navigation />
       <PageHeader title={`All Stories`} />
       <p>This page can only be accessed by administrators.</p>
 

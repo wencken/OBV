@@ -1,0 +1,11 @@
+.layout{
+  display: flex;
+  flex-flow: column;
+  width: 20rem;
+  margin: 0 auto;
+}
+
+.label{
+  display: flex;
+  flex-flow: column;
+}
