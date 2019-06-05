@@ -17,7 +17,7 @@ const Home = ({ storyStore, moodStore }) => {
       {stories.length > 0 ? (
         <div>
           {stories.map(story => (
-            <ul className={styles.reverse}>
+            <ul key={story.id} className={styles.reverse}>
               <li>{story.description}</li>
               <li>- {story.mood ? story.mood.name : ""}</li>
               <li>- {story.rate}</li>
