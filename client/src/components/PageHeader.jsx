@@ -6,7 +6,7 @@ import styles from "./PageHeader.module.css";
 
 const PageHeader = ({ title }) => {
   return (
-    <div>
+    <header>
       <article className={styles.box}>
         <ul className={styles.social}>
           <li className={styles.social_list}>
@@ -47,7 +47,7 @@ const PageHeader = ({ title }) => {
         <Filter />
       </article>
       <Navigation />
-    </div>
+    </header>
   );
 };
 

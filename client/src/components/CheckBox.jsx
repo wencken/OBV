@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import styles from "../containers/Share.module.css";
 class CheckBox extends Component {
   constructor(props) {
     super(props);
@@ -21,13 +21,15 @@ class CheckBox extends Component {
     const { emailInput } = this.props;
     return (
       <>
-        <input
-          type="checkbox"
-          name="email"
-          id="checkbox"
-          onClick={this.toggleContent}
-        />
-        Ik wil deelnemen aan de wedstrijd.
+        <label htmlFor="checkbox" className={styles.checkbox}>
+          <input
+            type="checkbox"
+            name="email"
+            id="checkbox"
+            onClick={this.toggleContent}
+          />
+          Ik wil deelnemen aan de wedstrijd.
+        </label>
         <label htmlFor="email">
           {showContent === true ? (
             <input
@@ -35,6 +37,7 @@ class CheckBox extends Component {
               name="email"
               id="email"
               ref={emailInput}
+              className={styles.reverse}
               required
             />
           ) : (

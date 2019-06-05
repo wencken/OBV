@@ -1,0 +1,11 @@
+.reverse{
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto;
+  width: 20rem;
+}
+
+.checkbox{
+  display: flex;  
+  align-items: center;
+}

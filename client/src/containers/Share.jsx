@@ -3,6 +3,7 @@ import { inject, observer } from "mobx-react";
 import { ROUTES } from "../constants";
 import PageHeader from "../components/PageHeader";
 import CheckBox from "../components/CheckBox";
+import styles from "./Share.module.css";
 
 const Share = ({ moodStore, storyStore, emailStore, history }) => {
   const descriptionInput = React.createRef();
@@ -27,7 +28,8 @@ const Share = ({ moodStore, storyStore, emailStore, history }) => {
   return (
     <>
       <PageHeader title={`Tell us your story`} />
-      <form onSubmit={handleSubmit}>
+
+      <form onSubmit={handleSubmit} className={styles.reverse}>
         <label htmlFor="mood">
           Mood:
           <select name="mood" id="mood" ref={moodInput}>
@@ -53,7 +55,7 @@ const Share = ({ moodStore, storyStore, emailStore, history }) => {
             </li>
           ))}
         </label> */}
-        <label htmlFor="description">
+        <label htmlFor="description" className={styles.reverse}>
           Question
           <input
             type="text"
