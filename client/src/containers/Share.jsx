@@ -25,6 +25,10 @@ const Share = ({ moodStore, storyStore, emailStore, history }) => {
     emailInput.current.value = "";
   };
 
+  const setMood = e => {
+    e.preventDefault();
+    console.log("Mood selected:", e);
+  };
   return (
     <>
       <PageHeader title={`Tell us your story`} />
@@ -49,7 +53,8 @@ const Share = ({ moodStore, storyStore, emailStore, history }) => {
                 name="mood"
                 value={mood.name}
                 ref={moodInput}
-                onClick={() => setMood(mood.name)}
+                // checked={this.state.selected === "Gent"}
+                onChange={setMood}
               />
               {mood.name}
             </li>
