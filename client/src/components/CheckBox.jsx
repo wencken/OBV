@@ -37,6 +37,7 @@ class CheckBox extends Component {
               name="email"
               id="email"
               ref={emailInput}
+              placeholder="E-mailadres"
               className={styles.reverse}
             />
           ) : (
@@ -44,6 +45,7 @@ class CheckBox extends Component {
               type="email"
               name="email"
               id="email"
+              placeholder="E-mailadres"
               ref={emailInput}
               className={styles.visually_hidden}
             />

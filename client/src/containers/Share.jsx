@@ -57,10 +57,11 @@ const Share = ({ moodStore, storyStore, emailStore, history }) => {
         </label> */}
         <label htmlFor="description" className={styles.reverse}>
           Question
-          <input
-            type="text"
+          <textarea
+            type="textarea"
             name="description"
             id="description"
+            placeholder="Tell us your story..."
             ref={descriptionInput}
             required
           />

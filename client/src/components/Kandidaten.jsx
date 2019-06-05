@@ -31,4 +31,4 @@ const condition = authUser => authUser && authUser.roles.includes(ROLES.admin);
 export default inject(`emailStore`)(
   WithAuthorisation(condition)(observer(Kandidaten))
 );
-// export default inject(`emailStore`)(observer(EmailAdmin));
+// export default inject(`emailStore`)(observer(Kandidaten));
