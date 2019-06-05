@@ -7,10 +7,6 @@ class Filter extends Component {
     this.state = { selected: "Gent" };
   }
 
-  // handleFormSubmit = e => {
-  //   e.preventDefault();
-  //   console.log("Geselecteerde stad:", e.target.value);
-  // };
   setCityMode = value => {
     console.log("Geselecteerde stad:", this.state.selected);
     this.setState({ selected: value });
@@ -18,7 +14,6 @@ class Filter extends Component {
 
   render() {
     return (
-      // <form onChange={this.handleFormSubmit}>
       <form>
         <label htmlFor="city">
           <input

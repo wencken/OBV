@@ -4,7 +4,6 @@ import WithAuthorisation from "./auth/WithAuthorisation";
 import { ROLES } from "../constants";
 
 import PageHeader from "./PageHeader";
-import Navigation from "./Navigation";
 import StoryDetail from "./StoryDetail";
 
 const StoryAdmin = ({ moodStore, storyStore }) => {
