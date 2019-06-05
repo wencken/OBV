@@ -19,11 +19,9 @@ const Stories = ({ storyStore }) => {
                 <li>{story.description}</li>
                 <li>{story.mood ? story.mood.name : ""}</li>
                 <li>{story.city}</li>
-                <input
-                  type="submit"
-                  value={story.rate}
-                  onClick={story.ratings}
-                />
+                <button type="submit" onClick={story.ratings}>
+                  {story.rate} Stemmen
+                </button>
               </ul>
             ))}
           </div>

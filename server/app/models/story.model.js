@@ -3,10 +3,10 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const StorySchema = mongoose.Schema(
   {
+    rate: Number,
     description: String,
     city: String,
-    moodId: ObjectId,
-    rate: Number
+    moodId: ObjectId
   },
   {
     timestamps: true

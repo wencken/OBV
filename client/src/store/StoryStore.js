@@ -27,7 +27,7 @@ class StoryStore {
   };
 
   _addStories = values => {
-    // console.log(values);
+    console.log(values);
     const story = new Story(this.rootStore);
     story.updateFromServer(values);
     runInAction(() => this.stories.push(story));
