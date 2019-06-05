@@ -1,7 +1,6 @@
 import React from "react";
 import { inject, observer } from "mobx-react";
 import PageHeader from "../components/PageHeader";
-import Navigation from "../components/Navigation";
 
 const Moods = ({ moodStore, storyStore }) => {
   const { moods } = moodStore;
@@ -19,7 +18,6 @@ const Moods = ({ moodStore, storyStore }) => {
 
   return (
     <>
-      <Navigation />
       <PageHeader title={`How are we doing?`} />
       <ul>
         {moods.map(mood => (

@@ -1,12 +1,10 @@
 import React from "react";
 import PageHeader from "../components/PageHeader";
-import Navigation from "../components/Navigation";
 import Map from "../components/Map";
 
 const Information = () => {
   return (
     <>
-      <Navigation />
       <PageHeader title={`Huh?`} />
       <h2>Laat jezelf aan opera horen en opera zal antwoorden.</h2>
       <p>

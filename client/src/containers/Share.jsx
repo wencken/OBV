@@ -2,7 +2,6 @@ import React from "react";
 import { inject, observer } from "mobx-react";
 import { ROUTES } from "../constants";
 import PageHeader from "../components/PageHeader";
-import Navigation from "../components/Navigation";
 import CheckBox from "../components/CheckBox";
 
 const Share = ({ moodStore, storyStore, emailStore, history }) => {
@@ -27,7 +26,6 @@ const Share = ({ moodStore, storyStore, emailStore, history }) => {
 
   return (
     <>
-      <Navigation />
       <PageHeader title={`Tell us your story`} />
       <form onSubmit={handleSubmit}>
         <label htmlFor="mood">

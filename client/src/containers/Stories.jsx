@@ -1,7 +1,6 @@
 import React from "react";
 import { PropTypes, inject, observer } from "mobx-react";
 import PageHeader from "../components/PageHeader";
-import Navigation from "../components/Navigation";
 import Vote from "../components/Vote";
 
 const Stories = ({ storyStore }) => {
@@ -9,7 +8,6 @@ const Stories = ({ storyStore }) => {
 
   return (
     <>
-      <Navigation />
       <PageHeader title={`All Stories`} />
       <>
         {stories.length > 0 ? (

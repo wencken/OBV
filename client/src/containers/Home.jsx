@@ -1,22 +1,26 @@
 import React from "react";
 import { inject, observer } from "mobx-react";
 import PageHeader from "../components/PageHeader";
-import Navigation from "../components/Navigation";
+import styles from "./Home.module.css";
 
-const Home = ({ storyStore }) => {
+const Home = ({ storyStore, moodStore }) => {
   const { stories } = storyStore;
+  const { moods } = moodStore;
 
   return (
     <>
-      <Navigation />
       <PageHeader title={`De Derde Boodschap`} />
       <h2>{stories.length} stories:</h2>
       {stories.length > 0 ? (
-        <ul>
+        <div>
           {stories.map(story => (
-            <p> {story.description}</p>
+            <ul className={styles.reverse}>
+              <li>{story.description}</li>
+              <li>- {story.mood ? story.mood.name : ""}</li>
+              <li>- {story.rate}</li>
+            </ul>
           ))}
-        </ul>
+        </div>
       ) : (
         <p>No stories</p>
       )}
@@ -24,4 +28,4 @@ const Home = ({ storyStore }) => {
   );
 };
 
-export default inject(`storyStore`)(observer(Home));
+export default inject(`storyStore`, `moodStore`)(observer(Home));

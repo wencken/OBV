@@ -1,0 +1,18 @@
+.titel{
+ font-weight: bold
+}
+/*Social media*/
+.social{
+ display:flex;
+ width: 5rem;
+ justify-content: space-between;
+}
+.social_list{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.social_svg{
+  width: 1rem;
+  display: block;
+}

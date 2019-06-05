@@ -1,12 +1,10 @@
 import React from "react";
-import Navigation from "../components/Navigation";
 import Carousel from "../components/carousel/Carousel";
 import CarouselData from "../components/carousel/CarouselData";
 
 const Detail = () => {
   return (
     <>
-      <Navigation />
       <Carousel slides={CarouselData} />
       <ul>
         <li>
