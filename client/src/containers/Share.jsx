@@ -1,14 +1,15 @@
 import React from "react";
 import { inject, observer } from "mobx-react";
-import { Redirect } from "react-router";
+
+import { ROUTES } from "../constants";
 import PageHeader from "../components/PageHeader";
 import Navigation from "../components/Navigation";
 
 import Filter from "../components/Filter";
 import Stories from "./Stories";
-import { ROUTES } from "../constants";
+import { Redirect } from "react-router";
 
-const Share = ({ moodStore, storyStore }) => {
+const Share = ({ moodStore, storyStore, history }) => {
   const cityInput = React.createRef();
   const descriptionInput = React.createRef();
   const moodInput = React.createRef();
@@ -16,16 +17,15 @@ const Share = ({ moodStore, storyStore }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
+    history.push(ROUTES.succeed);
     storyStore.addStory({
-      city: cityInput.current.value,
+      // city: cityInput.current.value,
       description: descriptionInput.current.value,
       moodId: moodInput.current.value
     });
-    cityInput.current.value = "";
+    // cityInput.current.value = "";
     descriptionInput.current.value = "";
     moodInput.current.value = "";
-    // <Redirect to={ROUTES.thankyou} />;
   };
 
   // const setMood = value => {
