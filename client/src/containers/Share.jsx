@@ -25,10 +25,10 @@ const Share = ({ moodStore, storyStore, emailStore, history }) => {
     emailInput.current.value = "";
   };
 
-  const setMood = e => {
-    e.preventDefault();
-    console.log("Mood selected:", e);
-  };
+  // const setMood = e => {
+  //   e.preventDefault();
+  //   console.log("Mood selected:", e);
+  // };
   return (
     <>
       <PageHeader title={`Tell us your story`} />
