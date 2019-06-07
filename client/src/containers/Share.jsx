@@ -12,54 +12,86 @@ const Share = ({ moodStore, storyStore, emailStore, history }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    history.push(ROUTES.succeed);
-    storyStore.addStory({
-      description: descriptionInput.current.value,
-      moodId: moodInput.current.value
-    });
-    emailStore.addEmail({
-      email: emailInput.current.value
-    });
-    descriptionInput.current.value = "";
-    moodInput.current.value = "";
-    emailInput.current.value = "";
+
+    if (!emailInput.current.value) {
+      console.log("nog validatie toevoegen");
+    } else {
+      history.push(ROUTES.succeed);
+
+      storyStore.addStory({
+        description: descriptionInput.current.value,
+        moodId: moodInput.current.value
+      });
+      emailStore.addEmail({
+        email: emailInput.current.value
+      });
+      descriptionInput.current.value = "";
+      moodInput.current.value = "";
+      emailInput.current.value = "";
+    }
   };
 
   // const setMood = e => {
-  //   e.preventDefault();
+  //   // e.preventDefault();
   //   console.log("Mood selected:", e);
   // };
+
   return (
     <>
       <PageHeader title={`Tell us your story`} />
 
       <form onSubmit={handleSubmit} className={styles.reverse}>
-        <label htmlFor="mood">
+        {/* <label htmlFor="mood">
           Mood:
           <select name="mood" id="mood" ref={moodInput}>
             {moodStore.moods.map(mood => (
-              <option value={mood.id} key={mood.id}>
+              <option value={mood.id} key={mood.id} name={mood.name}>
                 {mood.name}
               </option>
             ))}
           </select>
-        </label>
-        {/* <label htmlFor="mood">
-          Mood:
-          {moodStore.moods.map(mood => (
-            <li key={mood.id}>
+        </label> */}
+
+        {moodStore.moods.length === 0 ? (
+          <>
+            <p>
+              We are very sorry. <br />
+              Because of technical complications, <br />
+              today you'll have no choice but being happy!
+            </p>
+            <label htmlFor="happy">
               <input
                 type="radio"
+                id="happy"
                 name="mood"
-                value={mood.name}
+                value="happy"
                 ref={moodInput}
-                // checked={this.state.selected === "Gent"}
-                onChange={setMood}
               />
-              {mood.name}
-            </li>
-          ))}
-        </label> */}
+              Happy
+            </label>
+          </>
+        ) : (
+          <ul>
+            {moodStore.moods.map(mood => (
+              <li key={mood.id}>
+                <label htmlFor={mood.name}>
+                  <input
+                    key={mood.id}
+                    id={mood.name}
+                    type="radio"
+                    name="mood"
+                    value={mood.id}
+                    ref={moodInput}
+                    // checked={this.state.selected === "Gent"}
+                    // onChange={setMood}
+                  />
+                  {mood.name}
+                </label>
+              </li>
+            ))}
+          </ul>
+        )}
+
         <label htmlFor="description" className={styles.reverse}>
           Question
           <textarea

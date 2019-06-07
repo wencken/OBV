@@ -5,17 +5,20 @@ class Filter extends Component {
   constructor(props) {
     super(props);
     this.state = { selected: "Gent" };
+    console.log("stad:", this.state.selected);
   }
 
   setCityMode = value => {
-    console.log("Geselecteerde stad:", this.state.selected);
-    this.setState({ selected: value });
+    if (value) {
+      console.log("Geselecteerde stad:", this.state.selected);
+      this.setState({ selected: value });
+    }
   };
 
   render() {
     return (
       <form>
-        <label htmlFor="city">
+        <label htmlFor="Gent">
           <input
             type="radio"
             id="Gent"
@@ -26,6 +29,8 @@ class Filter extends Component {
             onChange={() => this.setCityMode("Gent")}
           />
           Gent
+        </label>
+        <label htmlFor="Antwerpen">
           <input
             type="radio"
             id="Antwerpen"

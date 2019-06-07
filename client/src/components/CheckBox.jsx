@@ -11,9 +11,9 @@ class CheckBox extends Component {
 
   toggleContent(event) {
     event.preventDefault();
-    this.setState({
-      showContent: !this.state.showContent
-    });
+    this.setState(prevState => ({
+      showContent: !prevState.showContent
+    }));
   }
 
   render() {

@@ -10,7 +10,12 @@ class Vote extends Component {
         <li>{story.mood ? story.mood.name : ""}</li>
         <li>{story.city}</li>
         <li>
-          <button onClick={() => onVote(story)}>{story.rate} Likes</button>
+          <button onClick={() => onVote(story)}>
+            {story.rate}{" "}
+            <span role="img" aria-label="poop">
+              💩
+            </span>
+          </button>
         </li>
       </ul>
     );
