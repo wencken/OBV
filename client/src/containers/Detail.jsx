@@ -5,6 +5,10 @@ import CarouselData from "../components/carousel/CarouselData";
 const Detail = () => {
   return (
     <>
+      <header>
+        <h2>Macbeth</h2>
+        <p>Shakespeare’s darkest psychological thriller.</p>
+      </header>
       <Carousel slides={CarouselData} />
       <ul>
         <li>

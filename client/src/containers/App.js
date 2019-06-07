@@ -17,11 +17,13 @@ import Register from "../components/auth/Register";
 //
 import StoryAdmin from "../components/StoryAdmin";
 import Kandidaten from "../components/Kandidaten";
+import PageHeader from "../components/PageHeader";
 
 class App extends Component {
   render() {
     return (
       <>
+        <PageHeader title={`De Derde Boodschap`} />
         <main>
           <Switch>
             <Route path={ROUTES.home} exact strict component={Home} />

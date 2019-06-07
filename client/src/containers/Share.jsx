@@ -1,11 +1,12 @@
 import React from "react";
 import { inject, observer } from "mobx-react";
 import { ROUTES } from "../constants";
-import PageHeader from "../components/PageHeader";
 import CheckBox from "../components/CheckBox";
 import styles from "./Share.module.css";
 
 const Share = ({ moodStore, storyStore, emailStore, history }) => {
+  const { city } = moodStore;
+
   const descriptionInput = React.createRef();
   const moodInput = React.createRef();
   const emailInput = React.createRef();
@@ -20,7 +21,8 @@ const Share = ({ moodStore, storyStore, emailStore, history }) => {
 
       storyStore.addStory({
         description: descriptionInput.current.value,
-        moodId: moodInput.current.value
+        moodId: moodInput.current.value,
+        city: city
       });
       emailStore.addEmail({
         email: emailInput.current.value
@@ -38,8 +40,8 @@ const Share = ({ moodStore, storyStore, emailStore, history }) => {
 
   return (
     <>
-      <PageHeader title={`Tell us your story`} />
-
+      {/* <PageHeader title={`Tell us your story`} /> */}
+      <h2>Tell us your story</h2>
       <form onSubmit={handleSubmit} className={styles.reverse}>
         {/* <label htmlFor="mood">
           Mood:

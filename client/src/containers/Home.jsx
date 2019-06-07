@@ -1,6 +1,5 @@
 import React from "react";
 import { inject, observer } from "mobx-react";
-import PageHeader from "../components/PageHeader";
 import styles from "./Home.module.css";
 
 const Home = ({ storyStore, moodStore }) => {
@@ -9,11 +8,15 @@ const Home = ({ storyStore, moodStore }) => {
 
   return (
     <>
-      <PageHeader title={`De Derde Boodschap`} />
-      <h2>
-        Top 10 van de {stories.length} verhalen uit {moods.name} van{" "}
-        {stories.city}:
-      </h2>
+      {/* <PageHeader title={`De Derde Boodschap`} /> */}
+      <header>
+        <h2>De Derde Boodschap</h2>
+        <p>
+          Top 10 van de {stories.length} verhalen uit {moods.name} van{" "}
+          {stories.city}:
+        </p>
+      </header>
+
       {stories.length > 0 ? (
         <div>
           {stories.map(story => (

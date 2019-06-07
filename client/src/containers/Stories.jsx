@@ -1,6 +1,5 @@
 import React from "react";
 import { PropTypes, inject, observer } from "mobx-react";
-import PageHeader from "../components/PageHeader";
 import Vote from "../components/Vote";
 
 const Stories = ({ storyStore }) => {
@@ -8,8 +7,9 @@ const Stories = ({ storyStore }) => {
 
   return (
     <>
-      <PageHeader title={`All Stories`} />
+      {/* <PageHeader title={`All Stories`} /> */}
       <>
+        <h2>All Stories</h2>
         {stories.length > 0 ? (
           <div>
             {stories.map(story => (

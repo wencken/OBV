@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PageHeader from "../PageHeader";
 import CarouselSlide from "./CarouselSlide";
 import CarouselIndicator from "./CarouselIndicator";
 import styles from "./Carousel.module.css";
@@ -58,9 +57,9 @@ class Carousel extends Component {
   render() {
     return (
       <>
-        <PageHeader title={`Macbeth`} />
+        {/* <PageHeader title={`Macbeth`} /> */}
         <article className={styles.carousel_container}>
-          <h2>Shakespeare’s darkest psychological thriller.</h2>
+          {/* <h2>Shakespeare’s darkest psychological thriller.</h2> */}
           <div className={styles.carousel}>
             <ul className={styles.carousel__slides}>
               {this.props.slides.map((slide, index) => (
