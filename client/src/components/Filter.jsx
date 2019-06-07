@@ -5,17 +5,17 @@ class Filter extends Component {
   constructor(props) {
     super(props);
     this.state = { selected: "Gent" };
-    console.log("stad:", this.state.selected);
+    console.log("Stad:", this.state.selected);
   }
 
-  setCityMode = value => {
-    if (value) {
-      console.log("Geselecteerde stad:", this.state.selected);
-      this.setState({ selected: value });
-    }
+  handleChangeCity = e => {
+    console.log("Stad:", e.target.value);
+    this.setState({ selected: e.target.value });
   };
 
   render() {
+    const { selected } = this.state;
+
     return (
       <form>
         <label htmlFor="Gent">
@@ -25,8 +25,8 @@ class Filter extends Component {
             name="city"
             value="Gent"
             // ref={cityInput}
-            checked={this.state.selected === "Gent"}
-            onChange={() => this.setCityMode("Gent")}
+            checked={selected === "Gent"}
+            onChange={this.handleChangeCity}
           />
           Gent
         </label>
@@ -37,8 +37,8 @@ class Filter extends Component {
             name="city"
             value="Antwerpen"
             // ref={cityInput}
-            checked={this.state.selected === "Antwerpen"}
-            onChange={() => this.setCityMode("Antwerpen")}
+            checked={selected === "Antwerpen"}
+            onChange={this.handleChangeCity}
           />
           Antwerpen
         </label>
