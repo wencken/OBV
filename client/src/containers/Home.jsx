@@ -12,14 +12,14 @@ const Home = ({ storyStore, moodStore }) => {
       <header>
         <h2>De Derde Boodschap</h2>
         <p>
-          Top 10 van de {stories.length} verhalen uit {moods.name} van{" "}
-          {stories.city}:
+          Top 10 van de {stories.length} verhalen uit {moods.name}(mood)
+          {/* van{" "}{stories.city}: */}
         </p>
       </header>
 
       {stories.length > 0 ? (
         <div>
-          {stories.map(story => (
+          {stories.slice(0, 10).map(story => (
             <ul key={story.id} className={styles.reverse}>
               <li>{story.description}</li>
               <li>- {story.mood ? story.mood.name : ""}</li>
