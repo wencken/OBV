@@ -10,7 +10,7 @@ class Filter extends Component {
   handleChangeCity = e => {
     this.setState({ selected: e.target.value });
 
-    this.props.changeCity(e, e.target.value);
+    this.props.changeCity(e.target.value);
   };
 
   render() {

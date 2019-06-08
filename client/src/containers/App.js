@@ -28,7 +28,7 @@ class App extends Component {
     };
   }
 
-  changeCity = (e, newCity) => {
+  changeCity = newCity => {
     this.setState({
       city: newCity
     });

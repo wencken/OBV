@@ -7,14 +7,14 @@ const Moods = ({ city, moodStore, storyStore }) => {
   const { moods } = moodStore;
   const { stories } = storyStore;
 
-  const countStories = value => {
+  const countStories = id => {
     let count = 0;
     for (let i = 0; i < stories.length; i++) {
-      if (stories[i].moodId === value) {
+      if (stories[i].moodId === id) {
         count++;
       }
     }
-    return (Math.round(count) / stories.length) * 100;
+    return (count / stories.length) * 100;
   };
 
   return (
@@ -24,7 +24,7 @@ const Moods = ({ city, moodStore, storyStore }) => {
       <ul>
         {moods.map(mood => (
           <li key={mood.id}>
-            {mood.name}: {Math.round(countStories(mood.id))}%
+            {mood.name}: {countStories(mood.id).toFixed(2)}%
           </li>
         ))}
       </ul>
