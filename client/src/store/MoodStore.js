@@ -6,12 +6,18 @@ configure({ enforceActions: `observed` });
 
 class MoodStore {
   moods = [];
+  currentMood = "";
 
   constructor(rootStore) {
     this.rootStore = rootStore;
     this.api = new Api(`moods`);
     this.getAll();
   }
+
+  changeCurrentMood = mood => {
+    this.currentMood = mood;
+    console.log(this.currentMood);
+  };
 
   getAll = () => {
     this.api.getAll().then(d => d.forEach(this._addMoods));
