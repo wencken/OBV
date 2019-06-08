@@ -18,18 +18,37 @@ import Register from "../components/auth/Register";
 import StoryAdmin from "../components/StoryAdmin";
 import Kandidaten from "../components/Kandidaten";
 import PageHeader from "../components/PageHeader";
+import Filter from "../components/Filter";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      city: "Gent"
+    };
+  }
+
+  changeCity = (e, newCity) => {
+    this.setState({
+      city: newCity
+    });
+    //hier niet loggen, is asynchroon! zie log in Share comp
+  };
+
   render() {
     return (
       <>
         <PageHeader title={`De Derde Boodschap`} />
+        <Filter changeCity={this.changeCity} />
         <main>
           <Switch>
             <Route path={ROUTES.home} exact strict component={Home} />
             <Route path={ROUTES.stories} component={Stories} />
             <Route path={ROUTES.mood} component={Mood} />
-            <Route path={ROUTES.share} component={Share} />
+            <Route
+              path={ROUTES.share}
+              render={() => <Share city={this.state.city} />}
+            />
             <Route path={ROUTES.detail} component={Detail} />
             <Route path={ROUTES.information} component={Information} />
             <Route path={ROUTES.login} component={Login} />

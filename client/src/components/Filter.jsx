@@ -5,12 +5,12 @@ class Filter extends Component {
   constructor(props) {
     super(props);
     this.state = { selected: "Gent" };
-    console.log("Stad:", this.state.selected);
   }
 
   handleChangeCity = e => {
-    console.log("Stad:", e.target.value);
     this.setState({ selected: e.target.value });
+
+    this.props.changeCity(e, e.target.value);
   };
 
   render() {
@@ -24,7 +24,6 @@ class Filter extends Component {
             id="Gent"
             name="city"
             value="Gent"
-            // ref={cityInput}
             checked={selected === "Gent"}
             onChange={this.handleChangeCity}
           />
@@ -36,7 +35,6 @@ class Filter extends Component {
             id="Antwerpen"
             name="city"
             value="Antwerpen"
-            // ref={cityInput}
             checked={selected === "Antwerpen"}
             onChange={this.handleChangeCity}
           />

@@ -1,11 +1,13 @@
 import React from "react";
 import { inject, observer } from "mobx-react";
 import { ROUTES } from "../constants";
+import { withRouter } from "react-router-dom";
+
 import CheckBox from "../components/CheckBox";
 import styles from "./Share.module.css";
 
-const Share = ({ moodStore, storyStore, emailStore, history }) => {
-  const { city } = moodStore;
+const Share = ({ city, moodStore, storyStore, emailStore, history }) => {
+  console.log(city);
 
   const descriptionInput = React.createRef();
   const moodInput = React.createRef();
@@ -14,23 +16,24 @@ const Share = ({ moodStore, storyStore, emailStore, history }) => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (!emailInput.current.value) {
-      console.log("nog validatie toevoegen");
-    } else {
-      history.push(ROUTES.succeed);
+    // if (!emailInput.current.value) {
+    //   console.log("nog validatie toevoegen");
+    // } else {
 
-      storyStore.addStory({
-        description: descriptionInput.current.value,
-        moodId: moodInput.current.value,
-        city: city
-      });
-      emailStore.addEmail({
-        email: emailInput.current.value
-      });
-      descriptionInput.current.value = "";
-      moodInput.current.value = "";
-      emailInput.current.value = "";
-    }
+    history.push(ROUTES.succeed);
+
+    storyStore.addStory({
+      description: descriptionInput.current.value,
+      moodId: moodInput.current.value,
+      city: city
+    });
+    emailStore.addEmail({
+      email: emailInput.current.value
+    });
+    descriptionInput.current.value = "";
+    moodInput.current.value = "";
+    emailInput.current.value = "";
+    // }
   };
 
   // const setMood = e => {
@@ -43,17 +46,6 @@ const Share = ({ moodStore, storyStore, emailStore, history }) => {
       {/* <PageHeader title={`Tell us your story`} /> */}
       <h2>Tell us your story</h2>
       <form onSubmit={handleSubmit} className={styles.reverse}>
-        {/* <label htmlFor="mood">
-          Mood:
-          <select name="mood" id="mood" ref={moodInput}>
-            {moodStore.moods.map(mood => (
-              <option value={mood.id} key={mood.id} name={mood.name}>
-                {mood.name}
-              </option>
-            ))}
-          </select>
-        </label> */}
-
         {moodStore.moods.length === 0 ? (
           <>
             <p>
@@ -84,8 +76,6 @@ const Share = ({ moodStore, storyStore, emailStore, history }) => {
                     name="mood"
                     value={mood.id}
                     ref={moodInput}
-                    // checked={this.state.selected === "Gent"}
-                    // onChange={setMood}
                   />
                   {mood.name}
                 </label>
@@ -112,4 +102,6 @@ const Share = ({ moodStore, storyStore, emailStore, history }) => {
   );
 };
 
-export default inject(`moodStore`, `storyStore`, `emailStore`)(observer(Share));
+export default inject(`moodStore`, `storyStore`, `emailStore`)(
+  withRouter(observer(Share))
+);
