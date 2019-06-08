@@ -43,8 +43,14 @@ class App extends Component {
         <main>
           <Switch>
             <Route path={ROUTES.home} exact strict component={Home} />
-            <Route path={ROUTES.stories} component={Stories} />
-            <Route path={ROUTES.mood} component={Mood} />
+            <Route
+              path={ROUTES.stories}
+              render={() => <Stories city={this.state.city} />}
+            />
+            <Route
+              path={ROUTES.mood}
+              render={() => <Mood city={this.state.city} />}
+            />
             <Route
               path={ROUTES.share}
               render={() => <Share city={this.state.city} />}

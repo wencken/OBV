@@ -8,6 +8,11 @@ class Api {
     return await r.json();
   };
 
+  getGhent = async entity => {
+    const r = await fetch(`/${this.entity}/${entity.city}`);
+    return await r.json();
+  };
+
   create = async entity => {
     const r = await fetch(
       `/${this.entity}`,

@@ -2,17 +2,25 @@ import React from "react";
 import { PropTypes, inject, observer } from "mobx-react";
 import Vote from "../components/Vote";
 
-const Stories = ({ storyStore }) => {
+const Stories = ({ city, storyStore }) => {
+  console.log(city);
+
   const { stories } = storyStore;
+
+  const filterStories = city => {
+    return stories.filter(story => story.city === city);
+  };
+
+  const filteredStories = filterStories(city);
 
   return (
     <>
       {/* <PageHeader title={`All Stories`} /> */}
       <>
         <h2>All Stories</h2>
-        {stories.length > 0 ? (
+        {filteredStories.length > 0 ? (
           <div>
-            {stories.map(story => (
+            {filteredStories.map(story => (
               <Vote
                 key={story.id}
                 story={story}

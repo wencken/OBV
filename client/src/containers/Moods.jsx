@@ -1,7 +1,9 @@
 import React from "react";
 import { inject, observer } from "mobx-react";
 
-const Moods = ({ moodStore, storyStore }) => {
+const Moods = ({ city, moodStore, storyStore }) => {
+  console.log(city);
+
   const { moods } = moodStore;
   const { stories } = storyStore;
 
