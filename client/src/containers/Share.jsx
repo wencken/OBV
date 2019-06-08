@@ -9,6 +9,8 @@ import styles from "./Share.module.css";
 const Share = ({ city, moodStore, storyStore, emailStore, history }) => {
   console.log(city);
 
+  let mood = "";
+
   const descriptionInput = React.createRef();
   const moodInput = React.createRef();
   const emailInput = React.createRef();
@@ -19,27 +21,29 @@ const Share = ({ city, moodStore, storyStore, emailStore, history }) => {
     // if (!emailInput.current.value) {
     //   console.log("nog validatie toevoegen");
     // } else {
+    console.log(e.currentTarget);
 
     history.push(ROUTES.succeed);
 
     storyStore.addStory({
       description: descriptionInput.current.value,
-      moodId: moodInput.current.value,
+      moodId: mood,
+      // moodId: moodInput.current.value,
       city: city
     });
     emailStore.addEmail({
       email: emailInput.current.value
     });
     descriptionInput.current.value = "";
-    moodInput.current.value = "";
+    // moodInput.current.value = "";
     emailInput.current.value = "";
     // }
   };
 
-  // const setMood = e => {
-  //   // e.preventDefault();
-  //   console.log("Mood selected:", e);
-  // };
+  const setMood = e => {
+    console.log("Mood selected:", e.currentTarget.value);
+    mood = e.currentTarget.value;
+  };
 
   return (
     <>
@@ -75,7 +79,9 @@ const Share = ({ city, moodStore, storyStore, emailStore, history }) => {
                     type="radio"
                     name="mood"
                     value={mood.id}
-                    ref={moodInput}
+                    // ref={moodInput}
+                    // checked={this.state.selected === "Gent"}
+                    onChange={setMood}
                   />
                   {mood.name}
                 </label>
