@@ -14,9 +14,12 @@ class MoodStore {
     this.getAll();
   }
 
-  setCity = city => {
-    this.city = city;
-  };
+  // setCity = city => {
+  //   this.city = city;
+  //   console.log(this.city);
+  // };
+
+  updateCity = city => {};
 
   getAll = () => {
     this.api.getAll().then(d => d.forEach(this._addMoods));

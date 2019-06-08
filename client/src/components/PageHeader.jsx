@@ -5,6 +5,14 @@ import Filter from "./Filter";
 import styles from "./PageHeader.module.css";
 
 const PageHeader = ({ title }) => {
+  // const changeCity = e => {
+  //   e.preventDefault();
+
+  // }
+  //State hier pas declareren? en in filter enkel de currentValue setStaten?
+  //dan nog een omhoog: in App.js zitten met state zodat bij share: city={this.state.city} kan gebruikt worden
+  //https://stackoverflow.com/questions/44792372/react-passing-state-to-sibling-component-and-up-to-parent-class
+
   return (
     <header>
       <article className={styles.box}>

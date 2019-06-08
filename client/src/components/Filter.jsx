@@ -48,3 +48,48 @@ class Filter extends Component {
 }
 
 export default inject("storyStore")(observer(Filter));
+
+// const Filter = ({ moodStore }) => {
+//   const { city } = moodStore;
+
+//   const cityInput = React.createRef();
+
+//   const handleChangeCity = e => {
+//     e.preventDefault();
+//     // {city} === cityInput.current.value;
+//     // moodStore.setCity({
+//     //   city: cityInput.current.value
+//     // });
+//   };
+
+//   return (
+//     <>
+//       <form>
+//         <label htmlFor="Gent">
+//           <input
+//             type="radio"
+//             id="Gent"
+//             name="city"
+//             value="Gent"
+//             ref={cityInput}
+//             onChange={handleChangeCity}
+//           />
+//           Gent
+//         </label>
+//         <label htmlFor="Antwerpen">
+//           <input
+//             type="radio"
+//             id="Antwerpen"
+//             name="city"
+//             value="Antwerpen"
+//             ref={cityInput}
+//             onChange={handleChangeCity}
+//           />
+//           Antwerpen
+//         </label>
+//       </form>
+//     </>
+//   );
+// };
+
+// export default inject("moodStore")(observer(Filter));
