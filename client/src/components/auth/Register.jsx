@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { inject } from "mobx-react";
 import { withRouter } from "react-router-dom";
 import { ROUTES } from "../../constants";
-import PageHeader from "../PageHeader";
 import styles from "./Login.module.css";
 class Register extends Component {
   constructor() {

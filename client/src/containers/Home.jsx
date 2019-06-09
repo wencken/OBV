@@ -8,6 +8,7 @@ const Home = ({ city, storyStore, moodStore }) => {
 
   console.log(city);
   console.log({ currentMood });
+  console.log(moods);
 
   const filterStories = city => {
     return stories.filter(story => story.city === city);
@@ -17,8 +18,6 @@ const Home = ({ city, storyStore, moodStore }) => {
 
   const sortStories = filteredStories => {
     const copyStories = [].concat(filteredStories);
-    copyStories.map(story => console.log(story.rate));
-
     return copyStories.sort((a, b) => b.rate - a.rate);
   };
 
@@ -29,7 +28,7 @@ const Home = ({ city, storyStore, moodStore }) => {
       <header>
         <h2>De Derde Boodschap</h2>
         <p>
-          Top 10 van de {stories.length} verhalen uit {moods.name}(mood) van{" "}
+          Top 10 van de {stories.length} verhalen uit {currentMood}(mood) van{" "}
           {city}:
         </p>
       </header>
