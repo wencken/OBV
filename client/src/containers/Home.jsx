@@ -3,10 +3,11 @@ import { inject, observer } from "mobx-react";
 import styles from "./Home.module.css";
 
 const Home = ({ city, storyStore, moodStore }) => {
-  console.log(city);
-
   const { stories } = storyStore;
-  const { moods } = moodStore;
+  const { moods, currentMood } = moodStore;
+
+  console.log(city);
+  console.log({ currentMood });
 
   const filterStories = city => {
     return stories.filter(story => story.city === city);
@@ -19,8 +20,8 @@ const Home = ({ city, storyStore, moodStore }) => {
       <header>
         <h2>De Derde Boodschap</h2>
         <p>
-          Top 10 van de {stories.length} verhalen uit {moods.name}(mood)
-          {/* van{" "}{stories.city}: */}
+          Top 10 van de {stories.length} verhalen uit {moods.name}(mood) van{" "}
+          {city}:
         </p>
       </header>
 
