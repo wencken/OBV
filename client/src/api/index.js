@@ -4,12 +4,7 @@ class Api {
   }
 
   getAll = async () => {
-    const r = await fetch(`/${this.entity}`);
-    return await r.json();
-  };
-
-  getGhent = async entity => {
-    const r = await fetch(`/${this.entity}/${entity.city}`);
+    const r = await fetch(`/${this.entity}?sort=-rate`);
     return await r.json();
   };
 
