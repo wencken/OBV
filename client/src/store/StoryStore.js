@@ -25,10 +25,8 @@ class StoryStore {
       .create(newStory)
       .then(storyValues => newStory.updateFromServer(storyValues));
 
-    incrementMood(newStory);
+    this.incrementMood(newStory);
     console.log(newStory);
-
-    // newStory.mood.increment();
   };
 
   _addStories = values => {
@@ -38,11 +36,7 @@ class StoryStore {
 
     runInAction(() => this.stories.push(story));
 
-    // if (!story.mood) {
-    //   console.log(story);
-    // } else {
-    //   story.mood.increment();
-    // }
+    // this.incrementMood(story);
   };
 
   incrementMood = story => {

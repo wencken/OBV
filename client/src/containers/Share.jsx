@@ -78,7 +78,7 @@ const Share = ({ city, moodStore, storyStore, emailStore, history }) => {
                     id={mood.name}
                     type="radio"
                     name="mood"
-                    value={mood.id}
+                    value={mood}
                     // ref={moodInput}
                     // checked={this.state.selected === "Gent"}
                     onChange={setMood}
