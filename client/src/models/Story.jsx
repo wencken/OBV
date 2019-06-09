@@ -2,24 +2,24 @@ import uuid from "uuid";
 import { decorate, observable, action, computed } from "mobx";
 
 class Story {
-  constructor(store, description, city, rate, id = uuid.v4(), mood) {
+  constructor(store, description, city, rate, id = uuid.v4(), moodId) {
     this.id = id;
     this.description = description;
     this.city = city;
     this.rate = rate;
     this.store = store;
-    this.mood = mood;
+    this.moodId = moodId;
   }
 
   setId = id => (this.id = id);
   setDesc = value => (this.description = value);
   setCity = value => (this.city = value);
-  setMoodId = value => (this.mood = value);
+  setMoodId = value => (this.moodId = value);
   setRatings = value => (this.rate = value);
 
-  // get mood() {
-  //   return this.store.moodStore.resolveMood(this.moodId);
-  // }
+  get mood() {
+    return this.store.moodStore.resolveMood(this.moodId);
+  }
 
   ratings = () => {
     this.rate++;
@@ -30,7 +30,7 @@ class Story {
       rate: this.rate,
       description: this.description,
       city: this.city,
-      mood: this.mood
+      moodId: this.moodId
     };
   }
 
@@ -38,7 +38,7 @@ class Story {
     this.setId(values._id);
     this.setDesc(values.description);
     this.setCity(values.city);
-    this.setMoodId(values.mood);
+    this.setMoodId(values.moodId);
     this.setRatings(values.rate);
   };
 }
@@ -47,7 +47,7 @@ decorate(Story, {
   id: observable,
   description: observable,
   city: observable,
-  mood: observable,
+  moodId: observable,
   rate: observable,
   //
   setId: action,
@@ -57,8 +57,8 @@ decorate(Story, {
   setRatings: action,
   //
   ratings: action,
-  values: computed
-  // mood: computed
+  values: computed,
+  mood: computed
 });
 
 export default Story;

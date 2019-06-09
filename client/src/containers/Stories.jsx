@@ -15,23 +15,16 @@ const Stories = ({ city, storyStore }) => {
 
   return (
     <>
-      {/* <PageHeader title={`All Stories`} /> */}
-      <>
-        <h2>All Stories</h2>
-        {filteredStories.length > 0 ? (
-          <div>
-            {filteredStories.map(story => (
-              <Vote
-                key={story.id}
-                story={story}
-                onVote={storyStore.voteStory}
-              />
-            ))}
-          </div>
-        ) : (
-          <p>No stories</p>
-        )}
-      </>
+      <h2>All Stories</h2>
+      {filteredStories.length > 0 ? (
+        <div>
+          {filteredStories.map(story => (
+            <Vote key={story.id} story={story} onVote={storyStore.voteStory} />
+          ))}
+        </div>
+      ) : (
+        <p>No stories</p>
+      )}
     </>
   );
 };

@@ -28,14 +28,12 @@ const Share = ({ city, moodStore, storyStore, emailStore, history }) => {
     storyStore.addStory({
       description: descriptionInput.current.value,
       moodId: mood,
-      // moodId: moodInput.current.value,
       city: city
     });
     emailStore.addEmail({
       email: emailInput.current.value
     });
     descriptionInput.current.value = "";
-    // moodInput.current.value = "";
     emailInput.current.value = "";
     // }
   };
@@ -47,7 +45,6 @@ const Share = ({ city, moodStore, storyStore, emailStore, history }) => {
 
   return (
     <>
-      {/* <PageHeader title={`Tell us your story`} /> */}
       <h2>Tell us your story</h2>
       <form onSubmit={handleSubmit} className={styles.reverse}>
         {moodStore.moods.length === 0 ? (
@@ -78,7 +75,7 @@ const Share = ({ city, moodStore, storyStore, emailStore, history }) => {
                     id={mood.name}
                     type="radio"
                     name="mood"
-                    value={mood}
+                    value={mood.id}
                     // ref={moodInput}
                     // checked={this.state.selected === "Gent"}
                     onChange={setMood}

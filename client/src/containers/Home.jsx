@@ -8,7 +8,6 @@ const Home = ({ storyStore, moodStore }) => {
 
   return (
     <>
-      {/* <PageHeader title={`De Derde Boodschap`} /> */}
       <header>
         <h2>De Derde Boodschap</h2>
         <p>

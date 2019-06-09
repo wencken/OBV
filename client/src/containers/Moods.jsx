@@ -13,26 +13,24 @@ const Moods = ({ city, moodStore, storyStore }) => {
 
   const filteredStories = filterStories(city);
 
-  moods.map(({ total }) => console.log(total));
+  // moods.map(({ total }) => console.log(total));
 
   var counts = {};
 
   const countStories = mood => {
-    // let count = 0;
-    // for (let i = 0; i < stories.length; i++) {
-    //   if (stories[i].moodId === mood.id) {
-    //     count++;
-    //     counts[mood.name] = parseFloat(count);
-    //     const max = checkMajority();
-    //     console.log(max);
-    //     moodStore.changeCurrentMood(max);
-    //   }
-    // }
-    // return (count / stories.length) * 100;
+    let count = 0;
+    for (let i = 0; i < filteredStories.length; i++) {
+      if (filteredStories[i].moodId === mood.id) {
+        count++;
+        counts[mood.name] = parseFloat(count);
+        const max = checkMajority();
+        console.log(max);
+        moodStore.changeCurrentMood(max);
+      }
+    }
+    return (count / filteredStories.length) * 100;
 
-    // counts[mood.name] = mood.total;
-
-    return (mood.total / stories.length) * 100;
+    // return (mood.total / stories.length) * 100;
   };
 
   const checkMajority = () => {
@@ -43,7 +41,6 @@ const Moods = ({ city, moodStore, storyStore }) => {
 
   return (
     <>
-      {/* <PageHeader title={`How are we doing?`} /> */}
       <h2>How are we doing?</h2>
       <ul>
         {moods.map(mood => (

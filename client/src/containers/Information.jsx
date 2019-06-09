@@ -4,7 +4,6 @@ import Map from "../components/Map";
 const Information = () => {
   return (
     <>
-      {/* <PageHeader title={`Huh?`} /> */}
       <header>
         <h1>What's this?</h1>
         <p>Laat jezelf aan opera horen en opera zal antwoorden.</p>

@@ -26,21 +26,30 @@ class StoryStore {
       .then(storyValues => newStory.updateFromServer(storyValues));
 
     this.incrementMood(newStory);
-    console.log(newStory);
   };
 
   _addStories = values => {
-    console.log(values);
+    // console.log(values);
     const story = new Story(this.rootStore);
     story.updateFromServer(values);
 
     runInAction(() => this.stories.push(story));
 
-    // this.incrementMood(story);
+    // this.getMoods();
+
+    setTimeout(this.incrementMood(story), 2000);
   };
 
+  // getMoods = () => {
+  //   this.stories.map(story => this.incrementMood(story));
+  // };
+
   incrementMood = story => {
-    story.mood.increment();
+    console.log(story);
+    console.log(story.mood);
+    if (story.mood) {
+      story.mood.increment();
+    }
   };
 
   updateStory = story => {

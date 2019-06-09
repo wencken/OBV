@@ -33,9 +33,13 @@ class Mood {
 decorate(Mood, {
   id: observable,
   name: observable,
+  amount: observable,
+  //
   setId: action,
   setName: action,
+  //
   increment: action,
+  total: computed,
   values: computed
 });
 

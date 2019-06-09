@@ -1,11 +1,4 @@
-import {
-  decorate,
-  observable,
-  configure,
-  action,
-  computed,
-  runInAction
-} from "mobx";
+import { decorate, observable, configure, action, runInAction } from "mobx";
 import Mood from "../models/Mood";
 import Api from "../api";
 
@@ -49,22 +42,13 @@ class MoodStore {
   };
 
   resolveMood = id => this.moods.find(mood => mood.id === id);
-
-  // get moodTotal() {
-  //   if (this.moods) {
-  //     return console.log(this.moods);
-
-  //     // this.moods.map(mood => mood.total);
-  //   }
-  //   return 0;
-  // }
 }
 
 decorate(MoodStore, {
   moods: observable,
   addMood: action,
-  updateMood: action
-  // moodTotal: computed
+  updateMood: action,
+  resolveMood: action
 });
 
 export default MoodStore;
