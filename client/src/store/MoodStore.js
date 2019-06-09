@@ -62,9 +62,14 @@ class MoodStore {
 
 decorate(MoodStore, {
   moods: observable,
+  moodCounts: observable,
+  currentMood: observable,
+  //
   addMood: action,
-  updateMood: action,
+  countMood: action,
   setMaxMood: action,
+  //
+  updateMood: action,
   resolveMood: action
 });
 
