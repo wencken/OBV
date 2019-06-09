@@ -24,13 +24,29 @@ class StoryStore {
     this.api
       .create(newStory)
       .then(storyValues => newStory.updateFromServer(storyValues));
+
+    incrementMood(newStory);
+    console.log(newStory);
+
+    // newStory.mood.increment();
   };
 
   _addStories = values => {
-    // console.log(values);
+    console.log(values);
     const story = new Story(this.rootStore);
     story.updateFromServer(values);
+
     runInAction(() => this.stories.push(story));
+
+    // if (!story.mood) {
+    //   console.log(story);
+    // } else {
+    //   story.mood.increment();
+    // }
+  };
+
+  incrementMood = story => {
+    story.mood.increment();
   };
 
   updateStory = story => {
@@ -56,7 +72,8 @@ class StoryStore {
 decorate(StoryStore, {
   stories: observable,
   addStory: action,
-  deleteStory: action
+  deleteStory: action,
+  incrementMood: action
 });
 
 export default StoryStore;

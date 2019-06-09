@@ -7,36 +7,38 @@ const Moods = ({ city, moodStore, storyStore }) => {
   const { moods } = moodStore;
   const { stories } = storyStore;
 
+  const filterStories = city => {
+    return stories.filter(story => story.city === city);
+  };
+
+  const filteredStories = filterStories(city);
+
+  moods.map(({ total }) => console.log(total));
+
   var counts = {};
 
   const countStories = mood => {
-    let count = 0;
-    for (let i = 0; i < stories.length; i++) {
-      if (stories[i].moodId === mood.id) {
-        count++;
-        counts[mood.name] = parseFloat(count);
-        const max = checkMajority();
-        console.log(max);
-        moodStore.changeCurrentMood(max);
-      }
-    }
-    return (count / stories.length) * 100;
+    // let count = 0;
+    // for (let i = 0; i < stories.length; i++) {
+    //   if (stories[i].moodId === mood.id) {
+    //     count++;
+    //     counts[mood.name] = parseFloat(count);
+    //     const max = checkMajority();
+    //     console.log(max);
+    //     moodStore.changeCurrentMood(max);
+    //   }
+    // }
+    // return (count / stories.length) * 100;
+
+    // counts[mood.name] = mood.total;
+
+    return (mood.total / stories.length) * 100;
   };
 
   const checkMajority = () => {
     return Object.keys(counts).reduce((a, b) =>
       counts[a] > counts[b] ? a : b
     );
-
-    // console.log({ ...counts });
-    // const test = { ...counts };
-    // let max = Math.max(...test);
-    // console.log(max);
-
-    // counts.map(count => console.log(count));
-
-    // const max = Math.max(...countsById);
-    // console.log(max);
   };
 
   return (
