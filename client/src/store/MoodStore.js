@@ -46,11 +46,13 @@ class MoodStore {
   };
 
   setMaxMood = () => {
-    const maxMood = Object.keys(this.moodCounts).reduce((a, b) =>
-      this.moodCounts[a] > this.moodCounts[b] ? a : b
-    );
-    this.currentMood = maxMood;
-    console.log(this.currentMood);
+    if (this.moodCounts) {
+      const maxMood = Object.keys(this.moodCounts).reduce((a, b) =>
+        this.moodCounts[a] > this.moodCounts[b] ? a : b
+      );
+      this.currentMood = maxMood;
+      console.log(this.currentMood);
+    }
   };
 
   updateMood = mood => {

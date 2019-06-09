@@ -18,7 +18,7 @@ const Login = ({ uiStore, history }) => {
 
   return (
     <>
-      <PageHeader title={`Inloggen`} />
+      <h2>Inloggen</h2>
       <form onSubmit={handleSubmit} className={styles.layout}>
         <label htmlFor="email" className={styles.label}>
           Email

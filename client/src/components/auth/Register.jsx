@@ -33,7 +33,7 @@ class Register extends Component {
     const { name, email, pwd, pwd2 } = this.state;
     return (
       <>
-        <PageHeader title={`Registreren`} />
+        <h2>Registreren</h2>
         <form onSubmit={this.handleSubmit} className={styles.layout}>
           <label htmlFor="email" className={styles.label}>
             name

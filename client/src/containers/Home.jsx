@@ -15,6 +15,15 @@ const Home = ({ city, storyStore, moodStore }) => {
 
   const filteredStories = filterStories(city);
 
+  const sortStories = filteredStories => {
+    const copyStories = [].concat(filteredStories);
+    copyStories.map(story => console.log(story.rate));
+
+    return copyStories.sort((a, b) => b.rate - a.rate);
+  };
+
+  const sortedStories = sortStories(filteredStories);
+
   return (
     <>
       <header>
@@ -25,9 +34,9 @@ const Home = ({ city, storyStore, moodStore }) => {
         </p>
       </header>
 
-      {filteredStories.length > 0 ? (
+      {sortedStories.length > 0 ? (
         <div>
-          {filteredStories.slice(0, 10).map(story => (
+          {sortedStories.slice(0, 10).map(story => (
             <ul key={story.id} className={styles.reverse}>
               <li>{story.description}</li>
               <li>- {story.mood ? story.mood.name : ""}</li>
