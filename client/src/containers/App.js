@@ -42,7 +42,12 @@ class App extends Component {
         <Filter changeCity={this.changeCity} />
         <main>
           <Switch>
-            <Route path={ROUTES.home} exact strict component={Home} />
+            <Route
+              path={ROUTES.home}
+              exact
+              strict
+              render={() => <Home city={this.state.city} />}
+            />
             <Route
               path={ROUTES.stories}
               render={() => <Stories city={this.state.city} />}

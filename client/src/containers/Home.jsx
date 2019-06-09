@@ -2,9 +2,17 @@ import React from "react";
 import { inject, observer } from "mobx-react";
 import styles from "./Home.module.css";
 
-const Home = ({ storyStore, moodStore }) => {
+const Home = ({ city, storyStore, moodStore }) => {
+  console.log(city);
+
   const { stories } = storyStore;
   const { moods } = moodStore;
+
+  const filterStories = city => {
+    return stories.filter(story => story.city === city);
+  };
+
+  const filteredStories = filterStories(city);
 
   return (
     <>
@@ -16,9 +24,9 @@ const Home = ({ storyStore, moodStore }) => {
         </p>
       </header>
 
-      {stories.length > 0 ? (
+      {filteredStories.length > 0 ? (
         <div>
-          {stories.slice(0, 10).map(story => (
+          {filteredStories.slice(0, 10).map(story => (
             <ul key={story.id} className={styles.reverse}>
               <li>{story.description}</li>
               <li>- {story.mood ? story.mood.name : ""}</li>
