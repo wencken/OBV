@@ -21,32 +21,41 @@ class Filter extends Component {
     return (
       <article>
         <h2 className={styles.visuallyHidden}>Filter</h2>
-        <form className={styles.bg_blue}>
-          <div className={styles.container_filter}>
-            <label htmlFor="Ghent" className={styles.container_radio}>
-              <input
-                type="radio"
-                id="Ghent"
-                name="city"
-                value="Ghent"
-                checked={selected === "Ghent"}
-                onChange={this.handleChangeCity}
-              />
+        <div className={styles.container_blue}>
+          <article className={styles.article_mood}>
+            <p>Share your story and let us know how you feel.</p>
+            <p>
+              Ghent is feeling teardrop-sad this week. #elections19 #blacksunday
+              #shame
+            </p>
+          </article>
+          <form className={styles.container_filter}>
+            <input
+              className={styles.input_radio}
+              type="radio"
+              id="Ghent"
+              name="city"
+              value="Ghent"
+              checked={selected === "Ghent"}
+              onChange={this.handleChangeCity}
+            />
+            <label htmlFor="Ghent" className={styles.label_radio}>
               Ghent
             </label>
-            <label htmlFor="Antwerp" className={styles.container_radio}>
-              <input
-                type="radio"
-                id="Antwerp"
-                name="city"
-                value="Antwerp"
-                checked={selected === "Antwerp"}
-                onChange={this.handleChangeCity}
-              />
+            <input
+              className={styles.input_radio}
+              type="radio"
+              id="Antwerp"
+              name="city"
+              value="Antwerp"
+              checked={selected === "Antwerp"}
+              onChange={this.handleChangeCity}
+            />
+            <label htmlFor="Antwerp" className={styles.label_radio}>
               Antwerp
             </label>
-          </div>
-        </form>
+          </form>
+        </div>
       </article>
     );
   }

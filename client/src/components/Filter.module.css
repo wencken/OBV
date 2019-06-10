@@ -2,34 +2,47 @@
     composes: visually-hidden from "../styles/index.css";
 }
 
-.bg {
+.container_main {
     width: 100vw;
     height: 23.4rem;
-    position: absolute;
+    position: fixed;
     top: 0;
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5rem;
 
     transform: translateY(-20rem);
     transition: 0.5s transform ease-out;
-
 }
 
-.bg:hover {
+.container_main:hover, .container_main:hover .container_filter {
     transform: translateY(0);
 }
 
-.bg_blue {
-    composes: bg;
+.container_blue {
+    composes: container_main;
     composes: bg_blue from "../styles/colors.module.css";
 }
 
-.bg_pink {
-    composes: bg;
+.container_pink {
+    composes: container_main;
     composes: bg_pink from "../styles/colors.module.css";
 }
 
-.bg_yellow {
-    composes: bg;
+.container_yellow {
+    composes: container_main;
     composes: bg_yellow from "../styles/colors.module.css";
+}
+
+.article_mood {
+    padding: 5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    
+    composes: text-big from "../styles/typo.module.css";
+    composes: color_white from "../styles/colors.module.css";
 }
 
 .container_filter {
@@ -38,18 +51,12 @@
     align-items: flex-end;
     justify-content: flex-start;
 
-    /* background-color: var(--blue); */
     transform: translateY(6rem);
     transition: 0.5s transform ease-out;
-
 }
 
-.container_filter:hover {
-    transform: translateY(0);
 
-}
-
-.container_radio {
+.label_radio {
     display: block;
     position: relative;
 
@@ -58,7 +65,7 @@
     composes: filterTitle-big from "../styles/typo.module.css";
 }
 
-.container_radio input {
+.input_radio {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -66,5 +73,8 @@
     width: 0;
 }
 
-/* bij input:checked: 
-werken met order of met opacity */
+.input_radio:checked + label {
+    color: var(--black);
+    -webkit-text-stroke: 0;
+    order: 1;
+}

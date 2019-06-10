@@ -16,6 +16,9 @@
 .filterTitle-big {
     font-size: 11.4rem;
     font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 0.2rem var(--black);
+    paint-order: stroke fill;
 }
 
 .title-big {
@@ -28,6 +31,10 @@
     font-size: 3.5rem;
     font-weight: bold;
     line-height: 2.8;
+}
+
+.text-big {
+    font-size: 2rem;
 }
 
 .text-normal {
