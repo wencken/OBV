@@ -1,19 +1,48 @@
 .box, .box1, .box2{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 5rem;
 }
 .box{
+  composes: bg_black from "../styles/colors.module.css";
+  composes: color_white from "../styles/colors.module.css";
+  composes: text-small from "../styles/typo.module.css";
+  
   align-items: center;
-  background-color: aliceblue;
-  height: 10rem;
+  height: 6rem;
   width: 100%;
 
   position: absolute;
   bottom: 0;
+
+  transform: translateY(4.5rem);
+  transition: 0.5s transform ease-out;
 }
+
+.box:hover {
+  transform: translateY(0);
+
+}
+
 .box1{
-  width: 10%;
 }
 .box2{
-  width: 25%;
+  width: 50vw;
 }
+
+/*Social media*/
+.boxSocial{
+  position: absolute;
+  right: 5rem;
+  bottom: 15rem;
+ }
+
+ .social_list{
+   width: 1.5rem;
+   height: 1.5rem;
+ }
+ 
+ .social_svg{
+   width: 1rem;
+   display: block;
+ }

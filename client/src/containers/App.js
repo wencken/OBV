@@ -24,7 +24,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      city: "Gent"
+      city: "Ghent"
     };
   }
 

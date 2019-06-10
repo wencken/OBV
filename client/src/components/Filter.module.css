@@ -1,0 +1,57 @@
+.visuallyHidden {
+    composes: visually-hidden from "../styles/index.css";
+}
+
+.bg_blue {
+    composes: bg_blue from "../styles/colors.module.css";
+    width: 100vw;
+    height: 23.4rem;
+    position: absolute;
+    top: 0;
+
+    transform: translateY(-20rem);
+    transition: 0.5s transform ease-out;
+
+}
+
+.bg_blue:hover {
+    transform: translateY(0);
+
+}
+
+.container_filter {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    /* background-color: var(--blue); */
+    transform: translateY(6rem);
+    transition: 0.5s transform ease-out;
+
+}
+
+.container_filter:hover {
+    transform: translateY(0);
+
+}
+
+.container_radio {
+    display: block;
+    position: relative;
+
+    /* margin-bottom: -8rem; */
+    cursor: pointer;
+    composes: filterTitle-big from "../styles/typo.module.css";
+}
+
+.container_radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* bij input:checked: 
+werken met order of met opacity */

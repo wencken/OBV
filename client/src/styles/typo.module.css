@@ -1,0 +1,40 @@
+:global(:root){
+    --font-base: 1.8rem;
+}
+
+.navTitle {
+    font-size: 2.2rem;
+    text-transform: uppercase; 
+}
+
+.btnTitle {
+    font-size: 2.4rem; 
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.filterTitle-big {
+    font-size: 11.4rem;
+    font-weight: bold;
+}
+
+.title-big {
+    font-size: 5.5rem;
+    font-weight: bold;
+    line-height: 3;
+}
+
+.title-small {
+    font-size: 3.5rem;
+    font-weight: bold;
+    line-height: 2.8;
+}
+
+.text-normal {
+    line-height: 1.2;
+}
+
+.text-small {
+    font-size: 1.4rem;
+}
+

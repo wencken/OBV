@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { observer, inject } from "mobx-react";
 
+import styles from "./Filter.module.css";
+
 class Filter extends Component {
   constructor(props) {
     super(props);
-    this.state = { selected: "Gent" };
+    this.state = { selected: "Ghent" };
   }
 
   handleChangeCity = e => {
@@ -17,30 +19,35 @@ class Filter extends Component {
     const { selected } = this.state;
 
     return (
-      <form>
-        <label htmlFor="Gent">
-          <input
-            type="radio"
-            id="Gent"
-            name="city"
-            value="Gent"
-            checked={selected === "Gent"}
-            onChange={this.handleChangeCity}
-          />
-          Gent
-        </label>
-        <label htmlFor="Antwerpen">
-          <input
-            type="radio"
-            id="Antwerpen"
-            name="city"
-            value="Antwerpen"
-            checked={selected === "Antwerpen"}
-            onChange={this.handleChangeCity}
-          />
-          Antwerpen
-        </label>
-      </form>
+      <article>
+        <h2 className={styles.visuallyHidden}>Filter</h2>
+        <form className={styles.bg_blue}>
+          <div className={styles.container_filter}>
+            <label htmlFor="Ghent" className={styles.container_radio}>
+              <input
+                type="radio"
+                id="Ghent"
+                name="city"
+                value="Ghent"
+                checked={selected === "Ghent"}
+                onChange={this.handleChangeCity}
+              />
+              Ghent
+            </label>
+            <label htmlFor="Antwerp" className={styles.container_radio}>
+              <input
+                type="radio"
+                id="Antwerp"
+                name="city"
+                value="Antwerp"
+                checked={selected === "Antwerp"}
+                onChange={this.handleChangeCity}
+              />
+              Antwerp
+            </label>
+          </div>
+        </form>
+      </article>
     );
   }
 }
@@ -63,27 +70,27 @@ export default inject("storyStore")(observer(Filter));
 //   return (
 //     <>
 //       <form>
-//         <label htmlFor="Gent">
+//         <label htmlFor="Ghent">
 //           <input
 //             type="radio"
-//             id="Gent"
+//             id="Ghent"
 //             name="city"
-//             value="Gent"
+//             value="Ghent"
 //             ref={cityInput}
 //             onChange={handleChangeCity}
 //           />
-//           Gent
+//           Ghent
 //         </label>
-//         <label htmlFor="Antwerpen">
+//         <label htmlFor="Antwerp">
 //           <input
 //             type="radio"
-//             id="Antwerpen"
+//             id="Antwerp"
 //             name="city"
-//             value="Antwerpen"
+//             value="Antwerp"
 //             ref={cityInput}
 //             onChange={handleChangeCity}
 //           />
-//           Antwerpen
+//           Antwerp
 //         </label>
 //       </form>
 //     </>

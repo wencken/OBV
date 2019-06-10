@@ -77,7 +77,7 @@ const Share = ({ city, moodStore, storyStore, emailStore, history }) => {
                     name="mood"
                     value={mood.id}
                     // ref={moodInput}
-                    // checked={this.state.selected === "Gent"}
+                    // checked={this.state.selected === "Ghent"}
                     onChange={setMood}
                   />
                   {mood.name}

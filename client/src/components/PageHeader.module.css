@@ -1,28 +1,21 @@
-.box{
+.logoTitle {
+  /* composes: visually-hidden from "../styles/index.css"; */
+  width: 30vw;
+}
+
+.logoTitle::after{
+  /* content: url("/assets/img/obv_logo.png"); */
+  /* background-image: url("/assets/img/obv_logo.png"); */
+  width: 5rem;
+  height: 10rem;
+}
+
+.container {
+  height: 28rem;
+  width: 100vw;
+  padding: 0 7rem;
+
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  background-color: aliceblue;
-  height: 5rem;
-  width: 100%;
-}
-.titel{
- font-weight: bold
-}
-
-
-/*Social media*/
-.social{
- display:flex;
- width: 5rem;
- justify-content: space-between;
-}
-.social_list{
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-.social_svg{
-  width: 1rem;
-  display: block;
 }

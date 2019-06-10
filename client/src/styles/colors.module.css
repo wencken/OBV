@@ -1,0 +1,47 @@
+:global(:root){
+    --black: #000000;
+    --white: #FFFFFF;
+    --blue: #0145FF;
+    --pink: #F81949;
+    --yellow: #FFF801;
+}
+
+.color_black {
+    color: var(--black);
+}
+
+.color_white {
+    color: var(--white);
+}
+
+.color_blue {
+    color: var(--blue);
+}
+
+.color_pink {
+    color: var(--pink);
+}
+
+.color_yellow {
+    color: var(--yellow);
+}
+
+.bg_black {
+    background-color: var(--black);
+}
+
+.bg_white {
+    background-color: var(--white);
+}
+
+.bg_blue {
+    background-color: var(--blue);
+}
+
+.bg_pink {
+    background-color: var(--pink);
+}
+
+.bg_yellow {
+    background-color: var(--yellow);
+}
