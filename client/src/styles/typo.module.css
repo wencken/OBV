@@ -33,6 +33,10 @@
     line-height: 2.8;
 }
 
+.text-extrabig {
+    font-size: 2.8rem;
+}
+
 .text-big {
     font-size: 2rem;
 }

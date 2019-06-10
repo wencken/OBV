@@ -25,25 +25,28 @@ const Home = ({ city, storyStore, moodStore }) => {
 
   return (
     <>
-      <header>
-        <h2
-          className={
-            currentMood
-              ? currentMood === "happy"
-                ? "bg_yellow"
-                : currentMood === "sad"
-                ? "bg_blue"
-                : "bg_pink"
-              : ""
-          }
-        >
-          De Derde Boodschap
-        </h2>
+      <article
+        className={
+          currentMood
+            ? currentMood === "happy"
+              ? "bg_yellow"
+              : currentMood === "sad"
+              ? "bg_blue"
+              : "bg_pink"
+            : ""
+        }
+      >
+        <h2 className={styles.title_big}>De Derde Boodschap</h2>
         <p>
-          Top 10 van de {stories.length} verhalen uit {currentMood}(mood) van{" "}
-          {city}:
+          Opera Ballet Vlaanderen is looking for the things that move or
+          fascinate you, make you happy or even mad.{" "}
         </p>
-      </header>
+      </article>
+
+      <p>
+        Top 10 van de {stories.length} verhalen uit {currentMood}(mood) van{" "}
+        {city}:
+      </p>
 
       {sortedStories.length > 0 ? (
         <div>

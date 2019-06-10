@@ -1,3 +1,8 @@
+.title_big {
+  composes: title-big from "../styles/typo.module.css";
+}
+
 .reverse{
   display:flex;
 }
+
