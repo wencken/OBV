@@ -19,42 +19,60 @@ const Navigation = ({ uiStore }) => {
             </li>
           </span>
           <li>
-            <NavLink exact={true} to={ROUTES.home}>
+            <NavLink className={styles.navTitle} exact={true} to={ROUTES.home}>
               De Derde Boodschap
             </NavLink>
           </li>
           <li>
-            <NavLink to={ROUTES.storyadmin}>Stories</NavLink>
+            <NavLink className={styles.navTitle} to={ROUTES.storyadmin}>
+              Stories
+            </NavLink>
           </li>
           <li>
-            <NavLink to={ROUTES.mood}>Mood</NavLink>
+            <NavLink className={styles.navTitle} to={ROUTES.mood}>
+              Mood
+            </NavLink>
           </li>
           <li>
-            <NavLink to={ROUTES.kandidaten}>Kandidaten</NavLink>
+            <NavLink className={styles.navTitle} to={ROUTES.kandidaten}>
+              Kandidaten
+            </NavLink>
           </li>
         </ul>
       ) : (
-        <ul className={styles.container_nav}>
+        <ul className={styles.container_nav_main}>
           <li>
-            <NavLink exact={true} to={ROUTES.home}>
+            <NavLink className={styles.navTitle} exact={true} to={ROUTES.home}>
               De Derde Boodschap
             </NavLink>
           </li>
-          <li>
-            <NavLink to={ROUTES.stories}>Stories</NavLink>
-          </li>
-          <li>
-            <NavLink to={ROUTES.mood}>Mood</NavLink>
-          </li>
-          <li>
-            <NavLink to={ROUTES.detail}>Macbeth</NavLink>
-          </li>
-          <li>
-            <NavLink to={ROUTES.information}>What's this?</NavLink>
-          </li>
-          <li>
-            <NavLink to={ROUTES.share}>Your story</NavLink>
-          </li>
+          <div className={styles.container_nav}>
+            <li>
+              <NavLink className={styles.navTitle} to={ROUTES.stories}>
+                Stories
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={styles.navTitle} to={ROUTES.mood}>
+                Mood
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={styles.navTitle} to={ROUTES.detail}>
+                Macbeth
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={styles.navTitle} to={ROUTES.information}>
+                What's this?
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={styles.navTitle} to={ROUTES.share}>
+                Your story
+              </NavLink>
+            </li>
+          </div>
         </ul>
       )}
     </nav>
