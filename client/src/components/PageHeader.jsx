@@ -6,7 +6,7 @@ import styles from "./PageHeader.module.css";
 const PageHeader = ({ title }) => {
   return (
     <header className={styles.container}>
-      <h1 className={styles.logoTitle}>{title}</h1>
+      {/* <h1 className={styles.logoTitle}>{title}</h1> */}
       <Navigation />
     </header>
   );

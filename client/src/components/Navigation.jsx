@@ -8,7 +8,7 @@ const Navigation = ({ uiStore }) => {
   return (
     <nav>
       {uiStore.authUser ? (
-        <ul className={styles.boxAdmin}>
+        <ul className={styles.container_nav_admin}>
           <span>
             <li>
               {uiStore.authUser.name.charAt(0).toUpperCase() +
@@ -34,7 +34,7 @@ const Navigation = ({ uiStore }) => {
           </li>
         </ul>
       ) : (
-        <ul className={styles.box}>
+        <ul className={styles.container_nav}>
           <li>
             <NavLink exact={true} to={ROUTES.home}>
               De Derde Boodschap
@@ -47,13 +47,13 @@ const Navigation = ({ uiStore }) => {
             <NavLink to={ROUTES.mood}>Mood</NavLink>
           </li>
           <li>
-            <NavLink to={ROUTES.share}>Tell us your story</NavLink>
-          </li>
-          <li>
             <NavLink to={ROUTES.detail}>Macbeth</NavLink>
           </li>
           <li>
-            <NavLink to={ROUTES.information}>Huh?</NavLink>
+            <NavLink to={ROUTES.information}>What's this?</NavLink>
+          </li>
+          <li>
+            <NavLink to={ROUTES.share}>Your story</NavLink>
           </li>
         </ul>
       )}
