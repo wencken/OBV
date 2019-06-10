@@ -11,9 +11,10 @@
 }
 
 .container {
-  height: 28rem;
+  height: 20rem;
   width: 100vw;
   padding: 0 7rem;
+  margin-top: 5rem;
 
   display: flex;
   justify-content: space-between;

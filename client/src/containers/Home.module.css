@@ -1,5 +1,90 @@
+.visuallyHidden {
+  composes: visually-hidden from "../styles/index.css";
+}
+
+.container {
+  padding: 5rem;
+}
+
+.container_main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container_left {
+  display: flex;
+  flex-flow: row-reverse nowrap;
+}
+
+.container_intro {
+  composes: container;
+  width: 36vw;
+  max-height: 65vh;
+}
+
+.container_blue {
+  composes: container_intro;
+  composes: bg_blue from "../styles/colors.module.css";
+}
+
+.container_pink {
+  composes: container_intro;
+  composes: bg_pink from "../styles/colors.module.css";
+}
+
+.container_yellow {
+  composes: container_intro;
+  composes: bg_yellow from "../styles/colors.module.css";
+}
+
+.container_ctas {
+  display: flex;
+  width: 36vw;
+  /* max-height: 15vh; */
+}
+
+.container_ctaToilets {
+  composes: container;
+  composes: bg_black from "../styles/colors.module.css";
+  composes: color_white from "../styles/colors.module.css";
+}
+
+.container_ctaStory {
+  composes: container;
+  composes: bg_white from "../styles/colors.module.css";
+  composes: color_black from "../styles/colors.module.css";
+  border: 0.2rem solid var(--yellow);
+}
+
+.container_aside {
+  composes: container;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+
+.container_facts {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  height: 30rem;
+}
+
+.container_stories {
+  composes: container;
+}
+
 .title_big {
   composes: title-big from "../styles/typo.module.css";
+}
+
+.text_extrabig{
+  composes: text-extrabig from "../styles/typo.module.css";
+}
+
+.text_big {
+  composes: text-big from "../styles/typo.module.css";
 }
 
 .reverse{
