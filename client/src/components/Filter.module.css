@@ -2,8 +2,7 @@
     composes: visually-hidden from "../styles/index.css";
 }
 
-.bg_blue {
-    composes: bg_blue from "../styles/colors.module.css";
+.bg {
     width: 100vw;
     height: 23.4rem;
     position: absolute;
@@ -14,9 +13,23 @@
 
 }
 
-.bg_blue:hover {
+.bg:hover {
     transform: translateY(0);
+}
 
+.bg_blue {
+    composes: bg;
+    composes: bg_blue from "../styles/colors.module.css";
+}
+
+.bg_pink {
+    composes: bg;
+    composes: bg_pink from "../styles/colors.module.css";
+}
+
+.bg_yellow {
+    composes: bg;
+    composes: bg_yellow from "../styles/colors.module.css";
 }
 
 .container_filter {

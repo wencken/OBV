@@ -18,6 +18,15 @@ const Moods = ({ city, moodStore, storyStore }) => {
   return (
     <>
       <h2>How are we doing?</h2>
+      {/* <ul>
+        {moodCounts
+          ? Object.keys(moodCounts).map(key => (
+              <li key={key}>
+                {key}: {moodCounts[key]}
+              </li>
+            ))
+          : ""}
+      </ul> */}
       <ul>
         {moods.map(mood => (
           <li key={mood.id}>

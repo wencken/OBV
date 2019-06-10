@@ -26,7 +26,19 @@ const Home = ({ city, storyStore, moodStore }) => {
   return (
     <>
       <header>
-        <h2>De Derde Boodschap</h2>
+        <h2
+          className={
+            currentMood
+              ? currentMood === "happy"
+                ? "bg_yellow"
+                : currentMood === "sad"
+                ? "bg_blue"
+                : "bg_pink"
+              : ""
+          }
+        >
+          De Derde Boodschap
+        </h2>
         <p>
           Top 10 van de {stories.length} verhalen uit {currentMood}(mood) van{" "}
           {city}:

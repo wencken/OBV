@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 
 import Home from "./Home";
 import Stories from "./Stories";
-import Mood from "./Moods";
+import Moods from "./Moods";
 import Share from "./Share";
 import Detail from "./Detail";
 import Information from "./Information";
@@ -54,7 +54,7 @@ class App extends Component {
             />
             <Route
               path={ROUTES.mood}
-              render={() => <Mood city={this.state.city} />}
+              render={() => <Moods city={this.state.city} />}
             />
             <Route
               path={ROUTES.share}

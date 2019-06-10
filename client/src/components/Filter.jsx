@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { observer, inject } from "mobx-react";
+import { observer } from "mobx-react";
 
 import styles from "./Filter.module.css";
 
@@ -52,7 +52,7 @@ class Filter extends Component {
   }
 }
 
-export default inject("storyStore")(observer(Filter));
+export default observer(Filter);
 
 // const Filter = ({ moodStore }) => {
 //   const { city } = moodStore;

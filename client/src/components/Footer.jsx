@@ -3,7 +3,8 @@ import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <footer className={styles.box}>
+    <footer >
+      <div className={styles.box}>
       <div className={styles.box1}>
         <h1>De Derde Boodschap</h1>
         <p>&#169;2019</p>
@@ -14,6 +15,8 @@ const Footer = () => {
         <p>Thomas Habets</p>
         <p>Wencke Nuyt</p>
       </div>
+      </div>
+
       <ul className={styles.boxSocial}>
         <li className={styles.social_list}>
           <a href="https://www.facebook.com/balletvlaanderen/">

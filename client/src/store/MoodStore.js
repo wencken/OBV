@@ -45,13 +45,31 @@ class MoodStore {
     return ((count / stories.length) * 100).toFixed(2);
   };
 
+  // countMoods = stories => {
+  //   let count = 0;
+
+  //   if (this.moods) {
+  //     for (let i = 0; i < this.moods.length; i++) {
+  //       for (let j = 0; j < stories.length; j++) {
+  //         if (stories[j].moodId === this.moods[i].id) {
+  //           count++;
+  //           this.moodCounts[this.moods[i].name] = parseFloat(count);
+  //         }
+  //       }
+  //     }
+  //     this.setMaxMood();
+  //   }
+  //   return ((count / stories.length) * 100).toFixed(2);
+  // };
+
   setMaxMood = () => {
-    if (this.moodCounts) {
+    if (this.moodCounts.length > 1) {
       const maxMood = Object.keys(this.moodCounts).reduce((a, b) =>
         this.moodCounts[a] > this.moodCounts[b] ? a : b
       );
       this.currentMood = maxMood;
-      console.log(this.currentMood);
+    } else {
+      Object.keys(this.moodCounts).map(mood => (this.currentMood = mood));
     }
   };
 
@@ -69,6 +87,7 @@ decorate(MoodStore, {
   //
   addMood: action,
   countMood: action,
+  countMoods: action,
   setMaxMood: action,
   //
   updateMood: action,

@@ -12,11 +12,11 @@
   height: 6rem;
   width: 100%;
 
-  position: absolute;
+  position: fixed;
   bottom: 0;
 
   transform: translateY(4.5rem);
-  transition: 0.5s transform ease-out;
+  transition: 0.3s transform ease-out;
 }
 
 .box:hover {
