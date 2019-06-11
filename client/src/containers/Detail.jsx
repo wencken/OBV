@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from "../components/carousel/Carousel";
 import CarouselData from "../components/carousel/CarouselData";
-import styles from "../Detail.module.css";
+import styles from "./Detail.module.css";
 
 const Detail = () => {
   return (
