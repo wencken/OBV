@@ -1,4 +1,11 @@
-import { decorate, observable, configure, action, runInAction } from "mobx";
+import {
+  decorate,
+  observable,
+  configure,
+  action,
+  computed,
+  runInAction
+} from "mobx";
 import Story from "../models/Story";
 import Api from "../api";
 
@@ -40,6 +47,8 @@ class StoryStore {
     setTimeout(this.incrementMood(story), 2000);
   };
 
+  get topMood() {}
+
   // getMoods = () => {
   //   this.stories.map(story => this.incrementMood(story));
   // };
@@ -76,7 +85,8 @@ decorate(StoryStore, {
   stories: observable,
   addStory: action,
   deleteStory: action,
-  incrementMood: action
+  incrementMood: action,
+  topMood: computed
 });
 
 export default StoryStore;
