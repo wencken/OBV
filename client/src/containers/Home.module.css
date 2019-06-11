@@ -22,20 +22,6 @@
   max-height: 65vh;
 }
 
-.container_blue {
-  composes: container_intro;
-  composes: bg_blue from "../styles/colors.module.css";
-}
-
-.container_pink {
-  composes: container_intro;
-  composes: bg_pink from "../styles/colors.module.css";
-}
-
-.container_yellow {
-  composes: container_intro;
-  composes: bg_yellow from "../styles/colors.module.css";
-}
 
 .container_ctas {
   display: flex;
@@ -53,7 +39,6 @@
   composes: container;
   composes: bg_white from "../styles/colors.module.css";
   composes: color_black from "../styles/colors.module.css";
-  border: 0.2rem solid var(--yellow);
 }
 
 .container_aside {

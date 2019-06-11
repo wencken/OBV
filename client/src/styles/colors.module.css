@@ -45,3 +45,24 @@
 .bg_yellow {
     background-color: var(--yellow);
 }
+
+.border_black {
+    border: 0.2rem solid var(--black);
+}
+
+.border_white {
+    border: 0.2rem solid var(--white);
+}
+
+.border_blue {
+    border: 0.2rem solid var(--blue);
+}
+
+.border_pink {
+    border: 0.2rem solid var(--pink);
+}
+
+.border_yellow {
+    border: 0.2rem solid var(--yellow);
+}
+

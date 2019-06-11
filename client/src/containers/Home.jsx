@@ -32,10 +32,10 @@ const Home = ({ city, storyStore, moodStore }) => {
               className={
                 currentMood
                   ? currentMood === "happy"
-                    ? styles.container_yellow
+                    ? `${styles.container_intro} bg_yellow `
                     : currentMood === "sad"
-                    ? styles.container_blue
-                    : styles.container_pink
+                    ? `${styles.container_intro} bg_blue color_white`
+                    : `${styles.container_intro} bg_pink color_white`
                   : styles.container_intro
               }
             >
@@ -60,7 +60,17 @@ const Home = ({ city, storyStore, moodStore }) => {
                 <button>See the map</button>
               </article>
 
-              <article className={styles.container_ctaStory}>
+              <article
+                className={
+                  currentMood
+                    ? currentMood === "happy"
+                      ? `${styles.container_ctaStory} border_yellow `
+                      : currentMood === "sad"
+                      ? `${styles.container_ctaStory} border_blue `
+                      : `${styles.container_ctaStory} border_pink `
+                    : styles.container_ctaStory
+                }
+              >
                 <h3 className={styles.visuallyHidden}>Tell us your story</h3>
                 <p className={styles.text_big}>
                   Or drop your story here and make a difference.{" "}
@@ -76,16 +86,20 @@ const Home = ({ city, storyStore, moodStore }) => {
               <p>Macbeth</p>
               <button>Listen here</button>
             </article>
-            <aside>
+            <aside className={styles.container_facts}>
               <h2 className={styles.visuallyHidden}>Facts</h2>
-              <dl className={styles.container_facts}>
-                <dt>3520</dt>
-                <dd>stories</dd>
-                <dt>31</dt>
-                <dd>Storytoilets</dd>
-                <dt>{countMood(filteredStories, currentMood)}%</dt>
-                <dd>Happy stories</dd>
-              </dl>
+              <div>
+                <p>{stories.length}</p>
+                <p>stories</p>
+              </div>
+              <div>
+                <p>31</p>
+                <p>Storytoilets</p>
+              </div>
+              <div>
+                <p>{countMood(filteredStories, currentMood)}%</p>
+                <p>Happy stories</p>
+              </div>
             </aside>
           </div>
         </div>
