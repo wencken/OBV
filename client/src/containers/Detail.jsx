@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "../components/carousel/Carousel";
 import CarouselData from "../components/carousel/CarouselData";
+import styles from "../Detail.module.css";
 
 const Detail = () => {
   return (
@@ -9,7 +10,7 @@ const Detail = () => {
         <h2>Macbeth</h2>
         <p>Shakespeare’s darkest psychological thriller.</p>
       </header>
-      <Carousel slides={CarouselData} />
+      <Carousel className={"border_"} slides={CarouselData} />
       <ul>
         <li>
           <a href="https://www.operaballet.be/nl/programma/2018-2019/macbeth">
