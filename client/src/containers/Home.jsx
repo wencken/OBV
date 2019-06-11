@@ -3,12 +3,15 @@ import { inject, observer } from "mobx-react";
 import styles from "./Home.module.css";
 
 const Home = ({ city, storyStore, moodStore }) => {
-  const { stories } = storyStore;
+  const { stories, topMood } = storyStore;
   const { moods, countMood, currentMood } = moodStore;
 
   console.log(city);
   console.log({ currentMood });
   console.log(moods);
+
+  const test = topMood;
+  console.log(test);
 
   const filterStories = city => {
     return stories.filter(story => story.city === city);
