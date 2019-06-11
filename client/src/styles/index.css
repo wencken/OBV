@@ -1,5 +1,6 @@
 @import "./reset.css";
 @import "./colors.module.css";
+@import "./layout.module.css";
 
 
 html {

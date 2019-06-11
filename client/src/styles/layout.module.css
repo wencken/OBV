@@ -1,0 +1,12 @@
+.btn {
+    width: 20rem;
+    height: 5rem;
+}
+
+.btn_white {
+    /* composes: btn; */
+    background-color: var(--white);
+    color: var(--white);
+    /* composes: bg_white from "./colors.module.css"; */
+    /* composes: color_white from "./colors.module.cs" */
+}

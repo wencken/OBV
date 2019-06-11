@@ -4,7 +4,9 @@ import { inject, observer } from "mobx-react";
 import { ROUTES } from "../constants";
 import styles from "./Navigation.module.css";
 
-const Navigation = ({ uiStore }) => {
+const Navigation = ({ uiStore, moodStore }) => {
+  const { currentMood } = moodStore;
+
   return (
     <nav>
       {uiStore.authUser ? (
@@ -68,7 +70,18 @@ const Navigation = ({ uiStore }) => {
               </NavLink>
             </li>
             <li>
-              <NavLink className={styles.navTitle} to={ROUTES.share}>
+              <NavLink
+                className={
+                  currentMood
+                    ? currentMood === "happy"
+                      ? `${styles.navTitle} bg_yellow `
+                      : currentMood === "sad"
+                      ? `${styles.navTitle} bg_blue color_white`
+                      : `${styles.navTitle} bg_pink color_white`
+                    : styles.navTitle
+                }
+                to={ROUTES.share}
+              >
                 Your story
               </NavLink>
             </li>
@@ -79,4 +92,4 @@ const Navigation = ({ uiStore }) => {
   );
 };
 
-export default inject("uiStore")(observer(Navigation));
+export default inject("uiStore", "moodStore")(observer(Navigation));

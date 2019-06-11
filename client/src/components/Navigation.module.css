@@ -30,7 +30,6 @@ nav {
 
 .navTitle {
   composes: navTitle from "../styles/typo.module.css";
-
   color: var(--black);
 }
 
