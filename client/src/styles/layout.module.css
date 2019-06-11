@@ -8,7 +8,4 @@
     background-color: var(--white);
     color: var(--black);
     font-size: 1.8rem;
-    /* composes: btnTitle-normal; */
-    /* composes: bg_white from "./colors.module.css"; */
-    /* composes: color_white from "./colors.module.cs" */
 }
