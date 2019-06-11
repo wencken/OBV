@@ -60,7 +60,9 @@ const Home = ({ city, storyStore, moodStore }) => {
                 <p className={styles.text_big}>
                   Visit our public toilets and leave your mark…{" "}
                 </p>
-                <button className={"btn_white"}>See the map</button>
+                <button className={"btn_white btnTitle-normal"}>
+                  See the map
+                </button>
               </article>
 
               <article
