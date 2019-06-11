@@ -1,16 +1,18 @@
 import React from "react";
+import { inject, observer } from "mobx-react";
 import Carousel from "../components/carousel/Carousel";
 import CarouselData from "../components/carousel/CarouselData";
-import styles from "./Detail.module.css";
+// import styles from "./Home.module.css";
 
-const Detail = () => {
+const Detail = ({ moodStore }) => {
+  const { currentMood } = moodStore;
   return (
     <>
       <header>
         <h2>Macbeth</h2>
         <p>Shakespeare’s darkest psychological thriller.</p>
       </header>
-      <Carousel slides={CarouselData} />
+      <Carousel currentMood={currentMood} slides={CarouselData} />
       <ul>
         <li>
           <a href="https://www.operaballet.be/nl/programma/2018-2019/macbeth">
@@ -27,4 +29,4 @@ const Detail = () => {
   );
 };
 
-export default Detail;
+export default inject(`moodStore`)(observer(Detail));

@@ -55,11 +55,21 @@ class Carousel extends Component {
   };
 
   render() {
+    const currentMood = this.props;
+    console.log(currentMood);
     return (
       <>
-        {/* <PageHeader title={`Macbeth`} /> */}
-        <article className={styles.carousel_container}>
-          {/* <h2>Shakespeare’s darkest psychological thriller.</h2> */}
+        <article
+          className={
+            currentMood
+              ? currentMood === "happy"
+                ? `${styles.carousel_container} border_yellow `
+                : currentMood === "sad"
+                ? `${styles.carousel_container} border_blue`
+                : `${styles.carousel_container} border_pink`
+              : styles.carousel_container
+          }
+        >
           <div className={styles.carousel}>
             <ul className={styles.carousel__slides}>
               {this.props.slides.map((slide, index) => (
