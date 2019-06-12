@@ -19,10 +19,15 @@ class StoryStore {
     this.rootStore = rootStore;
     this.api = new Api(`stories`);
     this.getAll();
+    // this.checkMood();
   }
 
   getAll = () => {
     this.api.getAll().then(d => d.forEach(this._addStories));
+  };
+
+  checkMood = () => {
+    this.api.checkHighMood().then(d => (this.currentMood = d));
   };
 
   addStory = data => {
@@ -47,28 +52,47 @@ class StoryStore {
 
     // setTimeout(this.incrementMood(story), 2000);
   };
-
-  get topMood() {
-    // console.log("check");
-
-    return this.stories.reduce((a, b) => {
+  getMoodAmounts = async () => {
+    return await this.stories.reduce((a, b) => {
       let key = b["moodId"];
 
       if (!a[key]) {
         a[key] = 1;
       }
       a[key]++;
-      const maxMoodId = Object.keys(a).reduce((c, d) => (a[c] > a[d] ? c : d));
-      console.log(maxMoodId);
-      this.stories.filter(story => story.id === maxMoodId);
-
-      // console.log(this.rootStore.moodStore.resolveMood(maxMoodId));
-
-      // const maxMood = this.rootStore.moodStore.resolveMood(maxMoodId);
-      // console.log(maxMood.name);
+      console.log(a);
 
       return a;
     }, {});
+  };
+
+  get topMood() {
+    // const test = this.api.checkHighMood().then(r => {
+    //   return r;
+    // });
+    // console.log(test);
+    //return this.api.checkHighMood();
+    // console.log("check");
+
+    return this.stories.reduce((a, b) => {
+      let key = b["moodId"];
+      if (!a[key]) {
+        a[key] = 1;
+      }
+      a[key]++;
+      const maxMoodId = Object.keys(a).reduce((c, d) => (a[c] > a[d] ? c : d));
+      console.log(maxMoodId);
+      // console.log(this.rootStore.moodStore.resolveMood(maxMoodId));
+      // const maxMood = this.rootStore.moodStore.resolveMood(maxMoodId);
+      // console.log(maxMood.name);
+      return a;
+    }, {});
+
+    // const maxMoodId = this.getMoodAmounts().then(a =>
+    //   Object.keys(a).reduce((c, d) => (a[c] > a[d] ? c : d))
+    // );
+    // console.log(maxMoodId);
+    // return maxMoodId;
   }
 
   // getMoods = () => {

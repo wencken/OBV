@@ -8,6 +8,11 @@ class Api {
     return await r.json();
   };
 
+  checkHighMood = async () => {
+    const r = await fetch(`/topmood`);
+    return await r.text();
+  };
+
   create = async entity => {
     const r = await fetch(
       `/${this.entity}`,

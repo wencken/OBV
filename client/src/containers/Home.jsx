@@ -9,7 +9,6 @@ const Home = ({ city, storyStore, moodStore }) => {
   console.log(city);
   console.log({ currentMood });
   console.log(moods);
-
   const test = topMood;
   console.log(test);
 

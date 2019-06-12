@@ -21,6 +21,40 @@ exports.create = (req, res) => {
     });
 };
 
+exports.highestMood = async (req, res) => {
+  try {
+    const stories = await Story.find();
+    const firstFilter = stories.reduce((a, b) => {
+      const key = b['moodId'];
+
+      if (!a[key]) {
+        a[key] = 1;
+      }
+      a[key] ++;
+
+      // this.stories.filter(story => story.id === maxMoodId);
+
+      // console.log(this.rootStore.moodStore.resolveMood(maxMoodId));
+
+      // const maxMood = this.rootStore.moodStore.resolveMood(maxMoodId);
+      // console.log(maxMood.name);
+
+      return a;
+    }, {});
+    const maxMoodId = Object.keys(firstFilter).reduce((c, d) =>
+      firstFilter[c] > firstFilter[d] ? c : d
+    );
+    //console.log(maxMoodId);
+    return maxMoodId;
+    //console.log(first);
+
+    //return Object.keys(first).reduce((c, d) => (first[c] > first[d] ? c : d));
+    //return first;
+  } catch (err) {
+    res.status(500).send({err: err.story || 'Error'});
+  }
+};
+
 //FINDALL
 exports.findAll = async (req, res) => {
   try {
