@@ -38,13 +38,21 @@ class UiStore {
     this.authService.register(name, email, pwd, role);
 
   changeCity = city => {
-    this.currentCity = city;
     console.log(city);
+
+    if (city !== "") {
+      this.currentCity = city;
+      console.log(this.currentCity);
+    } else {
+      this.currentCity = "Ghent";
+    }
+    return this.currentCity;
   };
 }
 
 decorate(UiStore, {
   authUser: observable,
+  currentCity: observable,
   setUser: action,
   changeCity: action
 });

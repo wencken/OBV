@@ -1,9 +1,8 @@
 import React from "react";
 import { inject, observer } from "mobx-react";
 
-const Moods = ({ city, moodStore, storyStore }) => {
-  console.log(city);
-
+const Moods = ({ uiStore, moodStore, storyStore }) => {
+  const { currentCity } = uiStore;
   const { moods } = moodStore;
   const { stories } = storyStore;
 
@@ -11,7 +10,7 @@ const Moods = ({ city, moodStore, storyStore }) => {
     return stories.filter(story => story.city === city);
   };
 
-  const filteredStories = filterStories(city);
+  const filteredStories = filterStories(currentCity);
 
   // moods.map(({ total }) => console.log(total));
 
@@ -39,4 +38,4 @@ const Moods = ({ city, moodStore, storyStore }) => {
   );
 };
 
-export default inject(`storyStore`, `moodStore`)(observer(Moods));
+export default inject(`uiStore`, `storyStore`, `moodStore`)(observer(Moods));

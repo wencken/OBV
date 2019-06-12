@@ -22,48 +22,17 @@ import PageHeader from "../components/PageHeader";
 import Filter from "../components/Filter";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      city: "Ghent"
-    };
-  }
-
-  // changeCity = newCity => {
-  //   this.setState({
-  //     city: newCity
-  //   });
-  // };
-
   render() {
     return (
       <>
         <PageHeader title={`De Derde Boodschap`} />
-        {/* <Filter changeCity={this.changeCity} /> */}
-        <Filter
-          city={this.state.city}
-          setCity={this.props.uiStore.changeCity}
-        />
+        <Filter />
         <main>
           <Switch>
-            <Route
-              path={ROUTES.home}
-              exact
-              strict
-              render={() => <Home city={this.state.city} />}
-            />
-            <Route
-              path={ROUTES.stories}
-              render={() => <Stories city={this.state.city} />}
-            />
-            <Route
-              path={ROUTES.mood}
-              render={() => <Moods city={this.state.city} />}
-            />
-            <Route
-              path={ROUTES.share}
-              render={() => <Share city={this.state.city} />}
-            />
+            <Route path={ROUTES.home} exact strict render={() => <Home />} />
+            <Route path={ROUTES.stories} render={() => <Stories />} />
+            <Route path={ROUTES.mood} render={() => <Moods />} />
+            <Route path={ROUTES.share} render={() => <Share />} />
             <Route path={ROUTES.detail} component={Detail} />
             <Route path={ROUTES.information} component={Information} />
             <Route path={ROUTES.login} component={Login} />

@@ -6,9 +6,8 @@ import { withRouter } from "react-router-dom";
 import CheckBox from "../components/CheckBox";
 import styles from "./Share.module.css";
 
-const Share = ({ city, moodStore, storyStore, emailStore, history }) => {
-  console.log(city);
-
+const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
+  const { currentCity } = uiStore;
   let mood = "";
 
   const descriptionInput = React.createRef();
@@ -28,7 +27,7 @@ const Share = ({ city, moodStore, storyStore, emailStore, history }) => {
     storyStore.addStory({
       description: descriptionInput.current.value,
       moodId: mood,
-      city: city
+      city: currentCity
     });
     emailStore.addEmail({
       email: emailInput.current.value
@@ -105,6 +104,6 @@ const Share = ({ city, moodStore, storyStore, emailStore, history }) => {
   );
 };
 
-export default inject(`moodStore`, `storyStore`, `emailStore`)(
+export default inject(`uiStore`, `moodStore`, `storyStore`, `emailStore`)(
   withRouter(observer(Share))
 );

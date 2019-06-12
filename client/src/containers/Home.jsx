@@ -9,12 +9,13 @@ import styles from "./Home.module.css";
 // import tag from "../../assets/img/tag.jpg";
 // import whoever from "../../assets/img/whoever.jpg";
 
-const Home = ({ city, storyStore, moodStore }) => {
+const Home = ({ uiStore, storyStore, moodStore }) => {
   const { stories } = storyStore;
   const { moods, currentMood } = moodStore;
 
-  console.log(city);
   console.log(moods);
+
+  const { currentCity } = uiStore;
 
   const test = currentMood;
   console.log(test);
@@ -23,7 +24,7 @@ const Home = ({ city, storyStore, moodStore }) => {
     return stories.filter(story => story.city === city);
   };
 
-  const filteredStories = filterStories(city);
+  const filteredStories = filterStories(currentCity);
 
   const sortStories = filteredStories => {
     const copyStories = [].concat(filteredStories);
@@ -136,11 +137,11 @@ const Home = ({ city, storyStore, moodStore }) => {
         <article className={styles.container_stories}>
           <h2 className={"title_big"}>
             Stories of <br />
-            {city}
+            {currentCity}
           </h2>
           <p>
             Top 10 van de {stories.length} verhalen uit {currentMood}(mood) van{" "}
-            {city}:
+            {currentCity}:
           </p>
           {sortedStories.length > 0 ? (
             <div>
@@ -161,4 +162,4 @@ const Home = ({ city, storyStore, moodStore }) => {
   );
 };
 
-export default inject(`storyStore`, `moodStore`)(observer(Home));
+export default inject(`uiStore`, `storyStore`, `moodStore`)(observer(Home));

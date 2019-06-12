@@ -11,9 +11,13 @@ class Filter extends Component {
   }
 
   handleChangeCity = e => {
-    e.preventDefault();
-    this.props.setCity(e.target.value);
+    // e.preventDefault();
     this.setState({ selected: e.target.value });
+
+    // this.props.setCity(e.target.value);
+
+    // setCity={this.props.uiStore.changeCity}
+    this.props.uiStore.changeCity(e.target.value);
   };
 
   render() {
@@ -117,7 +121,7 @@ class Filter extends Component {
   }
 }
 
-export default inject("moodStore")(observer(Filter));
+export default inject("uiStore", "moodStore")(observer(Filter));
 
 // const Filter = ({ uiStore }) => {
 //   // const { changeCity } = uiStore;

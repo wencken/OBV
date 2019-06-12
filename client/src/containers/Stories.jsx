@@ -2,8 +2,8 @@ import React from "react";
 import { PropTypes, inject, observer } from "mobx-react";
 import Vote from "../components/Vote";
 
-const Stories = ({ city, storyStore }) => {
-  console.log(city);
+const Stories = ({ uiStore, storyStore }) => {
+  const { currentCity } = uiStore;
 
   const { stories } = storyStore;
 
@@ -11,7 +11,7 @@ const Stories = ({ city, storyStore }) => {
     return stories.filter(story => story.city === city);
   };
 
-  const filteredStories = filterStories(city);
+  const filteredStories = filterStories(currentCity);
 
   return (
     <>
@@ -33,4 +33,4 @@ Stories.propTypes = {
   storyStore: PropTypes.observableObject.isRequired
 };
 
-export default inject(`storyStore`)(observer(Stories));
+export default inject(`uiStore`, `storyStore`)(observer(Stories));
