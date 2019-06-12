@@ -42,23 +42,16 @@
   composes: color_black from "../styles/colors.module.css";
 }
 
-.btn {
-  height: 5rem;
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-top: 2rem;
-  padding: 0 2rem;
-  border: none;
-}
-
 .btn_white {
-  composes: btn;
-  composes: btn_white from "../styles/layout.module.css";
+  composes: btn from "../styles/layout.module.css";
+  composes: bg_white from "../styles/colors.module.css";
+  composes: color_black from "../styles/colors.module.css";
 }
 
 .btn_black {
-  composes: btn;
-  composes: btn_black from "../styles/layout.module.css";
+  composes: btn from "../styles/layout.module.css";
+  composes: bg_black from "../styles/colors.module.css";
+  composes: color_white from "../styles/colors.module.css";
 }
 
 .container_aside {
@@ -110,10 +103,6 @@
   width: 17rem;
 }
 
-.listenHere::before {
-
-}
-
 .container_facts {
   composes: container;
 
@@ -121,7 +110,16 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
+  align-items: center;
   height: 30rem;
+}
+
+.container_facts div {
+  display: flex;
+  flex-flow: column nowrap;
+
+  align-items: center;
+  text-align: center;
 }
 
 .container_stories {

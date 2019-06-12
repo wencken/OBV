@@ -1,6 +1,13 @@
 import React from "react";
 import { inject, observer } from "mobx-react";
+import { Link } from "react-router-dom";
+
 import styles from "./Home.module.css";
+
+// import love from "./assets/img/love.jpg";
+// import pee from "../../assets/img/pee.jpg";
+// import tag from "../../assets/img/tag.jpg";
+// import whoever from "../../assets/img/whoever.jpg";
 
 const Home = ({ city, storyStore, moodStore }) => {
   const { stories } = storyStore;
@@ -59,7 +66,9 @@ const Home = ({ city, storyStore, moodStore }) => {
                 <p className={"text_big"}>
                   Visit our public toilets and leave your mark…{" "}
                 </p>
-                <button className={styles.btn_white}>See the map</button>
+                <Link to="/information" className={styles.btn_white}>
+                  See the map
+                </Link>
               </article>
 
               <article
@@ -77,7 +86,9 @@ const Home = ({ city, storyStore, moodStore }) => {
                 <p className={"text_big"}>
                   Or drop your story here and make a difference.{" "}
                 </p>
-                <button className={styles.btn_black}>Tell us your story</button>
+                <Link to="/share" className={styles.btn_black}>
+                  Tell us your story
+                </Link>
               </article>
             </article>
           </div>
@@ -105,16 +116,18 @@ const Home = ({ city, storyStore, moodStore }) => {
             <aside className={styles.container_facts}>
               <h2 className={"visually-hidden"}>Facts</h2>
               <div>
-                <p>{stories.length}</p>
+                <p className="title_small">{stories.length}</p>
                 <p>stories</p>
               </div>
               <div>
-                <p>31</p>
+                <p className="title_small">31</p>
                 <p>Storytoilets</p>
               </div>
               <div>
-                <p>NOG INVULLEN %</p>
-                <p>Happy stories</p>
+                <p className="title_small">%</p>
+                <p>
+                  <span>Happy</span> stories
+                </p>
               </div>
             </aside>
           </div>
