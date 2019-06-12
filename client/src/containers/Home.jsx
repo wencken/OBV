@@ -60,9 +60,7 @@ const Home = ({ city, storyStore, moodStore }) => {
                 <p className={styles.text_big}>
                   Visit our public toilets and leave your mark…{" "}
                 </p>
-                <button className={"btn_white btnTitle-normal"}>
-                  See the map
-                </button>
+                <button className={styles.btn_white}>See the map</button>
               </article>
 
               <article
@@ -80,7 +78,7 @@ const Home = ({ city, storyStore, moodStore }) => {
                 <p className={styles.text_big}>
                   Or drop your story here and make a difference.{" "}
                 </p>
-                <button>Tell us your story</button>
+                <button className={styles.btn_black}>Tell us your story</button>
               </article>
             </article>
           </div>

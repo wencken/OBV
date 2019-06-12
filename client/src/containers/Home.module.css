@@ -3,7 +3,7 @@
 }
 
 .container {
-  padding: 5rem;
+  padding: 4rem;
 }
 
 .container_main {
@@ -19,13 +19,14 @@
 .container_intro {
   composes: container;
   width: 36vw;
+  min-width: 61rem;
   max-height: 65vh;
 }
 
 
 .container_ctas {
   display: flex;
-  width: 36vw;
+  /* width: 36vw; */
   /* max-height: 15vh; */
 }
 
@@ -39,6 +40,24 @@
   composes: container;
   composes: bg_white from "../styles/colors.module.css";
   composes: color_black from "../styles/colors.module.css";
+}
+
+.btn {
+  width: 20rem;
+  height: 5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+.btn_white {
+  composes: btn;
+  composes: btn_white from "../styles/layout.module.css";
+}
+
+.btn_black {
+  composes: btn;
+  composes: btn_black from "../styles/layout.module.css";
 }
 
 .container_aside {
