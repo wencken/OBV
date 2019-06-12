@@ -2,9 +2,27 @@
   display: flex;
   justify-content: center;
 }
-.button_list{
-  
+/* buttons */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 2rem;
 }
-.button_cta{
+
+/**/
+.button_list{ 
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
   width: 20rem;
+  height: 20rem;
+  text-align: center;
+  padding: 2rem;
+  border: .2rem solid black;
 }
