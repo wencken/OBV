@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
+import { inject } from "mobx-react";
 
 import { ROUTES } from "../constants";
 import Footer from "../components/Footer";
@@ -19,7 +20,6 @@ import StoryAdmin from "../components/StoryAdmin";
 import Kandidaten from "../components/Kandidaten";
 import PageHeader from "../components/PageHeader";
 import Filter from "../components/Filter";
-import UiStore from "../store/UiStore";
 
 class App extends Component {
   constructor() {
@@ -40,7 +40,10 @@ class App extends Component {
       <>
         <PageHeader title={`De Derde Boodschap`} />
         {/* <Filter changeCity={this.changeCity} /> */}
-        <Filter setCity={UiStore.changeCity} />
+        <Filter
+          city={this.state.city}
+          setCity={this.props.uiStore.changeCity}
+        />
         <main>
           <Switch>
             <Route
@@ -78,4 +81,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default inject("uiStore")(App);

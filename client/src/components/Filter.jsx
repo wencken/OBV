@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { inject, observer } from "mobx-react";
 
 import styles from "./Filter.module.css";
+import { log } from "util";
 
 class Filter extends Component {
   constructor(props) {
@@ -18,10 +19,21 @@ class Filter extends Component {
   render() {
     const { selected } = this.state;
     const { currentMood } = this.props.moodStore;
+    const { city } = this.props;
     return (
       <article>
         <h2 className={styles.visuallyHidden}>Filter</h2>
-        <div className={styles.container_blue}>
+        <div
+          className={
+            currentMood
+              ? currentMood === "happy"
+                ? styles.container_yellow
+                : currentMood === "sad"
+                ? styles.container_blue
+                : styles.container_pink
+              : styles.container_blue
+          }
+        >
           <article className={styles.article_mood}>
             <ul>
               <li className={"text_bold"}>
@@ -36,7 +48,7 @@ class Filter extends Component {
                     : "visually-hidden"
                 }
               >
-                Ghent is feeling span{" "}
+                {city} is feeling span{" "}
                 <span className={"text_bold"}>teardrop-sad</span> this week.
                 #elections19 #blacksunday #shame
               </li>
@@ -49,20 +61,20 @@ class Filter extends Component {
                     : "visually-hidden"
                 }
               >
-                Antwerp is feeling{" "}
+                {city} is feeling{" "}
                 <span className={"text_bold"}>sunkissed-happy</span> this week.
                 #joy #summer #sfinksmixedfestival
               </li>
               <li
                 className={
                   currentMood
-                    ? currentMood === "angry"
+                    ? currentMood === "mad"
                       ? ""
                       : "visually-hidden"
                     : "visually-hidden"
                 }
               >
-                Ghent is feeling{" "}
+                {city} is feeling{" "}
                 <span className={"text_bold"}>darkred-angry</span> this week.
                 #shame #RIP #women #justice #julie
               </li>

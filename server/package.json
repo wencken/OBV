@@ -19,6 +19,6 @@
     "nodemon": "^1.18.10"
   },
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   }
 }

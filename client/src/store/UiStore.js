@@ -38,6 +38,7 @@ class UiStore {
     this.authService.register(name, email, pwd, role);
 
   changeCity = city => {
+    this.currentCity = city;
     console.log(city);
   };
 }
