@@ -27,6 +27,7 @@ body {
 main {
   padding: 0 7rem;
   height: 100%;
+  /* background-image: url(./love.jpg), url(./pee.jpg), url(./tag.jpg), url(./whoever.jpg); */
 }
 
 a {
