@@ -1,0 +1,10 @@
+.container_button{
+  display: flex;
+  justify-content: center;
+}
+.button_list{
+  
+}
+.button_cta{
+  width: 20rem;
+}

@@ -2,7 +2,7 @@ import React from "react";
 import { inject, observer } from "mobx-react";
 import Carousel from "../components/carousel/Carousel";
 import CarouselData from "../components/carousel/CarouselData";
-// import styles from "./Home.module.css";
+import styles from "./Detail.module.css";
 
 const Detail = ({ moodStore }) => {
   const { currentMood } = moodStore;
@@ -13,14 +13,19 @@ const Detail = ({ moodStore }) => {
         <p>Shakespeare’s darkest psychological thriller.</p>
       </header>
       <Carousel currentMood={currentMood} slides={CarouselData} />
-      <ul>
-        <li>
+      <ul className={styles.container_button}>
+        <li className={styles.button_list}>
+          <p>Still not convinced?</p>
           <a href="https://www.operaballet.be/nl/programma/2018-2019/macbeth">
-            More Info
+            Read more
           </a>
         </li>
-        <li>
-          <a href="https://ticketing.operaballet.be/nl/saleflow/event/301643d9-b03d-e811-90f0-0050568438e9/manual/area/5d31a250-3014-4e61-a610-1bf764ade50e/seat">
+        <li className={styles.button_list}>
+          <p>Curious for more?</p>
+          <a
+            className={styles.button_cta}
+            href="https://ticketing.operaballet.be/nl/saleflow/event/301643d9-b03d-e811-90f0-0050568438e9/manual/area/5d31a250-3014-4e61-a610-1bf764ade50e/seat"
+          >
             Buy Tickets
           </a>
         </li>

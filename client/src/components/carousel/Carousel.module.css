@@ -10,13 +10,14 @@ ul {
   flex-direction: column;
   justify-content: center;
   width: 60rem;
-  padding: 8rem;
+  padding: 3rem;
 }
 
 .carousel {
   position: relative;
   display: flex;
   align-content: center;
+  align-items: center;
   height: 25rem;
 }
 
@@ -40,6 +41,7 @@ ul {
 /*Content of slides*/
 .carousel_slide__title {
   font-weight: bold;
+  padding-bottom: 2rem;
 }
 
 /*Carousel indicators*/
