@@ -52,10 +52,10 @@ const Home = ({ city, storyStore, moodStore }) => {
             </article>
 
             <article className={styles.container_ctas}>
-              <h2 className={styles.visuallyHidden}>Call to Actions</h2>
+              <h2 className={"visually-hidden"}>Call to Actions</h2>
 
               <article className={styles.container_ctaToilets}>
-                <h3 className={styles.visuallyHidden}>Storytoilets</h3>
+                <h3 className={"visually-hidden"}>Storytoilets</h3>
                 <p className={"text_big"}>
                   Visit our public toilets and leave your mark…{" "}
                 </p>
@@ -73,7 +73,7 @@ const Home = ({ city, storyStore, moodStore }) => {
                     : styles.container_ctaStory
                 }
               >
-                <h3 className={styles.visuallyHidden}>Tell us your story</h3>
+                <h3 className={"visually-hidden"}>Tell us your story</h3>
                 <p className={"text_big"}>
                   Or drop your story here and make a difference.{" "}
                 </p>
@@ -83,13 +83,27 @@ const Home = ({ city, storyStore, moodStore }) => {
           </div>
           <div className={styles.container_aside}>
             <article className={"btn_listen bg_black color_white"}>
-              <h2 className={styles.visuallyHidden}>Listen</h2>
+              <img
+                src="../../assets/img/headphones2.png"
+                alt="White headphones with soundwaves"
+                width="50"
+                height="59"
+              />
+              <h2 className={"visually-hidden"}>Listen</h2>
               <p className={"text_small"}>Now Playing</p>
               <p className={"navTitle"}>Macbeth</p>
-              <button>Listen here</button>
+
+              <button className={styles.listenHere}>
+                {" "}
+                <span className={styles.icon}>
+                  {/* <span className={styles.playIcon} /> */}
+                  <span className={styles.pauseIcon} />
+                </span>{" "}
+                <span>Listen here</span>
+              </button>
             </article>
             <aside className={styles.container_facts}>
-              <h2 className={styles.visuallyHidden}>Facts</h2>
+              <h2 className={"visually-hidden"}>Facts</h2>
               <div>
                 <p>{stories.length}</p>
                 <p>stories</p>

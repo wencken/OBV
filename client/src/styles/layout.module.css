@@ -10,11 +10,11 @@
 }
 
 .btn_listen {
-    height: 18.5rem;
-    width: 18.5rem;
+    height: 19rem;
+    width: 19rem;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
     align-items: center;
-
+    padding: 1.5rem;
 }
