@@ -14,7 +14,6 @@ configure({ enforceActions: `observed` });
 class MoodStore {
   moods = [];
   moodCounts = {};
-  currentMood = "";
 
   constructor(rootStore) {
     this.rootStore = rootStore;
@@ -33,26 +32,26 @@ class MoodStore {
 
   addMood = data => {
     const newMood = new Mood(data.name);
-    // newMood.updateFromServer(data);
     this.moods.push(newMood);
     this.api
       .create(newMood)
       .then(moodValues => newMood.updateFromServer(moodValues));
   };
 
-  countMood = (stories, mood) => {
-    let count = 0;
-    for (let i = 0; i < stories.length; i++) {
-      if (stories[i].moodId === mood.id) {
-        count++;
-        this.moodCounts[mood.name] = parseFloat(count);
-      }
-    }
-    this.setMaxMood();
-    return ((count / stories.length) * 100).toFixed(2);
-  };
+  // countMood = (stories, mood) => {
+  //   let count = 0;
+  //   for (let i = 0; i < stories.length; i++) {
+  //     if (stories[i].moodId === mood.id) {
+  //       count++;
+  //       this.moodCounts[mood.name] = parseFloat(count);
+  //     }
+  //   }
+  //   this.setMaxMood();
+  //   return ((count / stories.length) * 100).toFixed(2);
+  // };
 
-  get topMood() {
+  get currentMood() {
+    // const city = this.rootStore.uiStore.currentCity;
     const amounts = this.rootStore.storyStore.stories.reduce((a, b) => {
       let key = b["moodId"];
 
@@ -71,23 +70,6 @@ class MoodStore {
     if (moodObject) return moodObject.name;
     return null;
   }
-
-  // countMoods = stories => {
-  //   let count = 0;
-
-  //   if (this.moods) {
-  //     for (let i = 0; i < this.moods.length; i++) {
-  //       for (let j = 0; j < stories.length; j++) {
-  //         if (stories[j].moodId === this.moods[i].id) {
-  //           count++;
-  //           this.moodCounts[this.moods[i].name] = parseFloat(count);
-  //         }
-  //       }
-  //     }
-  //     this.setMaxMood();
-  //   }
-  //   return ((count / stories.length) * 100).toFixed(2);
-  // };
 
   setMaxMood = () => {
     if (this.moodCounts.length > 1) {
@@ -110,13 +92,12 @@ class MoodStore {
 decorate(MoodStore, {
   moods: observable,
   moodCounts: observable,
-  currentMood: observable,
   //
   addMood: action,
   countMood: action,
   countMoods: action,
   setMaxMood: action,
-  topMood: computed,
+  currentMood: computed,
   //
   updateMood: action,
   resolveMood: action

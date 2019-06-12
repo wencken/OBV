@@ -4,12 +4,12 @@ import styles from "./Home.module.css";
 
 const Home = ({ city, storyStore, moodStore }) => {
   const { stories } = storyStore;
-  const { moods, countMood, currentMood, topMood } = moodStore;
+  const { moods, currentMood } = moodStore;
 
   console.log(city);
-  console.log({ currentMood });
   console.log(moods);
-  const test = topMood;
+
+  const test = currentMood;
   console.log(test);
 
   const filterStories = city => {
@@ -99,7 +99,7 @@ const Home = ({ city, storyStore, moodStore }) => {
                 <p>Storytoilets</p>
               </div>
               <div>
-                <p>{countMood(filteredStories, currentMood)}%</p>
+                <p>NOG INVULLEN %</p>
                 <p>Happy stories</p>
               </div>
             </aside>

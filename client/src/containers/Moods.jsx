@@ -4,7 +4,7 @@ import { inject, observer } from "mobx-react";
 const Moods = ({ city, moodStore, storyStore }) => {
   console.log(city);
 
-  const { moods, countMood } = moodStore;
+  const { moods } = moodStore;
   const { stories } = storyStore;
 
   const filterStories = city => {
@@ -30,7 +30,8 @@ const Moods = ({ city, moodStore, storyStore }) => {
       <ul>
         {moods.map(mood => (
           <li key={mood.id}>
-            {mood.name}: {countMood(filteredStories, mood)}%
+            {/* {mood.name}: {countMood(filteredStories, mood)}% */}
+            {mood.name}
           </li>
         ))}
       </ul>
