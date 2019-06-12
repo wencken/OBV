@@ -10,13 +10,20 @@ ul {
   flex-direction: column;
   justify-content: center;
   width: 60rem;
+  padding: 8rem;
 }
 
 .carousel {
   position: relative;
+  display: flex;
+  align-content: center;
+  height: 25rem;
 }
 
 /*Carousel slides*/
+.carousel__slides{
+  padding: 2rem;
+}
 .carousel__slide {
   margin-right: auto;
   margin-left: auto;
@@ -62,3 +69,20 @@ ul {
   opacity: .75;
   transition: opacity .15s cubic-bezier(.4, 0, 1, 1);
 }
+
+.carousel_button2, .carousel_button1 {
+  background-color:#000000;
+  border: none;
+  width: 6rem;
+  height: 3rem;
+  outline: none;
+}
+.carousel_button1:before {
+  content: "\2190";
+  color: white;
+ }
+ .carousel_button2:before {
+   content: "\2192";
+   color: white;
+ }
+ 

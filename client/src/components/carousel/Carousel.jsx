@@ -11,7 +11,7 @@ class Carousel extends Component {
     this.prevSlide = this.prevSlide.bind(this);
     this.nexSlide = this.nexSlide.bind(this);
     //
-    this.state = { activeIndex: 0 };
+    this.state = { activeIndex: 0, currentMood: "" };
   }
 
   goToSlide = index => {
@@ -71,6 +71,10 @@ class Carousel extends Component {
           }
         >
           <div className={styles.carousel}>
+            <button
+              className={styles.carousel_button1}
+              onClick={e => this.prevSlide(e)}
+            />
             <ul className={styles.carousel__slides}>
               {this.props.slides.map((slide, index) => (
                 <CarouselSlide
@@ -81,20 +85,23 @@ class Carousel extends Component {
                 />
               ))}
             </ul>
-            <ul className={styles.carousel__indicators}>
-              {this.props.slides.map((slide, index) => (
-                <CarouselIndicator
-                  key={index}
-                  index={index}
-                  activeIndex={this.state.activeIndex}
-                  isActive={this.state.activeIndex === index}
-                  onClick={e => this.goToSlide(index)}
-                />
-              ))}
-            </ul>
-            <button onClick={e => this.prevSlide(e)}>Previous</button>
-            <button onClick={e => this.nexSlide(e)}>Next</button>
+
+            <button
+              className={styles.carousel_button2}
+              onClick={e => this.nexSlide(e)}
+            />
           </div>
+          <ul className={styles.carousel__indicators}>
+            {this.props.slides.map((slide, index) => (
+              <CarouselIndicator
+                key={index}
+                index={index}
+                activeIndex={this.state.activeIndex}
+                isActive={this.state.activeIndex === index}
+                onClick={e => this.goToSlide(index)}
+              />
+            ))}
+          </ul>
         </article>
       </>
     );
