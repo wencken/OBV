@@ -4,6 +4,7 @@ import { getUserFromCookie } from "../utils/index.js";
 
 class UiStore {
   authUser = null;
+  currentCity = "";
 
   constructor(rootStore) {
     this.rootStore = rootStore;
@@ -35,8 +36,16 @@ class UiStore {
   //REGISTREREN
   register = (name, email, pwd, role) =>
     this.authService.register(name, email, pwd, role);
+
+  changeCity = city => {
+    console.log(city);
+  };
 }
 
-decorate(UiStore, { authUser: observable, setUser: action });
+decorate(UiStore, {
+  authUser: observable,
+  setUser: action,
+  changeCity: action
+});
 
 export default UiStore;

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { observer } from "mobx-react";
+import { inject, observer } from "mobx-react";
 
 import styles from "./Filter.module.css";
 
@@ -10,24 +10,68 @@ class Filter extends Component {
   }
 
   handleChangeCity = e => {
+    e.preventDefault();
+    this.props.setCity(e.target.value);
     this.setState({ selected: e.target.value });
-
-    this.props.changeCity(e.target.value);
   };
 
   render() {
     const { selected } = this.state;
-
+    const { currentMood } = this.props.moodStore;
     return (
       <article>
         <h2 className={styles.visuallyHidden}>Filter</h2>
         <div className={styles.container_blue}>
           <article className={styles.article_mood}>
-            <p>Share your story and let us know how you feel.</p>
-            <p>
-              Ghent is feeling teardrop-sad this week. #elections19 #blacksunday
-              #shame
-            </p>
+            <ul>
+              <li className={"text_bold"}>
+                Share your story and let us know how you feel.
+              </li>
+              <li
+                className={
+                  currentMood
+                    ? currentMood === "sad"
+                      ? ""
+                      : "visually-hidden"
+                    : "visually-hidden"
+                }
+              >
+                Ghent is feeling span{" "}
+                <span className={"text_bold"}>teardrop-sad</span> this week.
+                #elections19 #blacksunday #shame
+              </li>
+              <li
+                className={
+                  currentMood
+                    ? currentMood === "happy"
+                      ? ""
+                      : "visually-hidden"
+                    : "visually-hidden"
+                }
+              >
+                Antwerp is feeling{" "}
+                <span className={"text_bold"}>sunkissed-happy</span> this week.
+                #joy #summer #sfinksmixedfestival
+              </li>
+              <li
+                className={
+                  currentMood
+                    ? currentMood === "angry"
+                      ? ""
+                      : "visually-hidden"
+                    : "visually-hidden"
+                }
+              >
+                Ghent is feeling{" "}
+                <span className={"text_bold"}>darkred-angry</span> this week.
+                #shame #RIP #women #justice #julie
+              </li>
+              <li>
+                <a className={`btn_black`} href="./share">
+                  Share your story
+                </a>
+              </li>
+            </ul>
           </article>
           <form className={styles.container_filter}>
             <input
@@ -61,19 +105,17 @@ class Filter extends Component {
   }
 }
 
-export default observer(Filter);
+export default inject("moodStore")(observer(Filter));
 
-// const Filter = ({ moodStore }) => {
-//   const { city } = moodStore;
-
+// const Filter = ({ uiStore }) => {
+//   // const { changeCity } = uiStore;
 //   const cityInput = React.createRef();
 
 //   const handleChangeCity = e => {
 //     e.preventDefault();
-//     // {city} === cityInput.current.value;
-//     // moodStore.setCity({
-//     //   city: cityInput.current.value
-//     // });
+//     if (cityInput.current.value) {
+//       uiStore.changeCity(cityInput.current.value);
+//     }
 //   };
 
 //   return (
@@ -86,6 +128,7 @@ export default observer(Filter);
 //             name="city"
 //             value="Ghent"
 //             ref={cityInput}
+//             // checked={selected === "Ghent"}
 //             onChange={handleChangeCity}
 //           />
 //           Ghent
@@ -97,6 +140,7 @@ export default observer(Filter);
 //             name="city"
 //             value="Antwerp"
 //             ref={cityInput}
+//             // checked={selected === "Antwerp"}
 //             onChange={handleChangeCity}
 //           />
 //           Antwerp
@@ -106,4 +150,4 @@ export default observer(Filter);
 //   );
 // };
 
-// export default inject("moodStore")(observer(Filter));
+// export default inject("uiStore")(observer(Filter));

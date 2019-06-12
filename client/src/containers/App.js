@@ -19,6 +19,7 @@ import StoryAdmin from "../components/StoryAdmin";
 import Kandidaten from "../components/Kandidaten";
 import PageHeader from "../components/PageHeader";
 import Filter from "../components/Filter";
+import UiStore from "../store/UiStore";
 
 class App extends Component {
   constructor() {
@@ -28,18 +29,18 @@ class App extends Component {
     };
   }
 
-  changeCity = newCity => {
-    this.setState({
-      city: newCity
-    });
-    //hier niet loggen, is asynchroon! zie log in Share comp
-  };
+  // changeCity = newCity => {
+  //   this.setState({
+  //     city: newCity
+  //   });
+  // };
 
   render() {
     return (
       <>
         <PageHeader title={`De Derde Boodschap`} />
-        <Filter changeCity={this.changeCity} />
+        {/* <Filter changeCity={this.changeCity} /> */}
+        <Filter setCity={UiStore.changeCity} />
         <main>
           <Switch>
             <Route
