@@ -7,13 +7,13 @@
     text-transform: uppercase; 
 }
 
-.btnTitle-big {
+.btnTitle_big {
     font-size: 2.4rem; 
     text-transform: uppercase;
     font-weight: bold;
 }
 
-.filterTitle-big {
+.filterTitle_big {
     font-size: 11.4rem;
     font-weight: bold;
     color: transparent;
@@ -21,32 +21,43 @@
     paint-order: stroke fill;
 }
 
-.title-big {
+.title_big {
     font-size: 5.5rem;
     font-weight: bold;
     line-height: 1.3;
 }
 
-.title-small {
+.title_small {
     font-size: 3.5rem;
     font-weight: bold;
     line-height: 2.8;
 }
 
-.text-extrabig {
+.text_extrabig {
     font-size: 2.8rem;
     line-height: 1.5;
 }
 
-.text-big {
+.text_big {
     font-size: 2rem;
 }
 
-.text-normal {
+.text_normal {
     line-height: 1.2;
 }
 
-.text-small {
+.text_small {
     font-size: 1.4rem;
+}
+
+.text_bold {
+    font-weight: bold;
+}
+
+.text_italic {
+}
+
+.text_underline {
+    text-decoration: underline;
 }
 

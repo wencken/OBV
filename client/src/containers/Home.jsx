@@ -3,8 +3,8 @@ import { inject, observer } from "mobx-react";
 import styles from "./Home.module.css";
 
 const Home = ({ city, storyStore, moodStore }) => {
-  const { stories, topMood } = storyStore;
-  const { moods, countMood, currentMood } = moodStore;
+  const { stories } = storyStore;
+  const { moods, countMood, currentMood, topMood } = moodStore;
 
   console.log(city);
   console.log({ currentMood });
@@ -41,11 +41,11 @@ const Home = ({ city, storyStore, moodStore }) => {
                   : styles.container_intro
               }
             >
-              <h2 className={styles.title_big}>
+              <h2 className={"title_big"}>
                 De Derde <br />
                 Boodschap
               </h2>
-              <p className={styles.text_extrabig}>
+              <p className={"text_extrabig"}>
                 Opera Ballet Vlaanderen is looking for the things that move or
                 fascinate you, make you happy or even mad.{" "}
               </p>
@@ -56,7 +56,7 @@ const Home = ({ city, storyStore, moodStore }) => {
 
               <article className={styles.container_ctaToilets}>
                 <h3 className={styles.visuallyHidden}>Storytoilets</h3>
-                <p className={styles.text_big}>
+                <p className={"text_big"}>
                   Visit our public toilets and leave your mark…{" "}
                 </p>
                 <button className={styles.btn_white}>See the map</button>
@@ -74,7 +74,7 @@ const Home = ({ city, storyStore, moodStore }) => {
                 }
               >
                 <h3 className={styles.visuallyHidden}>Tell us your story</h3>
-                <p className={styles.text_big}>
+                <p className={"text_big"}>
                   Or drop your story here and make a difference.{" "}
                 </p>
                 <button className={styles.btn_black}>Tell us your story</button>
@@ -82,10 +82,10 @@ const Home = ({ city, storyStore, moodStore }) => {
             </article>
           </div>
           <div className={styles.container_aside}>
-            <article>
+            <article className={"btn_listen bg_black color_white"}>
               <h2 className={styles.visuallyHidden}>Listen</h2>
-              <p>Now Playing</p>
-              <p>Macbeth</p>
+              <p className={"text_small"}>Now Playing</p>
+              <p className={"navTitle"}>Macbeth</p>
               <button>Listen here</button>
             </article>
             <aside className={styles.container_facts}>
@@ -107,7 +107,7 @@ const Home = ({ city, storyStore, moodStore }) => {
         </div>
 
         <article className={styles.container_stories}>
-          <h2 className={styles.title_big}>
+          <h2 className={"title_big"}>
             Stories of <br />
             {city}
           </h2>

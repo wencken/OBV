@@ -1,4 +1,11 @@
-import { decorate, observable, configure, action, runInAction } from "mobx";
+import {
+  decorate,
+  observable,
+  configure,
+  action,
+  runInAction,
+  computed
+} from "mobx";
 import Mood from "../models/Mood";
 import Api from "../api";
 
@@ -45,6 +52,26 @@ class MoodStore {
     return ((count / stories.length) * 100).toFixed(2);
   };
 
+  get topMood() {
+    const amounts = this.rootStore.storyStore.stories.reduce((a, b) => {
+      let key = b["moodId"];
+
+      if (!a[key]) {
+        a[key] = 1;
+      }
+      a[key]++;
+      return a;
+    }, {});
+    const maxMoodId = Object.keys(amounts).reduce(
+      (c, d) => (amounts[c] > amounts[d] ? c : d),
+      0
+    );
+    console.log(maxMoodId);
+    const moodObject = this.resolveMood(maxMoodId);
+    if (moodObject) return moodObject.name;
+    return null;
+  }
+
   // countMoods = stories => {
   //   let count = 0;
 
@@ -89,6 +116,7 @@ decorate(MoodStore, {
   countMood: action,
   countMoods: action,
   setMaxMood: action,
+  topMood: computed,
   //
   updateMood: action,
   resolveMood: action

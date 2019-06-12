@@ -1,3 +1,4 @@
+
 .btn_white {
     background-color: var(--white);
     color: var(--black);
@@ -6,4 +7,14 @@
 .btn_black {
     background-color: var(--black);
     color: var(--white);
+}
+
+.btn_listen {
+    height: 18.5rem;
+    width: 18.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+
 }

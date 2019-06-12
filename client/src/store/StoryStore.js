@@ -52,8 +52,28 @@ class StoryStore {
 
     // setTimeout(this.incrementMood(story), 2000);
   };
-  getMoodAmounts = async () => {
-    return await this.stories.reduce((a, b) => {
+
+  // get topMood() {
+  // const test = this.api.checkHighMood().then(r => {
+  //   return r;
+  // });
+  // console.log(test);
+  //return this.api.checkHighMood();
+  // console.log("check");
+  // return this.stories.reduce((a, b) => {
+  //   let key = b["moodId"];
+  //   if (!a[key]) {
+  //     a[key] = 1;
+  //   }
+  //   a[key]++;
+  //   const maxMoodId = Object.keys(a).reduce((c, d) => (a[c] > a[d] ? c : d));
+  //   console.log(maxMoodId);
+  //   // console.log(this.rootStore.moodStore.resolveMood(maxMoodId));
+  //   // const maxMood = this.rootStore.moodStore.resolveMood(maxMoodId);
+  //   // console.log(maxMood.name);
+  //   return a;
+  // }, {});
+  /*     const amounts = this.stories.reduce((a, b) => {
       let key = b["moodId"];
 
       if (!a[key]) {
@@ -64,36 +84,13 @@ class StoryStore {
 
       return a;
     }, {});
-  };
-
-  get topMood() {
-    // const test = this.api.checkHighMood().then(r => {
-    //   return r;
-    // });
-    // console.log(test);
-    //return this.api.checkHighMood();
-    // console.log("check");
-
-    return this.stories.reduce((a, b) => {
-      let key = b["moodId"];
-      if (!a[key]) {
-        a[key] = 1;
-      }
-      a[key]++;
-      const maxMoodId = Object.keys(a).reduce((c, d) => (a[c] > a[d] ? c : d));
-      console.log(maxMoodId);
-      // console.log(this.rootStore.moodStore.resolveMood(maxMoodId));
-      // const maxMood = this.rootStore.moodStore.resolveMood(maxMoodId);
-      // console.log(maxMood.name);
-      return a;
-    }, {});
-
-    // const maxMoodId = this.getMoodAmounts().then(a =>
-    //   Object.keys(a).reduce((c, d) => (a[c] > a[d] ? c : d))
-    // );
-    // console.log(maxMoodId);
-    // return maxMoodId;
-  }
+    const maxMoodId = Object.keys(amounts).reduce(
+      (c, d) => (amounts[c] > amounts[d] ? c : d),
+      0
+    );
+ */
+  // return maxMoodId;
+  // }
 
   // getMoods = () => {
   //   this.stories.map(story => this.incrementMood(story));
@@ -131,8 +128,7 @@ decorate(StoryStore, {
   stories: observable,
   addStory: action,
   deleteStory: action,
-  incrementMood: action,
-  topMood: computed
+  incrementMood: action
 });
 
 export default StoryStore;

@@ -61,13 +61,14 @@
 }
 
 .container_aside {
-  composes: container;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
 }
 
 .container_facts {
+  composes: container;
+
   flex-grow: 1;
   display: flex;
   flex-flow: column nowrap;
@@ -79,7 +80,7 @@
   composes: container;
 }
 
-.title_big {
+/* .title_big {
   composes: title-big from "../styles/typo.module.css";
 }
 
@@ -89,7 +90,7 @@
 
 .text_big {
   composes: text-big from "../styles/typo.module.css";
-}
+} */
 
 .reverse{
   display:flex;
