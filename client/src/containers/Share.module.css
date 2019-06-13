@@ -18,3 +18,18 @@
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
 }
+
+.textarea{
+  background-color: lightgrey;
+  outline: none;
+  border: none;
+}
+.textarea_yellow:focus{
+  border-bottom: 0.2rem solid var(--yellow) ;
+}
+.textarea_blue:focus{
+  border-bottom: 0.2rem solid var(--blue) ;
+}
+.textarea_pink:focus{
+  border-bottom: 0.2rem solid var(--pink) ;
+}

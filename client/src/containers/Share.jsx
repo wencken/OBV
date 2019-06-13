@@ -8,6 +8,7 @@ import styles from "./Share.module.css";
 
 const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
   const { currentCity } = uiStore;
+  const { currentMood } = moodStore;
   let mood = "";
 
   const descriptionInput = React.createRef();
@@ -101,6 +102,15 @@ const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
         <label htmlFor="description" className={styles.reverse}>
           Question
           <textarea
+            className={
+              currentMood
+                ? currentMood === "happy"
+                  ? `${styles.textarea_yellow} ${styles.textarea} `
+                  : currentMood === "sad"
+                  ? `${styles.textarea_blue} ${styles.textarea} `
+                  : `${styles.textarea_pink} ${styles.textarea} `
+                : styles.textarea
+            }
             type="textarea"
             name="description"
             id="description"
