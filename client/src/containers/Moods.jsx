@@ -25,6 +25,10 @@ const Moods = ({ uiStore, moodStore, storyStore }) => {
             {moodCounts
               ? Object.keys(moodCounts).map(key => (
                   <li key={key}>
+                    <img
+                      src={`../../assets/img/${resolveMood(key).name}.png`}
+                      alt={`${resolveMood(key).name}`}
+                    />
                     {resolveMood(key).name}:
                     {((moodCounts[key] / filteredStories.length) * 100).toFixed(
                       2
@@ -60,15 +64,17 @@ const Moods = ({ uiStore, moodStore, storyStore }) => {
             <h2 className={"visually-hidden"}>Legende</h2>
 
             <div>
-              <p className="">Red</p>
+              <p className={"title_small text_uppercase color_pink"}>Red</p>
               <p className={"text_small"}>means anger</p>
             </div>
             <div>
-              <p className="">Blue</p>
+              <p className={"title_small text_uppercase color_blue"}>Blue</p>
               <p className={"text_small"}>stands for sad</p>
             </div>
             <div>
-              <p className="">Yellow</p>
+              <p className={"title_small text_uppercase color_yellow"}>
+                Yellow
+              </p>
               <p className={"text_small"}>equals happiness</p>
             </div>
           </aside>
