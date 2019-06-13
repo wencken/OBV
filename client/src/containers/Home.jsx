@@ -116,28 +116,47 @@ const Home = ({ uiStore, storyStore, moodStore }) => {
           </div>
         </div>
 
-        <article className={styles.container_stories}>
-          <h2 className={"title_big"}>
-            Stories of <br />
-            {currentCity}
-          </h2>
-          <p>
-            Top 10 van de {filteredStories.length} verhalen uit {currentMood}
-            (mood) van {currentCity}:
-          </p>
-          {sortedStories.length > 0 ? (
+        <article>
+          <button className={styles.toggle}>VVVVVVVVV</button>
+          <div className={styles.container_stories}>
+            <h2 className={"title_big"}>
+              <span
+                className={
+                  currentMood
+                    ? currentMood === "happy"
+                      ? `${styles.top_title_yellow} `
+                      : currentMood === "sad"
+                      ? `${styles.top_title_blue} `
+                      : `${styles.top_title_pink} `
+                    : styles.top_title_blue
+                }
+              >
+                Stories of
+              </span>{" "}
+              <br />
+              {currentCity}
+            </h2>
+            <p className={styles.intro_stories}>
+              Top 4 van de {filteredStories.length} verhalen uit {currentMood}
+              (mood) van {currentCity}
+            </p>
+            {sortedStories.length > 0 ? (
+              <div className={styles.stories_tiles}>
+                {sortedStories.slice(0, 10).map(story => (
+                  <ul key={story.id} className={styles.reverse}>
+                    <li>{story.description}</li>
+                    <li>- {story.mood ? story.mood.name : ""}</li>
+                    <li>- {story.rate}</li>
+                  </ul>
+                ))}
+              </div>
+            ) : (
+              <p>No stories</p>
+            )}
             <div>
-              {sortedStories.slice(0, 10).map(story => (
-                <ul key={story.id} className={styles.reverse}>
-                  <li>{story.description}</li>
-                  <li>- {story.mood ? story.mood.name : ""}</li>
-                  <li>- {story.rate}</li>
-                </ul>
-              ))}
+              <button className={styles.more_button}>Read more stories</button>
             </div>
-          ) : (
-            <p>No stories</p>
-          )}
+          </div>
         </article>
       </div>
     </>

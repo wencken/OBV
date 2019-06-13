@@ -83,9 +83,65 @@ aside div {
 
 .container_stories {
   composes: container;
+  display: flex;
+  align-items: flex-start;
+  transform: translate(-50%);
+  background: white;
+  grid-area: intro;
 }
 
 .reverse{
   display:flex;
+  padding: 2rem;
+  width: 40rem;
+  height: 20rem;
+  grid-area: reverse;
 }
+
+.stories_tiles{
+  display: grid;
+  grid-template-columns: 2;
+  grid-template-rows: 2;
+  grid-template-areas:
+  "intro . ."
+  ". . button"
+  ;
+}
+
+.top_title_yellow{
+  border-bottom: 4px solid  var(--yellow);
+  padding: 0rem 6rem 0rem 0rem;
+}
+
+.top_title_blue{
+  border-bottom: 4px solid  var(--blue);
+  padding: 0rem 6rem 0rem 0rem;
+}
+
+.top_title_pink{
+  border-bottom: 4px solid  var(--pink);
+  padding: 0rem 6rem 0rem 0rem;
+}
+
+.intro_stories{
+  font-weight: bold;
+}
+
+.more_button{
+  background: black;
+  color: white;
+  border: none;
+  position: relative;
+  font-size: 2rem;
+  padding: 2rem 3rem;
+  grid-area: button;
+}
+
+.toggle{
+  composes: more_button;
+  font-size: 3rem;
+  transform: translateX(0) translateY(20rem) rotate(90deg);
+  transform-origin: right top;
+}
+
 
