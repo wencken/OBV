@@ -17,6 +17,18 @@ const Moods = ({ uiStore, moodStore, storyStore }) => {
   return (
     <>
       <h2>How are we doing?</h2>
+      <article className={"btn_listen bg_black color_white"}>
+        <img
+          src="../../assets/img/headphones2.png"
+          alt="White headphones with soundwaves"
+          width="50"
+          height="59"
+        />
+        <h2 className={"visually-hidden"}>Listen</h2>
+        <p className={"text_small"}>Now Playing</p>
+        <p className={"navTitle"}>Macbeth</p>
+        <button>Listen here</button>
+      </article>
       {/* <ul>
         {moodCounts
           ? Object.keys(moodCounts).map(key => (

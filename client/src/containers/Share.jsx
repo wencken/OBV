@@ -45,6 +45,18 @@ const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
   return (
     <>
       <h2>Tell us your story</h2>
+      <article className={"btn_listen bg_black color_white"}>
+        <img
+          src="../../assets/img/headphones2.png"
+          alt="White headphones with soundwaves"
+          width="50"
+          height="59"
+        />
+        <h2 className={"visually-hidden"}>Listen</h2>
+        <p className={"text_small"}>Now Playing</p>
+        <p className={"navTitle"}>Macbeth</p>
+        <button>Listen here</button>
+      </article>
       <form onSubmit={handleSubmit} className={styles.reverse}>
         {moodStore.moods.length === 0 ? (
           <>

@@ -8,10 +8,16 @@ const Information = () => {
       <section>
         <h2>What's this?</h2>
         <div className={styles.container_aside}>
-          <article>
-            <h3 className={`visually-hidden`}>Listen</h3>
-            <p>Now Playing</p>
-            <p>Macbeth</p>
+          <article className={"btn_listen bg_black color_white"}>
+            <img
+              src="../../assets/img/headphones2.png"
+              alt="White headphones with soundwaves"
+              width="50"
+              height="59"
+            />
+            <h2 className={"visually-hidden"}>Listen</h2>
+            <p className={"text_small"}>Now Playing</p>
+            <p className={"navTitle"}>Macbeth</p>
             <button>Listen here</button>
           </article>
           <aside className={styles.container_facts}>
