@@ -115,21 +115,21 @@ const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
           {moodStore.moods.map(mood => (
             <li
               key={mood.id}
-              className={
-                mood.name
-                  ? moodInput === "happy"
-                    ? `${styles.reverse}`
-                    : moodInput === "sad"
-                    ? `${styles.reverse}`
-                    : `${styles.reverse}`
-                  : "visually-hidden"
-              }
+              // className={
+              //   mood.name
+              //     ? mood.name === "happy"
+              //       ? `${styles.reverse}`
+              //       : mood.name === "sad"
+              //       ? `${styles.reverse}`
+              //       : `${styles.reverse}`
+              //     : "visually-hidden"
+              // }
             >
               <label
                 htmlFor="description"
                 className={
-                  mood.name
-                    ? mood.name === "happy"
+                  mood.id
+                    ? mood.id === "happy"
                       ? `${styles.reverse}`
                       : mood.name === "sad"
                       ? `${styles.reverse}`
