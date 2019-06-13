@@ -2,6 +2,10 @@
   "name": "project",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "11.4.0",
+    "yarn": "1.10.1"
+  },
   "repository": "git@github.com/wencken/OBV.git",
   "author": "Wencke Nuyt <wencke.nuyt@student.howest.be>",
   "license": "MIT",
