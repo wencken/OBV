@@ -13,8 +13,16 @@ import styles from "./Home.module.css";
 const Home = ({ uiStore, storyStore, moodStore }) => {
   const { stories } = storyStore;
   const { moods, currentMood } = moodStore;
-
+  const toggle = true;
   console.log(moods);
+
+  const toggleStories = event => {
+    if (event.target.classList.contains("navigation--active")) {
+      event.target.classList.remove("navigation--active");
+    } else {
+      event.target.classList.add("navigation--active");
+    }
+  };
 
   const { currentCity } = uiStore;
 
@@ -117,8 +125,22 @@ const Home = ({ uiStore, storyStore, moodStore }) => {
         </div>
 
         <article className={styles.container_stories}>
-          <button className={styles.toggle}>VVVVVVVVV</button>
-          <div className={styles.stories_tiles}>
+          <button
+            className={`${styles.toggle} ${toggle ? "navigation--active" : ""}`}
+          >
+            VVVVVVVVV
+          </button>
+          <div
+            className={
+              currentMood
+                ? currentMood === "happy"
+                  ? `${styles.stories_happy} ${styles.stories_tiles} `
+                  : currentMood === "sad"
+                  ? `${styles.stories_sad} ${styles.stories_tiles} `
+                  : `${styles.stories_mad} ${styles.stories_tiles} `
+                : `${styles.stories_sad} ${styles.stories_tiles} `
+            }
+          >
             <h2 className={`${styles.title_where} title_big`}>
               <span
                 className={
@@ -141,7 +163,6 @@ const Home = ({ uiStore, storyStore, moodStore }) => {
               (mood) van {currentCity}
             </p>
             {sortedStories.length > 0 ? (
-              // <div>
               sortedStories.slice(0, 4).map(story => (
                 <ul key={story.id} className={styles.reverse}>
                   <li>{story.description}</li>
@@ -150,10 +171,19 @@ const Home = ({ uiStore, storyStore, moodStore }) => {
                 </ul>
               ))
             ) : (
-              /* </div> */
               <p>No stories</p>
             )}
-            <div>
+            <div
+              className={
+                currentMood
+                  ? currentMood === "happy"
+                    ? `${styles.stories_happy} ${styles.button_border} `
+                    : currentMood === "sad"
+                    ? `${styles.stories_sad} ${styles.button_border} `
+                    : `${styles.stories_mad} ${styles.button_border} `
+                  : `${styles.stories_sad} ${styles.button_border} `
+              }
+            >
               <button className={styles.more_button}>Read more stories</button>
             </div>
           </div>

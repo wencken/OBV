@@ -83,23 +83,31 @@ aside div {
 
 .stories_tiles{
   display: grid;
-  grid-template-columns: 35rem 35rem 35rem;
-  grid-template-rows: 20rem 20rem;
+  padding: 2rem;
+  padding-left: 25rem;
+  background: white;
+
+  grid-template-columns: 37rem 37rem 37rem;
+  grid-template-rows: 15rem 15rem;
   grid-auto-flow: row dense;
   grid-template-areas:
   "title . ."
   ". .  button"
   ;
+  justify-items: left;
+  grid-gap: 3rem;
 }
 
 .reverse{
+  margin-top: 3rem;
+  composes: text_normal from "../styles/typo.module.css";
 }
 
 .container_stories {
-  display: flex;
-  align-items: flex-start;
-  transform: translate(-50%);
-  background: white;
+  position: absolute;
+  float:right;
+  right:0;
+  transform: translateY(11.5rem);
 }
 
 .more_button{
@@ -113,17 +121,34 @@ aside div {
   cursor: pointer;
 }
 
+.button_border{
+  padding: 3rem;
+  display: flex;
+  height: 12rem;
+  border-style: solid;
+}
+
 .toggle{
   composes: more_button;
   font-size: 3rem;
-  transform: translateX(0) translateY(20rem) rotate(90deg);
-  transform-origin: right top;
+  transform: translateX(-15.2rem)  translateY(24rem) rotate(90deg);
 }
 
 .title_where{
   grid-area: title;
 }
 
+.stories_happy{
+  border: 2px solid  var(--yellow);
+}
+
+.stories_sad{
+  border: 2px solid  var(--blue);
+}
+
+.stories_mad{
+  border: 2px solid  var(--pink);
+}
 
 .top_title_yellow{
   border-bottom: 4px solid  var(--yellow);
