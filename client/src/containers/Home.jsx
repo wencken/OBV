@@ -1,6 +1,7 @@
 import React from "react";
 import { inject, observer } from "mobx-react";
 import { Link } from "react-router-dom";
+import Muziek from "../components/Muziek";
 
 import styles from "./Home.module.css";
 
@@ -94,27 +95,7 @@ const Home = ({ uiStore, storyStore, moodStore }) => {
             </article>
           </div>
           <div className={"container_aside"}>
-            <article className={"btn_listen bg_black color_white"}>
-              <img
-                src="../../assets/img/headphones2.png"
-                alt="White headphones with soundwaves"
-                width="50"
-                height="59"
-              />
-              <h2 className={"visually-hidden"}>Listen</h2>
-              <p className={"text_small"}>Now Playing</p>
-              <p className={"navTitle"}>Macbeth</p>
-
-              <button className={"listenHere"}>
-                {" "}
-                <span className={"icon"}>
-                  <span className={"playIcon"} />
-                  <span className={"pauseIcon"} />
-                </span>{" "}
-                <span>Listen here</span>
-              </button>
-            </article>
-
+            <Muziek />
             <aside className={"container_facts"}>
               <h2 className={"visually-hidden"}>Facts</h2>
               <div>
