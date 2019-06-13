@@ -50,7 +50,7 @@
     border: none;
   }
 
-  .icon{
+  .icon {
       /* de klasse voor de container van het icon */
     width:2rem;
     height:2rem;
@@ -60,7 +60,7 @@
     background-color: var(--white);
   }
   
-  .playIcon{
+  .playIcon {
       /* play button */
     position:absolute;
     margin-top: 0.5rem;
@@ -70,7 +70,7 @@
     border-bottom:0.5rem dashed transparent;
   }
   
-  .pauseIcon{
+  .pauseIcon {
       /* pause button */
     position:absolute;
     margin-top: 0.5rem;
@@ -116,3 +116,15 @@
     justify-content: space-around;
     align-items: center;
 }
+
+@custom-media --mobile screen and (min-width: 0);
+@custom-media --tablet screen and (min-width: 375px);
+@custom-media --desktop screen and (min-width: 1440px);
+
+/* aanspreken bv:
+
+@media (--mobile) { }
+@media (--tablet) { }
+@media (--desktop) { }
+
+*/
