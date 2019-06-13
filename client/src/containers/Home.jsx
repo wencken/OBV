@@ -116,10 +116,10 @@ const Home = ({ uiStore, storyStore, moodStore }) => {
           </div>
         </div>
 
-        <article>
+        <article className={styles.container_stories}>
           <button className={styles.toggle}>VVVVVVVVV</button>
-          <div className={styles.container_stories}>
-            <h2 className={"title_big"}>
+          <div className={styles.stories_tiles}>
+            <h2 className={`${styles.title_where} title_big`}>
               <span
                 className={
                   currentMood
@@ -136,21 +136,21 @@ const Home = ({ uiStore, storyStore, moodStore }) => {
               <br />
               {currentCity}
             </h2>
-            <p className={styles.intro_stories}>
+            <p className={"visually-hidden"}>
               Top 4 van de {filteredStories.length} verhalen uit {currentMood}
               (mood) van {currentCity}
             </p>
             {sortedStories.length > 0 ? (
-              <div className={styles.stories_tiles}>
-                {sortedStories.slice(0, 10).map(story => (
-                  <ul key={story.id} className={styles.reverse}>
-                    <li>{story.description}</li>
-                    <li>- {story.mood ? story.mood.name : ""}</li>
-                    <li>- {story.rate}</li>
-                  </ul>
-                ))}
-              </div>
+              // <div>
+              sortedStories.slice(0, 4).map(story => (
+                <ul key={story.id} className={styles.reverse}>
+                  <li>{story.description}</li>
+                  <li>- {story.mood ? story.mood.name : ""}</li>
+                  <li>- {story.rate}</li>
+                </ul>
+              ))
             ) : (
+              /* </div> */
               <p>No stories</p>
             )}
             <div>
