@@ -26,7 +26,7 @@ class Filter extends Component {
     const { city } = this.props;
     return (
       <article>
-        <h2 className={styles.visuallyHidden}>Filter</h2>
+        <h2 className={"visually-hidden"}>Filter</h2>
         <div
           className={
             currentMood
@@ -82,11 +82,10 @@ class Filter extends Component {
                 <span className={"text_bold"}>darkred-angry</span> this week.
                 #shame #RIP #women #justice #julie
               </li>
-              <li>
-                <a className={`btn_black`} href="./share">
-                  Share your story
-                </a>
-              </li>
+
+              <a className={styles.btn_black} href="./share">
+                Share your story
+              </a>
             </ul>
           </article>
           <form className={styles.container_filter}>
