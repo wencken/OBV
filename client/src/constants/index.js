@@ -8,7 +8,7 @@ export const ROUTES = {
   information: `/information`,
   storyadmin: `/storyadmin`,
   kandidaten: `/kandidaten`,
-  login: `/login`,
+  login: `/admin`,
   register: "/register"
 };
 

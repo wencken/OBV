@@ -34,8 +34,7 @@ class UiStore {
   };
 
   //REGISTREREN
-  register = (name, email, pwd, role) =>
-    this.authService.register(name, email, pwd, role);
+  register = (name, email, pwd) => this.authService.register(name, email, pwd);
 
   changeCity = city => {
     console.log(city);
@@ -53,6 +52,7 @@ class UiStore {
 decorate(UiStore, {
   authUser: observable,
   currentCity: observable,
+  //
   setUser: action,
   changeCity: action
 });

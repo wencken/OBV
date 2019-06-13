@@ -2,8 +2,6 @@ import React from "react";
 import { PropTypes, inject, observer } from "mobx-react";
 import WithAuthorisation from "./auth/WithAuthorisation";
 import { ROLES } from "../constants";
-
-import PageHeader from "./PageHeader";
 import StoryDetail from "./StoryDetail";
 
 const StoryAdmin = ({ moodStore, storyStore }) => {
@@ -23,9 +21,7 @@ const StoryAdmin = ({ moodStore, storyStore }) => {
 
   return (
     <>
-      <PageHeader title={`All Stories`} />
-      <p>This page can only be accessed by administrators.</p>
-
+      <h2>This page can only be accessed by administrators.</h2>
       <>
         {stories.length > 0 ? (
           <ul>

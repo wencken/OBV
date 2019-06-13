@@ -3,3 +3,19 @@
     composes: bg_yellow from "../styles/colors.module.css";
     composes: color_black from "../styles/colors.module.css";  
 }
+
+.container {
+    width: 100%;
+}
+
+
+/* VOTE */
+.vote_button {
+    outline: none;
+
+}
+
+.container_vote {
+    display: flex;
+    
+}

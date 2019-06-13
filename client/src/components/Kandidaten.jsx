@@ -1,6 +1,5 @@
 import React from "react";
 import { inject, observer } from "mobx-react";
-import PageHeader from "./PageHeader";
 import WithAuthorisation from "./auth/WithAuthorisation";
 import { ROLES } from "../constants";
 
@@ -9,8 +8,7 @@ const Kandidaten = ({ emailStore }) => {
 
   return (
     <>
-      <PageHeader title={`Kandidaten`} />
-      <p>This page can only be accessed by administrators.</p>
+      <h2>This page can only be accessed by administrators.</h2>
       <>
         {emails.length > 0 ? (
           <ul>
