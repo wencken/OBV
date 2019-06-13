@@ -7,15 +7,15 @@ nav {
   justify-content: space-around;
   align-items: center;
   height: 5rem;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .container_nav {
-  width: 60vw;
+  /* width: 60vw; */
 }
 
 .container_nav li {
-  width: 20%;
+  /* width: 20%; */
   text-align: center;
 }
 
@@ -31,6 +31,7 @@ nav {
 .navTitle {
   composes: navTitle from "../styles/typo.module.css";
   color: var(--black);
+  padding: 0 1rem;
 }
 
 .navTitle:hover {
