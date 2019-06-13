@@ -19,16 +19,20 @@ class CheckBox extends Component {
   render() {
     const { showContent } = this.state;
     const { emailInput } = this.props;
+    const mood = this.props.moodStore;
     return (
       <>
-        <label htmlFor="checkbox" className={styles.checkbox}>
+        <label
+          htmlFor="checkbox"
+          className={`${styles.checkbox} text_italic text_small`}
+        >
           <input
             type="checkbox"
             name="email"
             id="checkbox"
             onClick={this.toggleContent}
           />
-          Ik wil deelnemen aan de wedstrijd.
+          I want to have a chance of winning an opera ticket.
         </label>
         <label htmlFor="email">
           {showContent === true ? (
@@ -38,7 +42,8 @@ class CheckBox extends Component {
               id="email"
               ref={emailInput}
               placeholder="E-mailadres"
-              className={styles.reverse}
+              // className={styles.reverse}
+              className={styles.email}
             />
           ) : (
             <input
@@ -47,7 +52,7 @@ class CheckBox extends Component {
               id="email"
               placeholder="E-mailadres"
               ref={emailInput}
-              className={styles.visually_hidden}
+              className={"visually-hidden"}
             />
           )}
         </label>

@@ -1,3 +1,19 @@
+/* .visually_hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+} */
+
+.container{
+  display: flex;
+}
+/*titel*/
+.center {
+  text-align: center;
+}
 .reverse{
   display: flex;
   flex-flow: column;
@@ -5,24 +21,55 @@
   width: 20rem;
 }
 
-.checkbox{
-  display: flex;  
+/* LINKS */
+.form_links{
+  /* display: flex;
+  flex-flow: column;
+  padding-bottom: 2rem; */
+}
+.buttons_li{
+  width:13rem;
+}
+.input_radio {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.img {
+  position:relative;
+  width: 80%;
+}
+.img_container {
+  /* display: flex;
+  flex-flow: column; */
+}
+
+.img_box {
+  position: absolute;
+  width: 5%;
+  height: 15rem;
+}
+
+/* RECHTS */
+.form_rechts{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
   align-items: center;
 }
 
-.visually_hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
-}
-
+/* textveld question */
 .textarea{
-  background-color: lightgrey;
+  background-color: #F3F3F3;
   outline: none;
   border: none;
+  width: 50rem;
+  height: 30rem;
+  margin-top: 2rem;
+  padding: 1rem;
 }
 .textarea_yellow:focus{
   border-bottom: 0.2rem solid var(--yellow) ;
@@ -32,4 +79,35 @@
 }
 .textarea_pink:focus{
   border-bottom: 0.2rem solid var(--pink) ;
+}
+
+.textarea_li{
+  padding: 2rem;
+  width: 54rem
+}
+.checkbox{
+  display: flex;  
+  align-items: center;
+}
+
+/* submit */
+.btn_black {
+  composes: btn from "../styles/layout.module.css";
+  composes: bg_black from "../styles/colors.module.css";
+  composes: color_white from "../styles/colors.module.css";
+}
+
+/* email */
+.email{
+  background-color: #F3F3F3;
+  outline: none;
+  border: none;
+  width: 50rem;
+  height: 5rem;
+  margin-top: 2rem;
+  padding: 1rem;
+ 
+}
+.email:focus{
+  border-bottom: 0.2rem solid var(--black) ;
 }

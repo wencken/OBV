@@ -17,7 +17,7 @@ const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
   };
 
   let gemoed = "";
-  // console.log(gemoed);
+  console.log(gemoed);
   const descriptionInput = React.createRef();
   const moodInput = React.createRef();
   const emailInput = React.createRef();
@@ -52,195 +52,154 @@ const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
 
   return (
     <>
-      <h2>Tell us your story</h2>
-      <article className={"btn_listen bg_black color_white"}>
-        <img
-          src="../../assets/img/headphones2.png"
-          alt="White headphones with soundwaves"
-          width="50"
-          height="59"
-        />
-        <h2 className={"visually-hidden"}>Listen</h2>
-        <p className={"text_small"}>Now Playing</p>
-        <p className={"navTitle"}>Macbeth</p>
-        <button>Listen here</button>
-      </article>
-      <form onSubmit={handleSubmit} className={styles.reverse}>
-        {moodStore.moods.length === 0 ? (
-          <>
-            <p>
-              We are very sorry. <br />
-              Because of technical complications, <br />
-              today you'll have no choice but being happy!
-            </p>
-            <label htmlFor="happy">
-              <input
-                type="radio"
-                id="happy"
-                name="mood"
-                value="happy"
-                ref={moodInput}
-              />
-              Happy
-            </label>
-          </>
-        ) : (
-          <ul>
-            {moodStore.moods.map(mood => (
-              <li key={mood.id}>
-                <label htmlFor={mood.name}>
-                  <input
-                    key={mood.id}
-                    id={mood.name}
-                    type="radio"
-                    name="mood"
-                    value={mood.id}
-                    // ref={moodInput}
-                    // checked={this.state.selected === "Ghent"}
-                    onChange={setMood}
-                  />
-                  <span
+      <h2 className={`${styles.center} title_small`}>Tell us your story</h2>
+      <section className={styles.container}>
+        <h3 className={"visually-hidden"}>Tell us your story</h3>
+        <article className={"btn_listen bg_black color_white"}>
+          <img
+            src="../../assets/img/headphones2.png"
+            alt="White headphones with soundwaves"
+            width="50"
+            height="59"
+          />
+          <h3 className={"visually-hidden"}>Listen</h3>
+          <p className={"text_small"}>Now Playing</p>
+          <p className={"navTitle"}>Macbeth</p>
+          <button>Listen here</button>
+        </article>
+
+        <form onSubmit={handleSubmit} className={styles.container}>
+          {moodStore.moods.length === 0 ? (
+            <>
+              <p>
+                We are very sorry. <br />
+                Because of technical complications, <br />
+                today you'll have no choice but being happy!
+              </p>
+              <label htmlFor="happy">
+                <input
+                  type="radio"
+                  id="happy"
+                  name="mood"
+                  value="happy"
+                  ref={moodInput}
+                />
+                Happy
+              </label>
+            </>
+          ) : (
+            <ul className={styles.form_links}>
+              {moodStore.moods.map(mood => (
+                <li key={mood.id} className={styles.buttons_li}>
+                  <label htmlFor={mood.name}>
+                    <input
+                      className={styles.input_radio}
+                      key={mood.id}
+                      id={mood.name}
+                      type="radio"
+                      name="mood"
+                      value={mood.id}
+                      // ref={moodInput}
+                      checked={gemoed === mood.id}
+                      onChange={setMood}
+                    />
+                    <div className={styles.img_container}>
+                      <div
+                        className={
+                          mood.name
+                            ? mood.name === "happy"
+                              ? `${styles.img_box} bg_yellow`
+                              : mood.name === "sad"
+                              ? `${styles.img_box} bg_blue `
+                              : `${styles.img_box} bg_pink `
+                            : "visually-hidden"
+                        }
+                      />
+                      <img
+                        className={styles.img}
+                        src={`../../assets/img/${mood.name}.png`}
+                        alt={mood.name}
+                      />
+                    </div>
+                  </label>
+                </li>
+              ))}
+            </ul>
+          )}
+          <div className={styles.form_rechts}>
+            <ul>
+              {moodStore.moods.map(mood => (
+                <li
+                  key={mood.id}
+                  className={styles.textarea_li}
+                  // className={
+                  //   gemoed
+                  //     ? gemoed === mood.id
+                  //       ? "bg_blue"
+                  //       : // : mood.id === gemoed
+                  //         // ? `${styles.reverse}`
+                  //         // : `${styles.reverse}`
+                  //         "visually-hidden"
+                  //     : "visually-hidden"
+                  // }
+                >
+                  <label
+                    htmlFor="description"
                     className={
                       mood.name
                         ? mood.name === "happy"
-                          ? ` bg_yellow`
+                          ? `text_normal text_bold `
                           : mood.name === "sad"
-                          ? ` bg_blue `
-                          : ` bg_pink `
+                          ? `text_normal text_bold `
+                          : `text_normal text_bold `
                         : "visually-hidden"
                     }
                   >
-                    {mood.name}
-                  </span>
-                </label>
-              </li>
-            ))}
-          </ul>
-        )}
-
-        <ul>
-          {moodStore.moods.map(mood => (
-            <li
-              key={mood.id}
-              className={
-                mood.id
-                  ? mood.id === gemoed
-                    ? "bg_blue"
-                    : // : mood.id === gemoed
-                      // ? `${styles.reverse}`
-                      // : `${styles.reverse}`
-                      "visually-hidden"
-                  : "visually-hidden"
-              }
-            >
-              <label
-                htmlFor="description"
-                className={
-                  mood.name
-                    ? mood.name === "happy"
-                      ? `${styles.reverse}`
-                      : mood.name === "sad"
-                      ? `${styles.reverse}`
-                      : `${styles.reverse}`
-                    : "visually-hidden"
-                }
-              >
-                What have you experienced lately that made you feel very{" "}
-                <span
-                  className={
-                    mood.name
-                      ? mood.name === "happy"
-                        ? ` bg_yellow text_underline`
-                        : mood.name === "sad"
-                        ? ` bg_blue text_underline`
-                        : ` bg_pink text_underline`
-                      : "visually-hidden"
-                  }
-                >
-                  {mood.name}
-                </span>
-                ?
-                <textarea
-                  className={
-                    mood.name
-                      ? mood.name === "happy"
-                        ? `${styles.textarea_yellow} ${styles.textarea} `
-                        : mood.name === "sad"
-                        ? `${styles.textarea_blue} ${styles.textarea} `
-                        : `${styles.textarea_pink} ${styles.textarea} `
-                      : styles.textarea
-                  }
-                  type="textarea"
-                  name="description"
-                  id="description"
-                  placeholder="Tell us your story..."
-                  ref={descriptionInput}
-                  required
-                />
-              </label>
-            </li>
-          ))}
-        </ul>
-        {/* <label htmlFor="description" className={styles.reverse}>
-          <ul>
-            <li
-              className={
-                currentMood
-                  ? currentMood === "happy"
-                    ? "color_black"
-                    : "visually-hidden"
-                  : "visually-hidden"
-              }
-            >
-              What have you experienced lately that made you feel very{" "}
-              <span className={"text_underline bg_yellow"}>{mood.name}</span>?
-            </li>
-            <li
-              className={
-                currentMood
-                  ? currentMood === "sad"
-                    ? "color_black"
-                    : "visually-hidden"
-                  : "visually-hidden"
-              }
-            >
-              What have you experienced lately that made you feel very{" "}
-              <span className={"text_underline bg_blue color_white"}>sad</span>?
-            </li>
-            <li
-              className={
-                currentMood
-                  ? currentMood === "mad"
-                    ? ""
-                    : "visually-hidden"
-                  : "visually-hidden"
-              }
-            >
-              What have you experienced lately that made you feel very{" "}
-              <span className={"text_underline bg_pink color_white"}>mad</span>?
-            </li>
-          </ul>
-          <textarea
-            className={
-              currentMood
-                ? currentMood === "happy"
-                  ? `${styles.textarea_yellow} ${styles.textarea} `
-                  : currentMood === "sad"
-                  ? `${styles.textarea_blue} ${styles.textarea} `
-                  : `${styles.textarea_pink} ${styles.textarea} `
-                : styles.textarea
-            }
-            type="textarea"
-            name="description"
-            id="description"
-            placeholder="Tell us your story..."
-            ref={descriptionInput}
-            required
-          />
-        </label> */}
-        <CheckBox emailInput={emailInput} />
-        <input type="submit" value="Share your story" />
-      </form>
+                    What have you experienced lately that made you feel very{" "}
+                    <span
+                      className={
+                        mood.name
+                          ? mood.name === "happy"
+                            ? ` bg_yellow text_underline`
+                            : mood.name === "sad"
+                            ? ` bg_blue text_underline`
+                            : ` bg_pink text_underline`
+                          : "visually-hidden"
+                      }
+                    >
+                      {mood.name}
+                    </span>
+                    ?
+                    <textarea
+                      className={
+                        mood.name
+                          ? mood.name === "happy"
+                            ? `${styles.textarea_yellow} ${styles.textarea} `
+                            : mood.name === "sad"
+                            ? `${styles.textarea_blue} ${styles.textarea} `
+                            : `${styles.textarea_pink} ${styles.textarea} `
+                          : styles.textarea
+                      }
+                      type="textarea"
+                      name="description"
+                      id="description"
+                      placeholder="Tell us your story..."
+                      ref={descriptionInput}
+                      required
+                    />
+                  </label>
+                </li>
+              ))}
+            </ul>
+            <CheckBox emailInput={emailInput} />
+            <input
+              className={styles.btn_black}
+              type="submit"
+              value="Share your story"
+            />
+          </div>
+        </form>
+      </section>
     </>
   );
 };
