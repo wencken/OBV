@@ -16,3 +16,44 @@
 .container_facts {
     composes: container_facts from "./Home.module.css";
 } */
+.container_stats {
+    display: flex;
+    height: 50rem;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 30rem;
+}
+
+.stat {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 14rem;
+    justify-content: flex-end;
+    width: 10rem;
+}
+
+.stat img {
+    /* width: 25%; */
+    width: 10rem;
+}
+
+.svg {
+    position: absolute;
+    z-index: -1;
+    fill: var(--blue);
+}
+
+.stat_yellow {
+    composes: svg;
+    fill: var(--yellow);
+}
+
+.stat_pink {
+    composes: svg;
+    fill: var(--pink);
+}
+
+.stat_blue {
+    composes: svg;
+    fill: var(--blue);
+}

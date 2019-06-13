@@ -1,7 +1,7 @@
 import React from "react";
 import { inject, observer } from "mobx-react";
 
-// import styles from "./Moods.module.css";
+import styles from "./Moods.module.css";
 
 const Moods = ({ uiStore, moodStore, storyStore }) => {
   const { currentCity } = uiStore;
@@ -21,10 +21,10 @@ const Moods = ({ uiStore, moodStore, storyStore }) => {
       <div className={"container_switch"}>
         <article className={"container_right"}>
           <h2 className={"title_small"}>How is {uiStore.currentCity} doing?</h2>
-          <ul>
+          <ul className={styles.container_stats}>
             {moodCounts
               ? Object.keys(moodCounts).map(key => (
-                  <li key={key}>
+                  <li className={styles.stat} key={key}>
                     <img
                       src={`../../assets/img/${resolveMood(key).name}.png`}
                       alt={`${resolveMood(key).name}`}
@@ -33,6 +33,21 @@ const Moods = ({ uiStore, moodStore, storyStore }) => {
                     {((moodCounts[key] / filteredStories.length) * 100).toFixed(
                       2
                     )}
+                    <svg
+                      width="100"
+                      height="10"
+                      className={
+                        resolveMood(key).name
+                          ? resolveMood(key).name === "happy"
+                            ? styles.stat_yellow
+                            : resolveMood(key).name === "sad"
+                            ? styles.stat_blue
+                            : styles.stat_pink
+                          : ""
+                      }
+                    >
+                      <rect width="100" height="10" />
+                    </svg>
                   </li>
                 ))
               : ""}
