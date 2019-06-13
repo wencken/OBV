@@ -8,16 +8,22 @@ import styles from "./Share.module.css";
 
 const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
   const { currentCity } = uiStore;
-  const { currentMood } = moodStore;
-  let mood = "";
+  const { currentMood, moods } = moodStore;
 
+  const getCurrentMoodId = () => {
+    const currentMoodObject = moods.filter(mood => mood.name === currentMood);
+    console.log(currentMood);
+    return currentMoodObject.id;
+  };
+
+  let gemoed = "";
+  // console.log(gemoed);
   const descriptionInput = React.createRef();
   const moodInput = React.createRef();
   const emailInput = React.createRef();
 
   const handleSubmit = e => {
     e.preventDefault();
-
     // if (!emailInput.current.value) {
     //   console.log("nog validatie toevoegen");
     // } else {
@@ -27,7 +33,7 @@ const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
 
     storyStore.addStory({
       description: descriptionInput.current.value,
-      moodId: mood,
+      moodId: gemoed,
       city: currentCity
     });
     emailStore.addEmail({
@@ -40,7 +46,8 @@ const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
 
   const setMood = e => {
     console.log("Mood selected:", e.currentTarget.value);
-    mood = e.currentTarget.value;
+    gemoed = e.currentTarget.value;
+    console.log(gemoed);
   };
 
   return (
@@ -115,21 +122,22 @@ const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
           {moodStore.moods.map(mood => (
             <li
               key={mood.id}
-              // className={
-              //   mood.name
-              //     ? mood.name === "happy"
-              //       ? `${styles.reverse}`
-              //       : mood.name === "sad"
-              //       ? `${styles.reverse}`
-              //       : `${styles.reverse}`
-              //     : "visually-hidden"
-              // }
+              className={
+                mood.id
+                  ? mood.id === gemoed
+                    ? "bg_blue"
+                    : // : mood.id === gemoed
+                      // ? `${styles.reverse}`
+                      // : `${styles.reverse}`
+                      "visually-hidden"
+                  : "visually-hidden"
+              }
             >
               <label
                 htmlFor="description"
                 className={
-                  mood.id
-                    ? mood.id === "happy"
+                  mood.name
+                    ? mood.name === "happy"
                       ? `${styles.reverse}`
                       : mood.name === "sad"
                       ? `${styles.reverse}`
