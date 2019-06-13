@@ -19,7 +19,7 @@ const Stories = ({ uiStore, moodStore, storyStore }) => {
 
   return (
     <>
-      <article className={"container_right"}>
+      <section className={"container_right"}>
         <h2 className={"visually-hidden"}>All Stories</h2>
         {filteredStories.length > 0 ? (
           <article
@@ -33,14 +33,18 @@ const Stories = ({ uiStore, moodStore, storyStore }) => {
                 : `${styles.container} border_black bg_white`
             }
           >
-            <h3 className={"title_small color_yellow"}>Verhalen van de week</h3>
-            {filteredStories.slice(0, 6).map(story => (
-              <Vote
-                key={story.id}
-                story={story}
-                onVote={storyStore.voteStory}
-              />
-            ))}
+            <h3 className={`${styles.center} title_small color_yellow`}>
+              Verhalen van de week
+            </h3>
+            <div className={styles.container_stories}>
+              {filteredStories.slice(0, 6).map(story => (
+                <Vote
+                  key={story.id}
+                  story={story}
+                  onVote={storyStore.voteStory}
+                />
+              ))}
+            </div>
           </article>
         ) : (
           <p>No stories</p>
@@ -48,7 +52,7 @@ const Stories = ({ uiStore, moodStore, storyStore }) => {
         <Link to="/share" className={styles.btn_yellow}>
           Tell us your story
         </Link>
-      </article>
+      </section>
     </>
   );
 };

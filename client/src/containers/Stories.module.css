@@ -1,3 +1,7 @@
+.center {
+    text-align: center;
+    padding-top: 2rem;
+}
 .btn_yellow {
     composes: btn from "../styles/layout.module.css";
     composes: bg_yellow from "../styles/colors.module.css";
@@ -7,15 +11,22 @@
 .container {
     width: 100%;
 }
-
+.container_stories{
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
 
 /* VOTE */
 .vote_button {
     outline: none;
-
 }
 
 .container_vote {
-    display: flex;
-    
+    display: block;
+    flex-grow: 1;
+    width: 30rem;
+    padding: 2rem;
 }

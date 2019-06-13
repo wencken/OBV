@@ -7,30 +7,28 @@ class Vote extends Component {
   render() {
     const { story, onVote, currentMood } = this.props;
     return (
-      <ul className={styles.container_vote}>
-        <li>{story.description}</li>
-        {/* <li>{story.mood ? story.mood.name : ""}</li>
-        <li>{story.city}</li> */}
-        <li>
-          <button
-            className={
-              currentMood
-                ? currentMood === "happy"
-                  ? `${styles.vote_button} border_yellow bg_white`
-                  : currentMood === "sad"
-                  ? `${styles.vote_button} border_blue bg_white`
-                  : `${styles.vote_button} border_pink bg_white`
-                : `${styles.vote_button} border_black bg_white`
-            }
-            onClick={() => onVote(story)}
-          >
-            {story.rate}{" "}
-            <span role="img" aria-label="poop">
-              💩
-            </span>
-          </button>
-        </li>
-      </ul>
+      <article className={styles.container_vote}>
+        <h4>{story.description}</h4>
+        {/* <p>{story.mood ? story.mood.name : ""}</p>
+        <p>{story.city}</p> */}
+        <button
+          className={
+            currentMood
+              ? currentMood === "happy"
+                ? `${styles.vote_button} border_yellow bg_white`
+                : currentMood === "sad"
+                ? `${styles.vote_button} border_blue bg_white`
+                : `${styles.vote_button} border_pink bg_white`
+              : `${styles.vote_button} border_black bg_white`
+          }
+          onClick={() => onVote(story)}
+        >
+          {story.rate}{" "}
+          <span role="img" aria-label="poop">
+            💩
+          </span>
+        </button>
+      </article>
     );
   }
 }
