@@ -19,7 +19,7 @@ const Moods = ({ uiStore, moodStore, storyStore }) => {
   return (
     <>
       <div className={"container_switch"}>
-        <div className={"container_right"}>
+        <article className={"container_right"}>
           <h2 className={"title_small"}>How is {uiStore.currentCity} doing?</h2>
           <ul>
             {moodCounts
@@ -33,7 +33,7 @@ const Moods = ({ uiStore, moodStore, storyStore }) => {
                 ))
               : ""}
           </ul>
-        </div>
+        </article>
         <div className={"container_aside"}>
           <article className={"btn_listen bg_black color_white"}>
             <img

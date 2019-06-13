@@ -1,0 +1,5 @@
+.btn_black {
+    composes: btn from "../styles/layout.module.css";
+    composes: bg_black from "../styles/colors.module.css";
+    composes: color_white from "../styles/colors.module.css";
+  }
