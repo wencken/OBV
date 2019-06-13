@@ -4,7 +4,7 @@ import { getUserFromCookie } from "../utils/index.js";
 
 class UiStore {
   authUser = null;
-  currentCity = "";
+  currentCity = "Ghent";
 
   constructor(rootStore) {
     this.rootStore = rootStore;

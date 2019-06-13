@@ -16,7 +16,7 @@ const Moods = ({ uiStore, moodStore, storyStore }) => {
 
   return (
     <>
-      <h2>How are we doing?</h2>
+      <h2>How is {uiStore.currentCity} doing?</h2>
       <article className={"btn_listen bg_black color_white"}>
         <img
           src="../../assets/img/headphones2.png"

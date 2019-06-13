@@ -47,12 +47,12 @@ class Filter extends Component {
                 className={
                   currentMood
                     ? currentMood === "sad"
-                      ? ""
+                      ? "color_black"
                       : "visually-hidden"
                     : "visually-hidden"
                 }
               >
-                {city} is feeling span{" "}
+                We are feeling span{" "}
                 <span className={"text_bold"}>teardrop-sad</span> this week.
                 #elections19 #blacksunday #shame
               </li>
@@ -60,12 +60,12 @@ class Filter extends Component {
                 className={
                   currentMood
                     ? currentMood === "happy"
-                      ? ""
+                      ? "color_black"
                       : "visually-hidden"
                     : "visually-hidden"
                 }
               >
-                {city} is feeling{" "}
+                We are feeling{" "}
                 <span className={"text_bold"}>sunkissed-happy</span> this week.
                 #joy #summer #sfinksmixedfestival
               </li>
@@ -78,7 +78,7 @@ class Filter extends Component {
                     : "visually-hidden"
                 }
               >
-                {city} is feeling{" "}
+                We are feeling{" "}
                 <span className={"text_bold"}>darkred-angry</span> this week.
                 #shame #RIP #women #justice #julie
               </li>

@@ -42,7 +42,7 @@ const Information = () => {
           </p>
           <p>
             But still don't know what to write?{" "}
-            <span className={"text_bold"}>Get inspired{""}</span>by others.
+            <span className={"text_bold"}>Get inspired </span> by others.
           </p>
           <p>
             Because <span className={"text_bold"}>your story matters</span>! Say
