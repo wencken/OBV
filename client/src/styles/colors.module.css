@@ -26,6 +26,8 @@
     color: var(--yellow);
 }
 
+/* BACKGROUND-COLORS */
+
 .bg_black {
     background-color: var(--black);
 }
@@ -45,6 +47,9 @@
 .bg_yellow {
     background-color: var(--yellow);
 }
+
+
+/* BORDERS */
 
 .border_black {
     border: 0.2rem solid var(--black);

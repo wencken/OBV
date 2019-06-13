@@ -1,19 +1,11 @@
-/* .visually_hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
-} */
-
 .container{
   display: flex;
 }
 /*titel*/
-.center {
+.center { /* niet? */
   text-align: center;
-}
+} 
+
 .reverse{
   display: flex;
   flex-flow: column;
@@ -85,7 +77,7 @@
   padding: 2rem;
   width: 54rem
 }
-.checkbox{
+.checkbox{ /* niet? */
   display: flex;  
   align-items: center;
 }
@@ -98,7 +90,7 @@
 }
 
 /* email */
-.email{
+.email{ /* niet? */
   background-color: #F3F3F3;
   outline: none;
   border: none;

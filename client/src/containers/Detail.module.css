@@ -1,28 +1,53 @@
-.container_button{
-  display: flex;
-  justify-content: center;
-}
-/* buttons */
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 15rem;
-  height: 5rem;
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-top: 2rem;
-}
 
-/**/
 .button_list{ 
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  width: 20rem;
-  height: 20rem;
+
+  width: 100%;
+  height: 100%;
   text-align: center;
-  padding: 2rem;
-  border: .2rem solid black;
+  padding: 3rem 2rem;
+}
+
+/* WANT HIJ NEEMT DE COMBO VAN STYLES.KLASSE MET GLOBALE KLASSES NIET */
+.btn_bg_yellow {
+  composes: button_list;
+  composes: bg_yellow from "../styles/colors.module.css";
+}
+.btn_bg_pink {
+  composes: button_list;
+  composes: bg_pink from "../styles/colors.module.css";
+}
+.btn_bg_blue {
+  composes: button_list;
+  composes: bg_blue from "../styles/colors.module.css";
+}
+
+.btn_border_yellow {
+  composes: button_list;
+  composes: border_yellow from "../styles/colors.module.css";
+}
+.btn_border_pink {
+  composes: button_list;
+  composes: border_pink from "../styles/colors.module.css";
+}
+.btn_border_blue {
+  composes: button_list;
+  composes: border_blue from "../styles/colors.module.css";
+}
+
+/* STANDAARD BTNS */
+
+.btn_white {
+  composes: btn from "../styles/layout.module.css";
+  composes: bg_white from "../styles/colors.module.css";
+  composes: color_black from "../styles/colors.module.css";
+}
+
+.btn_black {
+  composes: btn from "../styles/layout.module.css";
+  composes: bg_black from "../styles/colors.module.css";
+  composes: color_white from "../styles/colors.module.css";
 }
