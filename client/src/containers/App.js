@@ -41,7 +41,7 @@ class App extends Component {
             <Route path={ROUTES.storyadmin} component={StoryAdmin} />
             <Route path={ROUTES.kandidaten} component={Kandidaten} />
 
-            <Route path={ROUTES.register} component={Register} />
+            {/* <Route path={ROUTES.register} component={Register} /> */}
           </Switch>
         </main>
         <Footer />
