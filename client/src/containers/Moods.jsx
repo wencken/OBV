@@ -3,16 +3,16 @@ import { inject, observer } from "mobx-react";
 
 const Moods = ({ uiStore, moodStore, storyStore }) => {
   const { currentCity } = uiStore;
-  const { moods } = moodStore;
+  const { moodCounts, resolveMood } = moodStore;
   const { stories } = storyStore;
+
+  console.log(moodCounts);
 
   const filterStories = city => {
     return stories.filter(story => story.city === city);
   };
 
   const filteredStories = filterStories(currentCity);
-
-  // moods.map(({ total }) => console.log(total));
 
   return (
     <>
@@ -29,22 +29,15 @@ const Moods = ({ uiStore, moodStore, storyStore }) => {
         <p className={"navTitle"}>Macbeth</p>
         <button>Listen here</button>
       </article>
-      {/* <ul>
+      <ul>
         {moodCounts
           ? Object.keys(moodCounts).map(key => (
               <li key={key}>
-                {key}: {moodCounts[key]}
+                {resolveMood(key).name}:
+                {((moodCounts[key] / filteredStories.length) * 100).toFixed(2)}
               </li>
             ))
           : ""}
-      </ul> */}
-      <ul>
-        {moods.map(mood => (
-          <li key={mood.id}>
-            {/* {mood.name}: {countMood(filteredStories, mood)}% */}
-            {mood.name}
-          </li>
-        ))}
       </ul>
     </>
   );

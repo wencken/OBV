@@ -140,8 +140,8 @@ const Home = ({ uiStore, storyStore, moodStore }) => {
             {currentCity}
           </h2>
           <p>
-            Top 10 van de {stories.length} verhalen uit {currentMood}(mood) van{" "}
-            {currentCity}:
+            Top 10 van de {filteredStories.length} verhalen uit {currentMood}
+            (mood) van {currentCity}:
           </p>
           {sortedStories.length > 0 ? (
             <div>
