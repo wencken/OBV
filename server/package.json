@@ -2,7 +2,8 @@
   "name": "server",
   "version": "1.0.0",
   "engines": {
-    "node": "11.4.0"
+    "node": "11.4.0",
+    "yarn": "1.10.1"
   },
   "main": "index.js",
   "license": "MIT",
