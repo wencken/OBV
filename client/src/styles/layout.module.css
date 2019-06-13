@@ -11,7 +11,11 @@
     border: none;
   }
 
+  /* KLASSES VOOR DE LISTEN */
+
 .btn_listen {
+    /* dit is de klasse voor de volledige container (article) van Listen 
+    te combineren met een bg en color kleur */
     height: 19rem;
     width: 19rem;
     display: flex;
@@ -19,4 +23,96 @@
     justify-content: space-around;
     align-items: center;
     padding: 1.5rem;
+}
+
+.listenHere {
+    /* Dit is de klasse van de button zelf (Listen Here), 
+    te combineren met btn_black
+    zie Home voor voorbeeld
+     */
+
+    margin-top: 0;
+    height: 3rem;
+  
+    display: flex;
+    justify-content: space-between;
+    width: 17rem;
+
+    background-color: var(--black);
+    color: var(--white);
+
+    /* Eigenschappen van button: */
+    align-items: center;
+
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 0 2rem;
+    border: none;
+  }
+
+  .icon{
+      /* de klasse voor de container van het icon */
+    width:2rem;
+    height:2rem;
+    position:relative;
+    z-index:2;
+    border-radius: 20rem;
+    background-color: var(--white);
+  }
+  
+  .playIcon{
+      /* play button */
+    position:absolute;
+    margin-top: 0.5rem;
+    margin-left: -0.3rem;
+    border-left:0.8rem solid var(--black);
+    border-top:0.5rem dashed transparent;
+    border-bottom:0.5rem dashed transparent;
+  }
+  
+  .pauseIcon{
+      /* pause button */
+    position:absolute;
+    margin-top: 0.5rem;
+    margin-left: -0.3rem;
+    border-left:0.2rem solid var(--black);
+    border-right:0.2rem solid var(--black);
+    width: 0.6rem;
+    height: 1rem;
+  }
+
+
+  /* KLASSES VOOR CONTAINERS */
+.container_switch {
+    /* Grote container met daarin de aside en de right die worden geswitchet */
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    justify-content: space-between; /* !! */
+}
+
+.container_right {
+    /* Container voor hoofdcontent met titel etc. in */
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.container_aside {
+    /* Container voor linkse blok met daarin Listen en container_facts  */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    width: 19rem; /* !! */
+    height: 54.2rem;
+}
+
+.container_facts {
+    /* Container voor content onder Listen (bv aside) */
+    padding: 4rem;
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
 }

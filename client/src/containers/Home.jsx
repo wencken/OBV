@@ -36,7 +36,7 @@ const Home = ({ uiStore, storyStore, moodStore }) => {
   return (
     <>
       <div className={styles.container_main}>
-        <div className={styles.container_left}>
+        <div className={"container_switch"}>
           <div>
             <article
               className={
@@ -93,7 +93,7 @@ const Home = ({ uiStore, storyStore, moodStore }) => {
               </article>
             </article>
           </div>
-          <div className={styles.container_aside}>
+          <div className={"container_aside"}>
             <article className={"btn_listen bg_black color_white"}>
               <img
                 src="../../assets/img/headphones2.png"
@@ -105,16 +105,17 @@ const Home = ({ uiStore, storyStore, moodStore }) => {
               <p className={"text_small"}>Now Playing</p>
               <p className={"navTitle"}>Macbeth</p>
 
-              <button className={styles.listenHere}>
+              <button className={"listenHere"}>
                 {" "}
-                <span className={styles.icon}>
-                  {/* <span className={styles.playIcon} /> */}
-                  <span className={styles.pauseIcon} />
+                <span className={"icon"}>
+                  <span className={"playIcon"} />
+                  <span className={"pauseIcon"} />
                 </span>{" "}
                 <span>Listen here</span>
               </button>
             </article>
-            <aside className={styles.container_facts}>
+
+            <aside className={"container_facts"}>
               <h2 className={"visually-hidden"}>Facts</h2>
               <div>
                 <p className="title_small">{stories.length}</p>

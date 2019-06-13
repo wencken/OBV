@@ -11,10 +11,11 @@
   justify-content: space-between;
 }
 
-.container_left {
+/* .container_switch {
   display: flex;
   flex-flow: row-reverse nowrap;
-}
+  justify-content: space-between; /* !!
+} */
 
 .container_intro {
   composes: container;
@@ -54,56 +55,14 @@
   composes: color_white from "../styles/colors.module.css";
 }
 
-.container_aside {
+/* .container_aside {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
-}
+  width: 19rem; /* !! + height?
+} */
 
-.icon{
-  width:2rem;
-  height:2rem;
-  position:relative;
-  /* float:left;
-  margin-left:5rem;
-  margin-top:3rem; */
-  z-index:2;
-  border-radius: 20rem;
-  composes: bg_white from "../styles/colors.module.css";
-}
-
-/* Play Pause Icon CSS*/
-.playIcon{
-  position:absolute;
-  margin-top: 0.5rem;
-  margin-left: -0.3rem;
-  border-left:0.8rem solid var(--black);
-  /* border-right:1rem dashed transparent; */
-  border-top:0.5rem dashed transparent;
-  border-bottom:0.5rem dashed transparent;
-}
-
-.pauseIcon{
-  position:absolute;
-  margin-top: 0.5rem;
-  margin-left: -0.3rem;
-  border-left:0.2rem solid var(--black);
-  border-right:0.2rem solid var(--black);
-  width: 0.6rem;
-  height: 1rem;
-}
-
-.listenHere {
-  composes: btn_black;
-  margin-top: 0;
-  height: 3rem;
-
-  display: flex;
-  justify-content: space-between;
-  width: 17rem;
-}
-
-.container_facts {
+/* .container_facts {
   composes: container;
 
   flex-grow: 1;
@@ -112,9 +71,9 @@
   justify-content: space-around;
   align-items: center;
   height: 30rem;
-}
+} */
 
-.container_facts div {
+aside div {
   display: flex;
   flex-flow: column nowrap;
 
