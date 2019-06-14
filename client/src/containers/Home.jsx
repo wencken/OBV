@@ -5,23 +5,10 @@ import Muziek from "../components/Muziek";
 
 import styles from "./Home.module.css";
 
-// import love from "./assets/img/love.jpg";
-// import pee from "../../assets/img/pee.jpg";
-// import tag from "../../assets/img/tag.jpg";
-// import whoever from "../../assets/img/whoever.jpg";
-
 const Home = ({ uiStore, storyStore, moodStore }) => {
   const { stories } = storyStore;
   const { moods, currentMood } = moodStore;
   console.log(moods);
-
-  const toggleStories = event => {
-    if (event.target.classList.contains("toggle_animation")) {
-      event.target.classList.remove("toggle_animation");
-    } else {
-      event.target.classList.add("toggle_animation");
-    }
-  };
 
   const { currentCity } = uiStore;
 
@@ -45,7 +32,7 @@ const Home = ({ uiStore, storyStore, moodStore }) => {
     <>
       <div className={styles.container_main}>
         <div className={"container_switch"}>
-          <div>
+          <div className={styles.container_wrapper}>
             <article
               className={
                 currentMood
@@ -127,7 +114,6 @@ const Home = ({ uiStore, storyStore, moodStore }) => {
           className={`
         ${styles.container_stories}
         `}
-          onClick={e => toggleStories(e)}
         >
           <button className={`${styles.toggle}`}>VVVVVVVVV</button>
           <div

@@ -31,10 +31,42 @@ nav {
 .navTitle {
   composes: navTitle from "../styles/typo.module.css";
   color: var(--black);
-  padding: 0 1rem;
+  margin: 2rem;
+  border-bottom: 4px solid white;
 }
 
-.navTitle:hover {
-  font-weight: bold;
-  /* transition: 0.2s ease-out; */
+.hover_blue:hover{
+  border-bottom: 4px solid var(--blue);
+}
+
+.hover_red:hover{
+  border-bottom: 4px solid var(--red);
+}
+
+.hover_yellow:hover{
+  border-bottom: 4px solid var(--yellow);
+}
+
+.active_blue{
+  border-bottom: 4px solid var(--blue);
+}
+
+.active_red{
+  border-bottom: 4px solid var(--red);
+}
+
+.active_yellow{
+  border-bottom: 4px solid var(--yellow);
+}
+
+.mainTitle{
+  text-align: left;
+  margin: 0;
+  margin-top:-3rem;
+  background: url(/assets/img/logo.jpg);
+  min-height: 18rem;
+  max-width: 14rem;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
 }

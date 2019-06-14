@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 
 import CheckBox from "../components/CheckBox";
 import styles from "./Share.module.css";
+import Muziek from "../components/Muziek";
 
 const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
   const { currentCity } = uiStore;
@@ -113,6 +114,7 @@ const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
                 ))}
               </ul>
             )}
+
             <div className={styles.form_rechts}>
               <ul>
                 {moodStore.moods.map(mood => (
@@ -189,26 +191,7 @@ const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
         </article>
 
         <div className={"container_aside"}>
-          <article className={"btn_listen bg_black color_white"}>
-            <img
-              src="../../assets/img/headphones2.png"
-              alt="White headphones with soundwaves"
-              width="50"
-              height="59"
-            />
-            <h2 className={"visually-hidden"}>Listen</h2>
-            <p className={"text_small"}>Now Playing</p>
-            <p className={"navTitle"}>Macbeth</p>
-
-            <button className={"listenHere"}>
-              {" "}
-              <span className={"icon"}>
-                <span className={"playIcon"} />
-                <span className={"pauseIcon"} />
-              </span>{" "}
-              <span>Listen here</span>
-            </button>
-          </article>
+          <Muziek />
         </div>
       </div>
     </>

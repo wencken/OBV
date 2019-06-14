@@ -117,7 +117,7 @@
     /* Container voor linkse blok met daarin Listen en container_facts  */
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     width: 19rem; /* !! */
     height: 54.2rem;
 }
