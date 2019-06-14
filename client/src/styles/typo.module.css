@@ -71,6 +71,7 @@
 }
 
 .text_italic {
+    font-style: italic;
 }
 
 .text_underline {
@@ -81,3 +82,14 @@
     text-transform: uppercase;
 }
 
+.text_line {
+    text-decoration: line-through;
+}
+
+.text_dark {
+    font-size: 11.4rem;
+    font-weight: bold;
+    color: black;
+    -webkit-text-stroke: 0.2rem var(--black);
+    paint-order: stroke fill;
+}

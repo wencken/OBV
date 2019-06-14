@@ -24,24 +24,24 @@ const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // if (!emailInput.current.value) {
-    //   console.log("nog validatie toevoegen");
-    // } else {
-    console.log(e.currentTarget);
+    if (!emailInput.current.value) {
+      console.log("nog validatie toevoegen");
+    } else {
+      console.log(e.currentTarget);
 
-    history.push(ROUTES.succeed);
+      history.push(ROUTES.succeed);
 
-    storyStore.addStory({
-      description: descriptionInput.current.value,
-      moodId: gemoed,
-      city: currentCity
-    });
-    emailStore.addEmail({
-      email: emailInput.current.value
-    });
-    descriptionInput.current.value = "";
-    emailInput.current.value = "";
-    // }
+      storyStore.addStory({
+        description: descriptionInput.current.value,
+        moodId: gemoed,
+        city: currentCity
+      });
+      emailStore.addEmail({
+        email: emailInput.current.value
+      });
+      descriptionInput.current.value = "";
+      emailInput.current.value = "";
+    }
   };
 
   const setMood = e => {
