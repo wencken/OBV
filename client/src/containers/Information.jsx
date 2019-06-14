@@ -35,20 +35,19 @@ class Information extends Component {
                   <span className={"text_bold"}>
                     best international opera house
                   </span>
-                  {this.props.uiStore.currentCity === "Antwerp" ? (
-                    <img
-                      src="../../assets/img/Antwerp-kaart.jpg"
-                      alt="Kaart van Antwerp"
-                    />
-                  ) : (
-                    <img
-                      src="../../assets/img/Ghent-kaart.jpg"
-                      alt="map of Ghent"
-                    />
-                  )}
                 </p>
               </article>
-              <img src="" alt="" />
+              {this.props.uiStore.currentCity === "Antwerp" ? (
+                <img
+                  src="../../assets/img/Antwerp-kaart.jpg"
+                  alt="Kaart van Antwerp"
+                />
+              ) : (
+                <img
+                  src="../../assets/img/Ghent-kaart.jpg"
+                  alt="map of Ghent"
+                />
+              )}
             </div>
           </article>
 
