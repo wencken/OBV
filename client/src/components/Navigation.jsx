@@ -44,33 +44,151 @@ const Navigation = ({ uiStore, moodStore }) => {
       ) : (
         <ul className={styles.container_nav_main}>
           <li>
-            <NavLink className={styles.navTitle} exact={true} to={ROUTES.home}>
-              De Derde Boodschap
+            <NavLink
+              activeClassName={
+                currentMood
+                  ? currentMood === "happy"
+                    ? `${styles.active_yellow}`
+                    : currentMood === "sad"
+                    ? `${styles.active_blue}`
+                    : `${styles.active_mad}`
+                  : `${styles.active_blue}`
+              }
+              className={
+                currentMood
+                  ? currentMood === "happy"
+                    ? `${styles.hover_yellow} ${styles.navTitle} ${
+                        styles.mainTitle
+                      }`
+                    : currentMood === "sad"
+                    ? `${styles.hover_blue} ${styles.navTitle} ${
+                        styles.mainTitle
+                      } `
+                    : `${styles.hover_mad} ${styles.navTitle} ${
+                        styles.mainTitle
+                      }`
+                  : `${styles.hover_blue} ${styles.navTitle} ${
+                      styles.mainTitle
+                    }`
+              }
+              exact={true}
+              to={ROUTES.home}
+            >
+              De Derde <br /> Boodschap
             </NavLink>
           </li>
           <div className={styles.container_nav}>
             <li>
-              <NavLink className={styles.navTitle} to={ROUTES.stories}>
+              <NavLink
+                activeClassName={
+                  currentMood
+                    ? currentMood === "happy"
+                      ? `${styles.active_yellow}`
+                      : currentMood === "sad"
+                      ? `${styles.active_blue}`
+                      : `${styles.active_mad}`
+                    : `${styles.active_blue}`
+                }
+                className={
+                  currentMood
+                    ? currentMood === "happy"
+                      ? `${styles.hover_yellow} ${styles.navTitle}`
+                      : currentMood === "sad"
+                      ? `${styles.hover_blue} ${styles.navTitle} `
+                      : `${styles.hover_mad} ${styles.navTitle}`
+                    : `${styles.hover_blue} ${styles.navTitle}`
+                }
+                to={ROUTES.stories}
+              >
                 Stories
               </NavLink>
             </li>
             <li>
-              <NavLink className={styles.navTitle} to={ROUTES.mood}>
+              <NavLink
+                activeClassName={
+                  currentMood
+                    ? currentMood === "happy"
+                      ? `${styles.active_yellow}`
+                      : currentMood === "sad"
+                      ? `${styles.active_blue}`
+                      : `${styles.active_mad}`
+                    : `${styles.active_blue}`
+                }
+                className={
+                  currentMood
+                    ? currentMood === "happy"
+                      ? `${styles.hover_yellow} ${styles.navTitle}`
+                      : currentMood === "sad"
+                      ? `${styles.hover_blue} ${styles.navTitle} `
+                      : `${styles.hover_mad} ${styles.navTitle}`
+                    : `${styles.hover_blue} ${styles.navTitle}`
+                }
+                to={ROUTES.mood}
+              >
                 Mood
               </NavLink>
             </li>
             <li>
-              <NavLink className={styles.navTitle} to={ROUTES.detail}>
+              <NavLink
+                activeClassName={
+                  currentMood
+                    ? currentMood === "happy"
+                      ? `${styles.active_yellow}`
+                      : currentMood === "sad"
+                      ? `${styles.active_blue}`
+                      : `${styles.active_mad}`
+                    : `${styles.active_blue}`
+                }
+                className={
+                  currentMood
+                    ? currentMood === "happy"
+                      ? `${styles.hover_yellow} ${styles.navTitle}`
+                      : currentMood === "sad"
+                      ? `${styles.hover_blue} ${styles.navTitle} `
+                      : `${styles.hover_mad} ${styles.navTitle}`
+                    : `${styles.hover_blue} ${styles.navTitle}`
+                }
+                to={ROUTES.detail}
+              >
                 Macbeth
               </NavLink>
             </li>
             <li>
-              <NavLink className={styles.navTitle} to={ROUTES.information}>
+              <NavLink
+                activeClassName={
+                  currentMood
+                    ? currentMood === "happy"
+                      ? `${styles.active_yellow}`
+                      : currentMood === "sad"
+                      ? `${styles.active_blue}`
+                      : `${styles.active_mad}`
+                    : `${styles.active_blue}`
+                }
+                className={
+                  currentMood
+                    ? currentMood === "happy"
+                      ? `${styles.hover_yellow} ${styles.navTitle}`
+                      : currentMood === "sad"
+                      ? `${styles.hover_blue} ${styles.navTitle} `
+                      : `${styles.hover_mad} ${styles.navTitle}`
+                    : `${styles.hover_blue} ${styles.navTitle}`
+                }
+                to={ROUTES.information}
+              >
                 What's this?
               </NavLink>
             </li>
             <li>
               <NavLink
+                activeClassName={
+                  currentMood
+                    ? currentMood === "happy"
+                      ? `${styles.active_yellow}`
+                      : currentMood === "sad"
+                      ? `${styles.active_blue}`
+                      : `${styles.active_mad}`
+                    : `${styles.active_blue}`
+                }
                 className={
                   currentMood
                     ? currentMood === "happy"
