@@ -20,10 +20,13 @@
 .container_intro {
   composes: container;
   width: 36vw;
-  min-width: 61rem;
+  min-width: 100%;
   max-height: 65vh;
 }
 
+.container_wrapper{
+  max-width: 61rem;
+}
 
 .container_ctas {
   display: flex;
@@ -104,26 +107,16 @@ aside div {
 }
 
 .container_stories {
-  position: absolute;
+  position: fixed;
   float:right;
   right:0;
+  transform: translateX(130rem) translateY(11.5rem);
+  transition: 0.3s transform ease-out;
 }
 
-.toggle_animation{
-  transform: translateY(11.5rem);
-  background: blue;
-}
-
-.container_stories:before {
-  content:" ";
-  display: block;
-  position: absolute;
-  background: red;
-  width: 10rem;
-  height: 27rem;
-  margin-top: 15rem;
-  margin-left: -8rem;
-  z-index: 100;
+.container_stories:hover {
+  transform: translateX(0) translateY(11.5rem);
+  transition: 0.5s transform ease-out;
 }
 
 .more_button{
