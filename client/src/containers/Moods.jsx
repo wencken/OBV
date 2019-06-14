@@ -5,10 +5,13 @@ import styles from "./Moods.module.css";
 
 const Moods = ({ uiStore, moodStore, storyStore }) => {
   const { currentCity } = uiStore;
-  const { moodCounts, resolveMood } = moodStore;
   const { stories } = storyStore;
+  const { moodCounts, resolveMood, currentMood } = moodStore;
 
   console.log(moodCounts);
+
+  const test = currentMood;
+  console.log(test);
 
   const filterStories = city => {
     return stories.filter(story => story.city === city);

@@ -38,7 +38,7 @@ class MoodStore {
       .then(moodValues => newMood.updateFromServer(moodValues));
   };
 
-  get currentMood() {
+  getAmounts = () => {
     const city = this.rootStore.uiStore.currentCity;
     console.log(city);
 
@@ -53,11 +53,17 @@ class MoodStore {
         a[key]++;
         return a;
       }, {});
-
+    console.log(amounts);
     this.moodCounts = amounts;
 
-    const maxMoodId = Object.keys(amounts).reduce(
-      (c, d) => (amounts[c] > amounts[d] ? c : d),
+    return amounts;
+  };
+
+  get currentMood() {
+    const amountsObject = this.getAmounts();
+
+    const maxMoodId = Object.keys(amountsObject).reduce(
+      (c, d) => (amountsObject[c] > amountsObject[d] ? c : d),
       0
     );
     console.log(maxMoodId);
@@ -77,10 +83,8 @@ class MoodStore {
 
 decorate(MoodStore, {
   moods: observable,
-  moodCounts: observable,
   //
   addMood: action,
-  countMoods: action,
   currentMood: computed,
   //
   updateMood: action,
