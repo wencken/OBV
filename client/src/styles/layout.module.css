@@ -21,8 +21,9 @@
     font-size: 1.8rem;
     font-weight: bold;
     margin-top: 2rem;
-    padding: 0 2rem;
+    padding: 1.4rem 1.5rem 1rem;
     border: none;
+    display: inline-block;
   }
 
   /* KLASSES VOOR DE LISTEN */

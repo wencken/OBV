@@ -19,7 +19,7 @@ class CheckBox extends Component {
   render() {
     const { showContent } = this.state;
     const { emailInput } = this.props;
-    // const mood = this.props.moodStore;
+    const mood = this.props.moodStore;
     return (
       <>
         <label

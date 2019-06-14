@@ -14,7 +14,9 @@ class CarouselSlide extends Component {
         <h3 className={styles.carousel_slide__title}>
           {this.props.slide.title}
         </h3>
-        <p className={styles.carousel_slide__text}>{this.props.slide.text}</p>
+        <p className={`${styles.carousel_slide__text} text_normal`}>
+          {this.props.slide.text}
+        </p>
       </li>
     );
   }

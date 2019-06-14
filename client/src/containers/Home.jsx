@@ -152,8 +152,6 @@ const Home = ({ uiStore, storyStore, moodStore }) => {
               sortedStories.slice(0, 4).map(story => (
                 <ul key={story.id} className={styles.reverse}>
                   <li>{story.description}</li>
-                  <li>- {story.mood ? story.mood.name : ""}</li>
-                  <li>- {story.rate}</li>
                 </ul>
               ))
             ) : (

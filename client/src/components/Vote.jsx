@@ -8,7 +8,7 @@ class Vote extends Component {
     const { story, onVote, currentMood } = this.props;
     return (
       <article className={styles.container_vote}>
-        <h4>{story.description}</h4>
+        <p className={"text_normal"}>{story.description}</p>
         {/* <p>{story.mood ? story.mood.name : ""}</p>
         <p>{story.city}</p> */}
         <button

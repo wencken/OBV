@@ -35,9 +35,7 @@ class Filter extends Component {
         >
           <article className={styles.article_mood}>
             <ul>
-              <li className={"text_bold"}>
-                Share your story and let us know how you feel.
-              </li>
+              <li className={"text_bold"} />
               <li
                 className={
                   currentMood

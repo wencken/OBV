@@ -66,7 +66,7 @@ class Carousel extends Component {
                 : currentMood === "sad"
                 ? `${styles.carousel_container} border_blue`
                 : `${styles.carousel_container} border_pink`
-              : styles.carousel_container
+              : `${styles.carousel_container} border_blue`
           }
         >
           <div className={styles.carousel}>
