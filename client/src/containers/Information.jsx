@@ -9,29 +9,30 @@ const Information = () => {
         <article className={"container_right"}>
           <h2 className={"title_small"}>What's this?</h2>
 
-          <div>
-            <p>
-              <span className={"text_bold"}>Write your story{""}</span>
-              on the wall of these amazing public toilets. Because you can!
-            </p>
-            <p>
-              But still don't know what to write?{" "}
-              <span className={"text_bold"}>Get inspired </span> by others.
-            </p>
-            <p>
-              Because <span className={"text_bold"}>your story matters</span>!
-              Say whatever you want (nobody knows who it's from)…
-            </p>
-            <p>
-              … and maybe you'll see your story on stage in the{" "}
-              <span className={"text_bold"}>
-                best international opera house
-              </span>
-              .
-            </p>
+          <div className={styles.container_content}>
+            <article>
+              <p className={styles.text}>
+                <span className={"text_bold"}>Write your story</span> on the
+                wall of these amazing public toilets. Because you can!
+              </p>
+              <p className={styles.text}>
+                But still don't know what to write?{" "}
+                <span className={"text_bold"}>Get inspired </span> by others.
+              </p>
+              <p className={styles.text}>
+                Because <span className={"text_bold"}>your story matters</span>!
+                Say whatever you want (nobody knows who it's from)…
+              </p>
+              <p className={styles.text}>
+                … and maybe you'll see your story on stage in the{" "}
+                <span className={"text_bold"}>
+                  best international opera house
+                </span>
+                .
+              </p>
+            </article>
+            <Map />
           </div>
-
-          <Map />
         </article>
 
         <div className={"container_aside"}>

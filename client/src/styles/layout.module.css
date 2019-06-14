@@ -1,4 +1,18 @@
-.btn {
+:global(:root) {
+  @custom-media --mobile screen and (min-width: 0);
+  @custom-media --tablet screen and (min-width: 375px);
+  @custom-media --desktop screen and (min-width: 1440px);
+
+}
+  /* aanspreken bv:
+  
+  @media (--mobile) { }
+  @media (--tablet) { }
+  @media (--desktop) { }
+  
+  */
+  
+  .btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,6 +110,7 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    min-height: 54.2rem;
 }
 
 .container_aside {
@@ -116,15 +131,3 @@
     justify-content: space-around;
     align-items: center;
 }
-
-@custom-media --mobile screen and (min-width: 0);
-@custom-media --tablet screen and (min-width: 375px);
-@custom-media --desktop screen and (min-width: 1440px);
-
-/* aanspreken bv:
-
-@media (--mobile) { }
-@media (--tablet) { }
-@media (--desktop) { }
-
-*/

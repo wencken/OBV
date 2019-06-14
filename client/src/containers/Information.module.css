@@ -3,3 +3,13 @@
     composes: bg_black from "../styles/colors.module.css";
     composes: color_white from "../styles/colors.module.css";
   }
+.text{
+  width:40rem;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+
+.container_content{
+  display: flex;
+  flex-wrap: wrap;
+}
