@@ -29,13 +29,12 @@ const Moods = ({ uiStore, moodStore, storyStore }) => {
                       src={`../../assets/img/${resolveMood(key).name}.png`}
                       alt={`${resolveMood(key).name}`}
                     />
-                    {resolveMood(key).name}:
-                    {((moodCounts[key] / filteredStories.length) * 100).toFixed(
-                      2
-                    )}
                     <svg
                       width="100"
-                      height="10"
+                      height={(
+                        (moodCounts[key] / filteredStories.length) *
+                        400
+                      ).toFixed(0)}
                       className={
                         resolveMood(key).name
                           ? resolveMood(key).name === "happy"
@@ -46,8 +45,21 @@ const Moods = ({ uiStore, moodStore, storyStore }) => {
                           : ""
                       }
                     >
-                      <rect width="100" height="10" />
+                      <rect
+                        width="100"
+                        height={(
+                          (moodCounts[key] / filteredStories.length) *
+                          400
+                        ).toFixed(0)}
+                      />
                     </svg>
+                    <span>
+                      {(
+                        (moodCounts[key] / filteredStories.length) *
+                        100
+                      ).toFixed(0)}
+                      %
+                    </span>
                   </li>
                 ))
               : ""}
