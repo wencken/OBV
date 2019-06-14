@@ -11,11 +11,11 @@ const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
   const { currentCity } = uiStore;
   const { currentMood, moods } = moodStore;
 
-  const getCurrentMoodId = () => {
-    const currentMoodObject = moods.filter(mood => mood.name === currentMood);
-    console.log(currentMood);
-    return currentMoodObject.id;
-  };
+  // const getCurrentMoodId = () => {
+  //   const currentMoodObject = moods.filter(mood => mood.name === currentMood);
+  //   console.log(currentMood);
+  //   return currentMoodObject.id;
+  // };
 
   let gemoed = "";
   console.log(gemoed);
@@ -117,68 +117,70 @@ const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
 
             <div className={styles.form_rechts}>
               <ul>
-                {moodStore.moods.map(mood => (
-                  <li
-                    key={mood.id}
-                    className={styles.textarea_li}
+                {/* {moodStore.moods.map(mood => ( */}
+                <li
+                  // key={mood.id}
+                  className={styles.textarea_li}
+                  // className={
+                  //   gemoed
+                  //     ? gemoed === mood.id
+                  //       ? "bg_blue"
+                  //       : // : mood.id === gemoed
+                  //         // ? `${styles.reverse}`
+                  //         // : `${styles.reverse}`
+                  //         "visually-hidden"
+                  //     : "visually-hidden"
+                  // }
+                >
+                  <label
+                    htmlFor="description"
                     // className={
-                    //   gemoed
-                    //     ? gemoed === mood.id
-                    //       ? "bg_blue"
-                    //       : // : mood.id === gemoed
-                    //         // ? `${styles.reverse}`
-                    //         // : `${styles.reverse}`
-                    //         "visually-hidden"
+                    //   mood.name
+                    //     ? mood.name === "happy"
+                    //       ? `text_normal text_bold `
+                    //       : mood.name === "sad"
+                    //       ? `text_normal text_bold `
+                    //       : `text_normal text_bold `
                     //     : "visually-hidden"
                     // }
                   >
-                    <label
-                      htmlFor="description"
+                    {/* What have you experienced lately that made you feel very{" "}
+                    <span
                       className={
                         mood.name
                           ? mood.name === "happy"
-                            ? `text_normal text_bold `
+                            ? ` bg_yellow text_underline`
                             : mood.name === "sad"
-                            ? `text_normal text_bold `
-                            : `text_normal text_bold `
+                            ? ` bg_blue text_underline`
+                            : ` bg_pink text_underline`
                           : "visually-hidden"
                       }
                     >
-                      What have you experienced lately that made you feel very{" "}
-                      <span
-                        className={
-                          mood.name
-                            ? mood.name === "happy"
-                              ? ` bg_yellow text_underline`
-                              : mood.name === "sad"
-                              ? ` bg_blue text_underline`
-                              : ` bg_pink text_underline`
-                            : "visually-hidden"
-                        }
-                      >
-                        {mood.name}
-                      </span>
-                      ?
-                      <textarea
-                        className={
-                          mood.name
-                            ? mood.name === "happy"
-                              ? `${styles.textarea_yellow} ${styles.textarea} `
-                              : mood.name === "sad"
-                              ? `${styles.textarea_blue} ${styles.textarea} `
-                              : `${styles.textarea_pink} ${styles.textarea} `
-                            : styles.textarea
-                        }
-                        type="textarea"
-                        name="description"
-                        id="description"
-                        placeholder="Tell us your story..."
-                        ref={descriptionInput}
-                        required
-                      />
-                    </label>
-                  </li>
-                ))}
+                      {mood.name}
+                    </span>
+                    ? */}
+                    <textarea
+                      className={`${styles.textarea} text_big`}
+                      // className={
+                      //   styles.textarea
+                      // mood.name
+                      //   ? mood.name === "happy"
+                      //     ? `${styles.textarea_yellow} ${styles.textarea} `
+                      //     : mood.name === "sad"
+                      //     ? `${styles.textarea_blue} ${styles.textarea} `
+                      //     : `${styles.textarea_pink} ${styles.textarea} `
+                      //   : styles.textarea
+                      // }
+                      type="textarea"
+                      name="description"
+                      id="description"
+                      placeholder="Tell us your story..."
+                      ref={descriptionInput}
+                      required
+                    />
+                  </label>
+                </li>
+                {/* ))} */}
               </ul>
               <CheckBox emailInput={emailInput} />
               <input
