@@ -11,11 +11,11 @@ const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
   const { currentCity } = uiStore;
   const { currentMood, moods } = moodStore;
 
-  const getCurrentMoodId = () => {
-    const currentMoodObject = moods.filter(mood => mood.name === currentMood);
-    console.log(currentMood);
-    return currentMoodObject.id;
-  };
+  // const getCurrentMoodId = () => {
+  //   const currentMoodObject = moods.filter(mood => mood.name === currentMood);
+  //   console.log(currentMood);
+  //   return currentMoodObject.id;
+  // };
 
   let gemoed = "";
   console.log(gemoed);
@@ -160,16 +160,17 @@ const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
                     </span>
                     ? */}
                     <textarea
-                      className={
-                        styles.textarea
-                        // mood.name
-                        //   ? mood.name === "happy"
-                        //     ? `${styles.textarea_yellow} ${styles.textarea} `
-                        //     : mood.name === "sad"
-                        //     ? `${styles.textarea_blue} ${styles.textarea} `
-                        //     : `${styles.textarea_pink} ${styles.textarea} `
-                        //   : styles.textarea
-                      }
+                      className={`${styles.textarea} text_big`}
+                      // className={
+                      //   styles.textarea
+                      // mood.name
+                      //   ? mood.name === "happy"
+                      //     ? `${styles.textarea_yellow} ${styles.textarea} `
+                      //     : mood.name === "sad"
+                      //     ? `${styles.textarea_blue} ${styles.textarea} `
+                      //     : `${styles.textarea_pink} ${styles.textarea} `
+                      //   : styles.textarea
+                      // }
                       type="textarea"
                       name="description"
                       id="description"
