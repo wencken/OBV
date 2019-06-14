@@ -9,13 +9,7 @@ import Muziek from "../components/Muziek";
 
 const Share = ({ uiStore, moodStore, storyStore, emailStore, history }) => {
   const { currentCity } = uiStore;
-  const { currentMood, moods } = moodStore;
-
-  // const getCurrentMoodId = () => {
-  //   const currentMoodObject = moods.filter(mood => mood.name === currentMood);
-  //   console.log(currentMood);
-  //   return currentMoodObject.id;
-  // };
+  // const { currentMood, moods } = moodStore;
 
   let gemoed = "";
   console.log(gemoed);

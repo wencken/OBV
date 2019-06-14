@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { inject, observer } from "mobx-react";
 
 import styles from "./Filter.module.css";
-import { log } from "util";
+// import { log } from "util";
 
 class Filter extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class Filter extends Component {
   render() {
     const { selected } = this.state;
     const { currentMood } = this.props.moodStore;
-    const { city } = this.props;
+    // const { city } = this.props;
     return (
       <article>
         <h2 className={"visually-hidden"}>Filter</h2>

@@ -2,7 +2,7 @@ import React from "react";
 import { PropTypes, inject, observer } from "mobx-react";
 import Vote from "../components/Vote";
 import { Link } from "react-router-dom";
-import Muziek from "../components/Muziek";
+// import Muziek from "../components/Muziek";
 
 import styles from "./Stories.module.css";
 

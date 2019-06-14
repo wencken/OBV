@@ -14,7 +14,7 @@ import Information from "./Information";
 import Succeed from "../components/Succeed";
 //
 import Login from "../components/auth/Login";
-import Register from "../components/auth/Register";
+// import Register from "../components/auth/Register";
 //
 import StoryAdmin from "../components/StoryAdmin";
 import Kandidaten from "../components/Kandidaten";

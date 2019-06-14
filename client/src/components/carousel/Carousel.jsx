@@ -55,7 +55,8 @@ class Carousel extends Component {
   };
 
   render() {
-    const currentMood = this.props;
+    const currentMood = this.props.currentMood;
+
     return (
       <>
         <article
