@@ -3,6 +3,7 @@ import { inject, observer } from "mobx-react";
 import Carousel from "../components/carousel/Carousel";
 import CarouselData from "../components/carousel/CarouselData";
 import styles from "./Detail.module.css";
+import Muziek from "../components/Muziek";
 
 const Detail = ({ moodStore }) => {
   const { currentMood } = moodStore;
@@ -22,7 +23,7 @@ const Detail = ({ moodStore }) => {
         </div>
 
         <div className={"container_aside"}>
-          <article className={"btn_listen bg_black color_white"}>
+          {/* <article className={"btn_listen bg_black color_white"}>
             <img
               src="../../assets/img/headphones2.png"
               alt="White headphones with soundwaves"
@@ -41,7 +42,8 @@ const Detail = ({ moodStore }) => {
               </span>{" "}
               <span>Listen here</span>
             </button>
-          </article>
+          </article> */}
+          <Muziek />
 
           <ul className={"container_facts"}>
             <li

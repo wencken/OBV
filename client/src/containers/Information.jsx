@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./Information.module.css";
 import { inject, observer } from "mobx-react";
+import Muziek from "../components/Muziek";
 
 class Information extends Component {
   constructor(props) {
@@ -52,7 +53,7 @@ class Information extends Component {
           </article>
 
           <div className={"container_aside"}>
-            <article className={"btn_listen bg_black color_white"}>
+            {/* <article className={"btn_listen bg_black color_white"}>
               <img
                 src="../../assets/img/headphones2.png"
                 alt="White headphones with soundwaves"
@@ -71,7 +72,8 @@ class Information extends Component {
                 </span>{" "}
                 <span>Listen here</span>
               </button>
-            </article>
+            </article> */}
+            <Muziek />
 
             <aside className={"container_facts"}>
               <h3 className={"visually-hidden"}>Intro</h3>

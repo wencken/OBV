@@ -2,6 +2,7 @@ import React from "react";
 import { inject, observer } from "mobx-react";
 
 import styles from "./Moods.module.css";
+import Muziek from "../components/Muziek";
 
 const Moods = ({ uiStore, moodStore, storyStore }) => {
   const { currentCity } = uiStore;
@@ -69,7 +70,7 @@ const Moods = ({ uiStore, moodStore, storyStore }) => {
           </ul>
         </article>
         <div className={"container_aside"}>
-          <article className={"btn_listen bg_black color_white"}>
+          {/* <article className={"btn_listen bg_black color_white"}>
             <img
               src="../../assets/img/headphones2.png"
               alt="White headphones with soundwaves"
@@ -88,7 +89,8 @@ const Moods = ({ uiStore, moodStore, storyStore }) => {
               </span>{" "}
               <span>Listen here</span>
             </button>
-          </article>
+          </article> */}
+          <Muziek />
 
           <aside className={"container_facts"}>
             <h2 className={"visually-hidden"}>Legende</h2>
