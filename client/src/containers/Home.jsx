@@ -18,10 +18,8 @@ const Home = ({ uiStore, storyStore, moodStore }) => {
   const toggleStories = event => {
     if (event.target.classList.contains("toggle_animation")) {
       event.target.classList.remove("toggle_animation");
-      this.forceUpdate();
     } else {
       event.target.classList.add("toggle_animation");
-      this.forceUpdate();
     }
   };
 
