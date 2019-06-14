@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { inject, observer } from "mobx-react";
 import { Link } from "react-router-dom";
 import Muziek from "../components/Muziek";
@@ -13,14 +13,15 @@ import styles from "./Home.module.css";
 const Home = ({ uiStore, storyStore, moodStore }) => {
   const { stories } = storyStore;
   const { moods, currentMood } = moodStore;
-  const toggle = true;
   console.log(moods);
 
   const toggleStories = event => {
-    if (event.target.classList.contains("navigation--active")) {
-      event.target.classList.remove("navigation--active");
+    if (event.target.classList.contains("toggle_animation")) {
+      event.target.classList.remove("toggle_animation");
+      this.forceUpdate();
     } else {
-      event.target.classList.add("navigation--active");
+      event.target.classList.add("toggle_animation");
+      this.forceUpdate();
     }
   };
 
@@ -124,12 +125,13 @@ const Home = ({ uiStore, storyStore, moodStore }) => {
           </div>
         </div>
 
-        <article className={styles.container_stories}>
-          <button
-            className={`${styles.toggle} ${toggle ? "navigation--active" : ""}`}
-          >
-            VVVVVVVVV
-          </button>
+        <article
+          className={`
+        ${styles.container_stories}
+        `}
+          onClick={e => toggleStories(e)}
+        >
+          <button className={`${styles.toggle}`}>VVVVVVVVV</button>
           <div
             className={
               currentMood

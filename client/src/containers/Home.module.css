@@ -107,7 +107,23 @@ aside div {
   position: absolute;
   float:right;
   right:0;
+}
+
+.toggle_animation{
   transform: translateY(11.5rem);
+  background: blue;
+}
+
+.container_stories:before {
+  content:" ";
+  display: block;
+  position: absolute;
+  background: red;
+  width: 10rem;
+  height: 27rem;
+  margin-top: 15rem;
+  margin-left: -8rem;
+  z-index: 100;
 }
 
 .more_button{
