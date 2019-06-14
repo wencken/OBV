@@ -11,12 +11,6 @@
   justify-content: space-between;
 }
 
-/* .container_switch {
-  display: flex;
-  flex-flow: row-reverse nowrap;
-  justify-content: space-between; /* !!
-} */
-
 .container_intro {
   composes: container;
   width: 36vw;
@@ -57,24 +51,6 @@
   composes: bg_black from "../styles/colors.module.css";
   composes: color_white from "../styles/colors.module.css";
 }
-
-/* .container_aside {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-around;
-  width: 19rem; /* !! + height?
-} */
-
-/* .container_facts {
-  composes: container;
-
-  flex-grow: 1;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-around;
-  align-items: center;
-  height: 30rem;
-} */
 
 aside div {
   display: flex;

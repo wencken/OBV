@@ -11,12 +11,7 @@ class Filter extends Component {
   }
 
   handleChangeCity = e => {
-    // e.preventDefault();
     this.setState({ selected: e.target.value });
-
-    // this.props.setCity(e.target.value);
-
-    // setCity={this.props.uiStore.changeCity}
     this.props.uiStore.changeCity(e.target.value);
   };
 
@@ -121,48 +116,3 @@ class Filter extends Component {
 }
 
 export default inject("uiStore", "moodStore")(observer(Filter));
-
-// const Filter = ({ uiStore }) => {
-//   // const { changeCity } = uiStore;
-//   const cityInput = React.createRef();
-
-//   const handleChangeCity = e => {
-//     e.preventDefault();
-//     if (cityInput.current.value) {
-//       uiStore.changeCity(cityInput.current.value);
-//     }
-//   };
-
-//   return (
-//     <>
-//       <form>
-//         <label htmlFor="Ghent">
-//           <input
-//             type="radio"
-//             id="Ghent"
-//             name="city"
-//             value="Ghent"
-//             ref={cityInput}
-//             // checked={selected === "Ghent"}
-//             onChange={handleChangeCity}
-//           />
-//           Ghent
-//         </label>
-//         <label htmlFor="Antwerp">
-//           <input
-//             type="radio"
-//             id="Antwerp"
-//             name="city"
-//             value="Antwerp"
-//             ref={cityInput}
-//             // checked={selected === "Antwerp"}
-//             onChange={handleChangeCity}
-//           />
-//           Antwerp
-//         </label>
-//       </form>
-//     </>
-//   );
-// };
-
-// export default inject("uiStore")(observer(Filter));

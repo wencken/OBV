@@ -1,11 +1,8 @@
 .logoTitle {
-  /* composes: visually-hidden from "../styles/index.css"; */
   width: 30vw;
 }
 
 .logoTitle::after{
-  /* content: url("/assets/img/obv_logo.png"); */
-  /* background-image: url("/assets/img/obv_logo.png"); */
   width: 5rem;
   height: 10rem;
 }
@@ -14,7 +11,6 @@
   height: 20rem;
   width: 100vw;
   padding: 0 7rem;
-  /* margin-top: 5rem; */
 
   display: flex;
   justify-content: space-between;
